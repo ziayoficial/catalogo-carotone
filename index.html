@@ -1201,8 +1201,8 @@
 
         // Contador regresivo
         function startCountdown() {
-            const now = new Date('2025-07-13T23:51:00-05:00'); // 11:51 PM -05 on July 13, 2025
-            const deadline = new Date('2025-07-14T00:00:00-05:00'); // Midnight of July 14, 2025
+            const now = new Date('2025-07-14T03:46:00-05:00'); // 03:46 AM -05 on July 14, 2025
+            const deadline = new Date('2025-07-14T04:00:00-05:00'); // Next interval (04:00 AM -05)
             let timeLeft = Math.floor((deadline - now) / 1000); // Time left in seconds
 
             const countdownElement = document.getElementById('countdown');
@@ -1214,7 +1214,7 @@
                 timeLeft--;
                 if (timeLeft < 0) {
                     const nextDeadline = new Date(deadline);
-                    nextDeadline.setDate(nextDeadline.getDate() + 1);
+                    nextDeadline.setMinutes(nextDeadline.getMinutes() + 10); // Reset to 10-minute intervals
                     timeLeft = Math.floor((nextDeadline - new Date()) / 1000);
                 }
             }, 1000);
@@ -1305,7 +1305,7 @@
             
             fbq('track', 'Purchase', {value: totalPrice, currency: 'COP'});
             
-            const message = `Hola, soy ${firstNames} ${lastNames}. 😊 Con estos datos confirmo mi pedido y acepto pagar el total:\n` +
+            const message = `Soy ${firstNames} ${lastNames}. 😊 Con estos datos confirmo mi pedido y acepto pagar el total:\n` +
                           `. 1. Nombres: ${firstNames}\n` +
                           `. 2. Apellidos: ${lastNames}\n` +
                           `. 3. Teléfono: ${phone}\n` +

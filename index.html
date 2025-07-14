@@ -3,50 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="¡Oferta exclusiva en Carotone con envío gratis y pago contra entrega! Pide ahora por WhatsApp y transforma tu piel.">
+    <meta name="description" content="¡Oferta exclusiva en Carotone con envío gratis y pago contra entrega! Transforma tu piel hoy.">
     <meta name="keywords" content="Carotone, crema aclarante, serum, jabón, lotion, cuidado de la piel, oferta, envío gratis, WhatsApp">
     <meta property="og:title" content="Oferta Exclusiva Carotone - Envío Gratis">
-    <meta property="og:description" content="Descubre kits y productos Carotone con descuentos increíbles. ¡Pide ya por WhatsApp y recibe envío gratis!">
+    <meta property="og:description" content="Descubre kits y productos Carotone con descuentos increíbles. ¡Transforma tu piel ahora!">
     <meta property="og:image" content="https://res.cloudinary.com/dewjjckox/image/upload/v1751857950/1.jpg">
     <meta property="og:url" content="URL_DE_TU_PAGINA">
-    <title>Carotone - ¡Luce Radiante Hoy! 🔥</title>
+    <title>Carotone - ¡Luce <span style="color: #ff6f61;">Radiante</span> Hoy! 🔥</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff6f61, #a33a7e);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff8a80, #ffd180);
             min-height: 100vh;
-            padding: 10px;
+            padding: 15px;
             display: flex;
             justify-content: center;
             align-items: flex-start;
         }
-        
+
         .container {
-            max-width: 420px;
+            max-width: 450px;
             margin: 0 auto;
-            background: white;
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            position: relative;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(5px);
         }
-        
+
         .header {
             background: linear-gradient(135deg, #ff6f61, #ff9a7a);
             color: white;
             text-align: center;
-            padding: 25px 15px;
+            padding: 35px 20px;
             position: relative;
             overflow: hidden;
         }
-        
+
         .header::before {
             content: '';
             position: absolute;
@@ -54,315 +55,490 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
-            animation: pulse 3s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
         }
-        
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"%3E%3Cpath fill="%23ffffff22" fill-opacity="0.2" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,85.3C672,75,768,85,864,90.7C960,96,1056,96,1152,85.3C1248,75,1344,64,1392,58.7L1440,53.3V320H1392C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320H0V64Z"%3E%3C/path%3E%3C/svg%3E') no-repeat;
+            background-size: cover;
+        }
+
         @keyframes pulse {
             0%, 100% { transform: scale(1); opacity: 0.5; }
             50% { transform: scale(1.1); opacity: 0.8; }
         }
-        
-        .header-content {
+
+        .header-content h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 1s ease-in;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ffd180, #ff6f61);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .header-content p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #fff;
+            opacity: 0.9;
+            font-style: italic;
+            line-height: 1.5;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            height: 120px;
+            background: conic-gradient(#fff 0%, #ff6f61 0%) border-box;
+            border-radius: 50%;
+            margin: 20px auto;
+            position: relative;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timer::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #ff6f61;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timer span {
             position: relative;
             z-index: 2;
         }
-        
-        .header h1 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
+
         .urgency-badge {
-            display: inline-block;
-            background: #ff1744;
+            background: #ff5722;
             color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 16px;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 18px;
             font-weight: 700;
-            margin-top: 15px;
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-15px); }
-            60% { transform: translateY(-8px); }
-        }
-        
-        .timer {
-            background: rgba(0,0,0,0.3);
-            padding: 12px;
-            border-radius: 10px;
             margin-top: 20px;
-            font-size: 20px;
-            font-weight: 700;
+            animation: pulseBadge 2s infinite;
+            display: inline-block;
+            text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            line-height: 1.3;
         }
-        
-        .social-proof {
-            background: #e8f5e8;
-            padding: 15px;
+
+        @keyframes pulseBadge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .social-proof, .testimonial {
+            background: #f0f4f8;
+            padding: 20px;
             text-align: center;
-            border-left: 5px solid #4caf50;
-            margin: 20px;
-            border-radius: 8px;
+            border-left: 6px solid #4caf50;
+            margin: 25px;
+            border-radius: 12px;
             font-size: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            line-height: 1.6;
         }
-        
-        .social-proof i {
+
+        .social-proof i, .testimonial i {
             color: #4caf50;
             margin-right: 10px;
         }
-        
-        .products-section {
-            padding: 25px;
+
+        .social-proof strong {
+            color: #ff6f61;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
-        
+
+        .testimonial {
+            font-style: italic;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .products-section {
+            padding: 30px;
+        }
+
         .section-title {
             text-align: center;
-            margin-bottom: 25px;
-            font-size: 22px;
+            margin-bottom: 30px;
+            font-size: 26px;
             color: #333;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
-            border-bottom: 2px solid #ff9a7a;
-            padding-bottom: 10px;
+            position: relative;
+            letter-spacing: 2.5px;
+            line-height: 1.3;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
-        
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: #ff9a7a;
+            border-radius: 2px;
+        }
+
+        .section-title .call-to-action {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #ff6f61;
+            background: linear-gradient(90deg, #ffd180, #ff6f61);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            animation: bounce 1.5s infinite;
+            position: relative;
+        }
+
+        .section-title .call-to-action::before {
+            content: '👇 ';
+            animation: point 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes point {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
         .product-card {
             border: 3px solid #e0e0e0;
             border-radius: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             cursor: pointer;
-            position: relative;
-            background: white;
+            background: #fff;
+            transform: translateY(0);
         }
-        
+
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
-        
+
         .product-card.selected {
             border-color: #25D366;
             background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
             transform: scale(1.03);
         }
-        
+
         .product-card.selected::after {
             content: '✓ SELECCIONADO';
             position: absolute;
-            top: 12px;
-            right: 12px;
+            top: 15px;
+            right: 15px;
             background: #25D366;
             color: white;
-            padding: 6px 12px;
-            border-radius: 15px;
+            padding: 8px 15px;
+            border-radius: 20px;
             font-size: 14px;
             font-weight: 700;
-            animation: fadeIn 0.3s ease;
+            animation: fadeIn 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
+
         .product-image {
             width: 100%;
-            max-height: 200px;
-            object-fit: contain;
+            height: 200px;
+            object-fit: cover;
             background-color: #f8f9fa;
             border-bottom: 2px solid #eee;
-            display: block;
         }
-        
+
         .product-info {
-            padding: 15px;
+            padding: 20px;
         }
-        
+
         .product-name {
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 700;
             color: #333;
-            margin-bottom: 10px;
-            line-height: 1.3;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            line-height: 1.2;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
         }
-        
+
         .product-description {
             font-size: 15px;
             color: #666;
-            margin-bottom: 12px;
-            line-height: 1.5;
+            margin-bottom: 15px;
+            line-height: 1.7;
+            font-style: italic;
+            font-weight: 400;
         }
-        
+
         .price-section {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
-        
+
         .price-current {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 800;
             color: #ff6f61;
+            text-shadow: 2px 2px 6px rgba(255, 111, 97, 0.3);
+            letter-spacing: 1px;
         }
-        
+
         .price-original {
             font-size: 16px;
             text-decoration: line-through;
             color: #999;
             margin-left: 10px;
+            font-style: italic;
+            font-weight: 500;
         }
-        
+
         .discount-badge {
-            background: #ff1744;
+            background: #ff5722;
             color: white;
-            padding: 5px 10px;
-            border-radius: 10px;
+            padding: 6px 12px;
+            border-radius: 12px;
             font-size: 14px;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
-        
+
         .stock-badge {
-            background: #ff9800;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 10px;
-            font-size: 12px;
+            background: #b35a00;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 13px;
             font-weight: 600;
-            margin-top: 5px;
-            display: inline-block;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
-        
+
         .benefits {
             background: #fff3e0;
-            padding: 12px;
-            border-radius: 8px;
-            margin-top: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
         }
-        
+
         .benefit-item {
             font-size: 14px;
             color: #e65100;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            line-height: 1.5;
+            text-transform: capitalize;
         }
-        
+
         .benefit-item i {
             margin-right: 10px;
             color: #4caf50;
         }
-        
+
         .order-form {
             background: #f8f9fa;
-            padding: 25px;
-            margin-top: 20px;
-            border-top: 4px solid #ff6f61;
+            padding: 30px;
+            margin-top: 30px;
+            border-top: 5px solid #ff6f61;
+            border-radius: 0 0 25px 25px;
         }
-        
+
         .form-title {
             text-align: center;
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 24px;
+            font-weight: 800;
             color: #333;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-transform: uppercase;
+            letter-spacing: 2.5px;
+            line-height: 1.2;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(90deg, #ff6f61, #ffd180);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-        
-        .selected-product {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
             margin-bottom: 20px;
-            border-left: 5px solid #25D366;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #4caf50;
+            width: 0;
+            transition: width 0.3s ease;
+        }
+
+        .selected-product {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 6px solid #25D366;
             display: none;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            line-height: 1.6;
         }
-        
+
         .selected-product.show {
             display: block;
             animation: slideIn 0.5s ease;
         }
-        
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        
+
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            position: relative;
         }
-        
+
         .form-row {
             display: flex;
-            gap: 10px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
-        
-        .form-row .form-group {
-            flex: 1;
-        }
-        
+
         .form-label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 600;
             color: #333;
-            font-size: 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            line-height: 1.3;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
         }
-        
+
         .form-input {
             width: 100%;
-            padding: 12px;
+            padding: 15px 20px;
             border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 14px;
-            transition: border-color 0.3s ease;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #444;
+            box-sizing: border-box;
+            background: #f9f9f9;
         }
-        
+
         .form-input:focus {
             outline: none;
             border-color: #25D366;
-            box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
+            box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.1);
+            background: #fff;
         }
-        
+
         .form-input.error {
             border-color: #ff1744;
         }
-        
+
+        .tooltip {
+            position: absolute;
+            top: -30px;
+            left: 10px;
+            background: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s;
+        }
+
+        .form-input:focus + .tooltip,
+        .form-input:hover + .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
         .whatsapp-button {
             width: 100%;
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
-            padding: 18px;
+            padding: 20px;
             border: none;
-            border-radius: 12px;
+            border-radius: 15px;
             font-size: 18px;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            margin-top: 20px;
+            margin-top: 25px;
             text-transform: uppercase;
+            letter-spacing: 2.5px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
-        
+
         .whatsapp-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
         }
-        
+
         .whatsapp-button:active {
             transform: translateY(0);
         }
-        
+
         .whatsapp-button::before {
             content: '';
             position: absolute;
@@ -370,147 +546,220 @@
             left: 50%;
             width: 0;
             height: 0;
-            background: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.4);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             transition: width 0.6s, height 0.6s;
         }
-        
+
         .whatsapp-button:hover::before {
             width: 300px;
             height: 300px;
         }
-        
+
         .whatsapp-button span {
             position: relative;
             z-index: 1;
         }
-        
+
         .trust-signals {
             display: flex;
             justify-content: space-around;
-            padding: 20px;
+            padding: 25px;
             background: #f8f9fa;
-            margin-top: 20px;
-            border-top: 2px solid #ddd;
+            margin-top: 30px;
+            border-top: 3px solid #ddd;
+            border-radius: 0 0 25px 25px;
         }
-        
+
         .trust-item {
             text-align: center;
             flex: 1;
         }
-        
+
         .trust-item i {
-            font-size: 26px;
+            font-size: 28px;
             color: #4caf50;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
-        
+
         .trust-item span {
-            font-size: 13px;
+            font-size: 14px;
             color: #666;
-            display: block;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            line-height: 1.4;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
         }
-        
+
         .floating-exclusivity {
             position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #ff1744;
+            top: 25px;
+            right: 25px;
+            background: #ff5722;
             color: white;
-            padding: 12px 18px;
-            border-radius: 50px;
+            padding: 15px 20px;
+            border-radius: 30px;
             font-size: 16px;
             font-weight: 700;
             z-index: 1000;
             animation: float 3s ease-in-out infinite;
-            box-shadow: 0 5px 15px rgba(255, 23, 68, 0.3);
+            box-shadow: 0 6px 18px rgba(255, 87, 34, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            line-height: 1.3;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
-        
+
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
+            50% { transform: translateY(-15px); }
         }
-        
-        .testimonial {
-            background: #e0f7fa;
-            padding: 15px;
-            margin: 20px;
-            border-radius: 8px;
-            font-style: italic;
-            color: #00695c;
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .info-section {
+            padding: 30px;
+            background: #ffffff;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-section h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #333;
             text-align: center;
-            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.3;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(90deg, #ff6f61, #ffd180);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-        
+
+        .info-section p {
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .info-section .reason-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 6px solid #ff9a7a;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .info-section .reason-item:hover {
+            background: #f0f0f0;
+            transform: translateX(10px);
+        }
+
+        .info-section .reason-item h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            line-height: 1.2;
+        }
+
+        .info-section .reason-item p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
         .manual-link {
             display: none;
             margin-top: 20px;
             padding: 15px;
             background: #fff3e0;
-            border-radius: 8px;
-            border-left: 5px solid #ff9800;
-            text-align: center;
-        }
-        
-        .manual-link.show {
-            display: block;
-        }
-        
-        .manual-link input {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
+            border-left: 6px solid #ff6f61;
+            border-radius: 10px;
             font-size: 14px;
-            margin-top: 10px;
-            text-align: center;
-            background-color: #fff;
             color: #333;
         }
-        
+
         @media (max-width: 480px) {
+            .container {
+                max-width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+
             .form-row {
                 flex-direction: column;
-                gap: 0;
+                gap: 10px;
             }
-            
+
             .product-image {
-                max-height: 150px;
-                height: auto;
-                object-fit: contain;
-                background-color: #f8f9fa;
+                height: 150px;
             }
-            
-            .product-info {
-                padding: 10px;
+
+            .header {
+                padding: 25px 15px;
             }
-            
-            .price-current {
-                font-size: 22px;
+
+            .header-content h1 {
+                font-size: 24px;
             }
-            
-            .product-card {
-                margin-bottom: 15px;
-            }
-            
-            .header h1 {
-                font-size: 20px;
-            }
-            
+
             .urgency-badge {
-                font-size: 14px;
-                padding: 8px 16px;
+                font-size: 16px;
+                padding: 10px 20px;
             }
-            
+
             .timer {
-                font-size: 18px;
+                width: 100px;
+                height: 100px;
+                font-size: 16px;
             }
-            
+
             .whatsapp-button {
                 font-size: 16px;
                 padding: 15px;
+            }
+
+            .info-section h2 {
+                font-size: 22px;
+            }
+
+            .info-section .reason-item h3 {
+                font-size: 18px;
+            }
+
+            .info-section .reason-item p {
+                font-size: 13px;
+            }
+
+            .form-input {
+                max-width: 100%;
+            }
+
+            .section-title .call-to-action {
+                font-size: 16px;
             }
         }
     </style>
@@ -543,380 +792,364 @@
 </head>
 <body>
     <div class="floating-exclusivity">
-        <i class="fas fa-star"></i> ¡Únete a los clientes exclusivos!
+        <i class="fas fa-hand-point-down"></i> ¡Toca cualquier producto de abajo para seleccionarlo ahora!
     </div>
     
     <div class="container">
         <div class="header">
             <div class="header-content">
-                <h1>🔥 CAROTONE - LUCE RADIANTE 🔥</h1>
-                <div class="urgency-badge">
-                    <i class="fas fa-clock"></i> ÚLTIMAS UNIDADES - ENVÍO GRATIS
-                </div>
-                <div class="timer">
-                    <i class="fas fa-stopwatch"></i> 23:45:12
-                </div>
+                <h1>¡Luce una <span style="color: #ffd180;">Piel</span> <span style="color: #ff6f61;">Radiante</span>!</h1>
+                <p>Reduce manchas y unifica tu tono de piel con <strong>Carotone</strong>, el kit despigmentante <em>100% original</em>.</p>
+                <div class="timer"><span id="countdown">00:08:00</span></div>
+                <div class="urgency-badge">¡Oferta por <span style="color: #ffd180;">tiempo limitado</span>!</div>
             </div>
         </div>
         
         <div class="social-proof">
             <i class="fas fa-users"></i>
-            <strong id="buyersCount">+1,247 personas</strong> compraron hoy
+            <span id="buyersCount"></span>
         </div>
         
         <div class="testimonial">
-            "¡Mi piel está transformada! El Kit Triple Poder es increíble. - Laura P."
+            "<em>¡Mi piel está transformada!</em> El Kit Triple Poder es increíble. - <strong>Laura P.</strong>"
         </div>
         
         <div class="products-section">
-            <div class="section-title">
-                👇 ELIGE TU PRODUCTO IDEAL 👇
-            </div>
+            <div class="section-title">👇 ELIGE TU <span style="color: #ff6f61;">PRODUCTO IDEAL</span> 👇 <br><span class="call-to-action">¡Toca cualquier producto de abajo para seleccionarlo y asegurar tu kit! 👇</span></div>
             
-            <!-- Kits Especiales -->
-            <div class="section-title">🎁 KITS ESPECIALES</div>
-            <div class="product-card" data-product="Kit Máximo Resplandor" data-price="149900" data-original="189900" data-stock="5" data-description="1 Crema Carotone Aclarante 135ml + 1 Lotion Manchas Negras Bsc 50ml + 1 Jabón Carotone 190gr">
-                <img src="https://res.cloudinary.com/dewjjckox/image/upload/v1751857950/1.jpg" alt="Kit Máximo Resplandor: Crema 135ml, Lotion 50ml y Jabón 190gr" class="product-image" loading="lazy">
+            <div class="section-title">🎁 <span style="color: #ff9a7a;">Kits Especiales</span></div>
+            <div class="product-card" data-product="Kit Máximo Resplandor" data-price="149900" data-original="189900" data-stock="5" data-description="1 Crema Carotone Aclarante 135ml + 1 Lotion Carotone Manchas Negras Bsc 50ml + 1 Jabón Carotone 190gr">
+                <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/1-Kit%20Maximo%20Resplandor.jpg" alt="Kit Máximo Resplandor: 1 Crema Carotone Aclarante 135ml + 1 Lotion Carotone Manchas Negras Bsc 50ml + 1 Jabón Carotone 190gr" class="product-image" loading="lazy">
                 <div class="product-info">
-                    <div class="product-name">🔥 Kit Máximo Resplandor</div>
-                    <div class="product-description">1 Crema Carotone Aclarante 135ml + 1 Lotion Manchas Negras Bsc 50ml + 1 Jabón Carotone 190gr</div>
+                    <div class="product-name">🔥 <span style="color: #ff6f61;">Kit Máximo Resplandor</span></div>
+                    <div class="product-description">1 Crema Carotone Aclarante 135ml + 1 Lotion Carotone Manchas Negras Bsc 50ml + 1 Jabón Carotone 190gr</div>
                     <div class="price-section">
                         <div>
-                            <span class="price-current">$149,900</span>
+                            <span class="price-current">$<span style="color: #ff6f61;">149,900</span></span>
                             <span class="price-original">$189,900</span>
                         </div>
                         <div class="discount-badge">21% OFF</div>
                     </div>
-                    <div class="stock-badge">Solo quedan 5 unidades</div>
+                    <div class="stock-badge">Solo quedan <span style="color: #ffffff;">5</span> unidades</div>
                     <div class="benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-shipping-fast"></i>Envío GRATIS
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-money-bill-wave"></i>Pago contra entrega
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-crown"></i>Kit completo
-                        </div>
+                        <div class="benefit-item"><i class="fas fa-shipping-fast"></i>Envío <strong>GRATIS</strong></div>
+                        <div class="benefit-item"><i class="fas fa-money-bill-wave"></i>Pago contra entrega</div>
+                        <div class="benefit-item"><i class="fas fa-crown"></i>Kit <em>completo</em></div>
                     </div>
                 </div>
             </div>
             
-            <div class="product-card" data-product="Kit Triple Poder" data-price="149900" data-original="189900" data-stock="3" data-description="1 Crema Carotone Aclarante 135ml + 1 Serum Aceite Aclarante 65ml + 1 Jabón Carotone 190gr">
-                <img src="https://res.cloudinary.com/dewjjckox/image/upload/v1751858013/2.jpg" alt="Kit Triple Poder: Crema 135ml, Serum 65ml y Jabón 190gr" class="product-image" loading="lazy">
+            <div class="product-card" data-product="Kit Triple Poder" data-price="149900" data-original="189900" data-stock="3" data-description="1 Crema Carotone Aclarante 135ml + 1 Serum Aceite Carotone Aclarante 65ml + 1 Jabón Carotone 190gr">
+                <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/2-Kit%20Triple%20Poder.jpg" alt="Kit Triple Poder: 1 Crema Carotone Aclarante 135ml + 1 Serum Aceite Carotone Aclarante 65ml + 1 Jabón Carotone 190gr" class="product-image" loading="lazy">
                 <div class="product-info">
-                    <div class="product-name">🔥 Kit Triple Poder</div>
-                    <div class="product-description">1 Crema Carotone Aclarante 135ml + 1 Serum Aceite Aclarante 65ml + 1 Jabón Carotone 190gr</div>
+                    <div class="product-name">🔥 <span style="color: #ff6f61;">Kit Triple Poder</span></div>
+                    <div class="product-description">1 Crema Carotone Aclarante 135ml + 1 Serum Aceite Carotone Aclarante 65ml + 1 Jabón Carotone 190gr</div>
                     <div class="price-section">
                         <div>
-                            <span class="price-current">$149,900</span>
+                            <span class="price-current">$<span style="color: #ff6f61;">149,900</span></span>
                             <span class="price-original">$189,900</span>
                         </div>
                         <div class="discount-badge">21% OFF</div>
                     </div>
-                    <div class="stock-badge">Solo quedan 3 unidades</div>
+                    <div class="stock-badge">Solo quedan <span style="color: #ffffff;">3</span> unidades</div>
                     <div class="benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-shipping-fast"></i>Envío GRATIS
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-money-bill-wave"></i>Pago contra entrega
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-star"></i>Máxima eficacia
-                        </div>
+                        <div class="benefit-item"><i class="fas fa-shipping-fast"></i>Envío <strong>GRATIS</strong></div>
+                        <div class="benefit-item"><i class="fas fa-money-bill-wave"></i>Pago contra entrega</div>
+                        <div class="benefit-item"><i class="fas fa-star"></i>Máxima <em>eficacia</em></div>
                     </div>
                 </div>
             </div>
             
-            <div class="product-card" data-product="Kit Despigmentante Intenso" data-price="139900" data-original="179900" data-stock="7" data-description="1 Crema Carotone Aclarante 135ml + 1 Lotion Manchas Negras Bsc 50ml">
-                <img src="https://res.cloudinary.com/dewjjckox/image/upload/v1751858053/3.jpg" alt="Kit Despigmentante Intenso: Crema 135ml y Lotion 50ml" class="product-image" loading="lazy">
+            <div class="product-card" data-product="Kit Despigmentante Intenso" data-price="139900" data-original="179900" data-stock="4" data-description="1 Crema Carotone Aclarante 135ml + 1 Lotion Carotone Manchas Negras Bsc 50ml">
+                <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/3-Kit%20Despigmentante%20Intenso.jpg" alt="Kit Despigmentante Intenso: 1 Crema Carotone Aclarante 135ml + 1 Lotion Carotone Manchas Negras Bsc 50ml" class="product-image" loading="lazy">
                 <div class="product-info">
-                    <div class="product-name">🔥 Kit Despigmentante Intenso</div>
-                    <div class="product-description">1 Crema Carotone Aclarante 135ml + 1 Lotion Manchas Negras Bsc 50ml</div>
+                    <div class="product-name">🔥 <span style="color: #ff6f61;">Kit Despigmentante Intenso</span></div>
+                    <div class="product-description">1 Crema Carotone Aclarante 135ml + 1 Lotion Carotone Manchas Negras Bsc 50ml</div>
                     <div class="price-section">
                         <div>
-                            <span class="price-current">$139,900</span>
+                            <span class="price-current">$<span style="color: #ff6f61;">139,900</span></span>
                             <span class="price-original">$179,900</span>
                         </div>
                         <div class="discount-badge">22% OFF</div>
                     </div>
-                    <div class="stock-badge">Solo quedan 7 unidades</div>
+                    <div class="stock-badge">Solo quedan <span style="color: #ffffff;">4</span> unidades</div>
                     <div class="benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-shipping-fast"></i>Envío GRATIS
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-money-bill-wave"></i>Pago contra entrega
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-star"></i>Más vendido
-                        </div>
+                        <div class="benefit-item"><i class="fas fa-shipping-fast"></i>Envío <strong>GRATIS</strong></div>
+                        <div class="benefit-item"><i class="fas fa-money-bill-wave"></i>Pago contra entrega</div>
+                        <div class="benefit-item"><i class="fas fa-heart"></i><em>Recomendado</em></div>
                     </div>
                 </div>
             </div>
             
-            <div class="product-card" data-product="Kit Aclarante Total" data-price="139900" data-original="179900" data-stock="4" data-description="1 Crema Carotone Aclarante 135ml + 1 Serum Aceite Aclarante 65ml">
-                <img src="https://res.cloudinary.com/dewjjckox/image/upload/v1751858094/4.jpg" alt="Kit Aclarante Total: Crema 135ml y Serum 65ml" class="product-image" loading="lazy">
+            <div class="product-card" data-product="Kit Aclarante Total" data-price="139900" data-original="179900" data-stock="4" data-description="1 Crema Carotone Aclarante 135ml + 1 Serum Aceite Carotone Aclarante 65ml">
+                <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/4-Kit%20Aclarante%20Total.jpg" alt="Kit Aclarante Total: 1 Crema Carotone Aclarante 135ml + 1 Serum Aceite Carotone Aclarante 65ml" class="product-image" loading="lazy">
                 <div class="product-info">
-                    <div class="product-name">🌟 Kit Aclarante Total</div>
-                    <div class="product-description">1 Crema Carotone Aclarante 135ml + 1 Serum Aceite Aclarante 65ml</div>
+                    <div class="product-name">🌟 <span style="color: #ff6f61;">Kit Aclarante Total</span></div>
+                    <div class="product-description">1 Crema Carotone Aclarante 135ml + 1 Serum Aceite Carotone Aclarante 65ml</div>
                     <div class="price-section">
                         <div>
-                            <span class="price-current">$139,900</span>
+                            <span class="price-current">$<span style="color: #ff6f61;">139,900</span></span>
                             <span class="price-original">$179,900</span>
                         </div>
                         <div class="discount-badge">22% OFF</div>
                     </div>
-                    <div class="stock-badge">Solo quedan 4 unidades</div>
+                    <div class="stock-badge">Solo quedan <span style="color: #ffffff;">4</span> unidades</div>
                     <div class="benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-shipping-fast"></i>Envío GRATIS
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-money-bill-wave"></i>Pago contra entrega
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-heart"></i>Recomendado
-                        </div>
+                        <div class="benefit-item"><i class="fas fa-shipping-fast"></i>Envío <strong>GRATIS</strong></div>
+                        <div class="benefit-item"><i class="fas fa-money-bill-wave"></i>Pago contra entrega</div>
+                        <div class="benefit-item"><i class="fas fa-heart"></i><em>Recomendado</em></div>
                     </div>
                 </div>
             </div>
             
-            <div class="product-card" data-product="Kit Cuidado y Limpieza" data-price="139900" data-original="179900" data-stock="6" data-description="1 Crema Carotone Aclarante 135ml + 1 Jabón Carotone 190gr">
-                <img src="https://res.cloudinary.com/dewjjckox/image/upload/v1751858163/5.jpg" alt="Kit Cuidado y Limpieza: Crema 135ml y Jabón 190gr" class="product-image" loading="lazy">
+            <div class="product-card" data-product="Kit Cuidado y Limpieza" data-price="139900" data-original="179900" data-stock="4" data-description="1 Crema Carotone Aclarante 135ml + 1 Jabón Carotone 190gr">
+                <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/5-Kit%20Cuidado%20y%20Limpieza.jpg" alt="Kit Cuidado y Limpieza: 1 Crema Carotone Aclarante 135ml + 1 Jabón Carotone 190gr" class="product-image" loading="lazy">
                 <div class="product-info">
-                    <div class="product-name">💖 Kit Cuidado y Limpieza</div>
+                    <div class="product-name">💖 <span style="color: #ff6f61;">Kit Cuidado y Limpieza</span></div>
                     <div class="product-description">1 Crema Carotone Aclarante 135ml + 1 Jabón Carotone 190gr</div>
                     <div class="price-section">
                         <div>
-                            <span class="price-current">$139,900</span>
+                            <span class="price-current">$<span style="color: #ff6f61;">139,900</span></span>
                             <span class="price-original">$179,900</span>
                         </div>
                         <div class="discount-badge">22% OFF</div>
                     </div>
-                    <div class="stock-badge">Solo quedan 6 unidades</div>
+                    <div class="stock-badge">Solo quedan <span style="color: #ffffff;">4</span> unidades</div>
                     <div class="benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-shipping-fast"></i>Envío GRATIS
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-money-bill-wave"></i>Pago contra entrega
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-shield-alt"></i>Cuidado integral
-                        </div>
+                        <div class="benefit-item"><i class="fas fa-shipping-fast"></i>Envío <strong>GRATIS</strong></div>
+                        <div class="benefit-item"><i class="fas fa-money-bill-wave"></i>Pago contra entrega</div>
+                        <div class="benefit-item"><i class="fas fa-heart"></i><em>Recomendado</em></div>
                     </div>
                 </div>
             </div>
             
-            <!-- Productos Individuales -->
-            <div class="section-title">🛍️ PRODUCTOS INDIVIDUALES</div>
-            <div class="product-card" data-product="Crema Carotone Aclarante 300ml" data-price="99900" data-original="129900" data-stock="8" data-description="Grande, Máxima duración, cuidado intensivo">
-                <img src="https://res.cloudinary.com/dewjjckox/image/upload/v1751877668/7.jpg" alt="Crema Carotone Aclarante 300ml para cuidado intensivo" class="product-image" loading="lazy">
+            <div class="section-title">🛍️ <span style="color: #ff9a7a;">PRODUCTOS INDIVIDUALES</span></div>
+            <div class="product-card" data-product="Crema Carotone Aclarante Original 300ml" data-price="99900" data-original="129900" data-stock="8" data-description="Grande, Máxima duración, cuidado intensivo">
+                <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/6-Crema%20Carotone%20Aclarante%20300ml.jpg" alt="Crema Carotone Aclarante Original 300ml: Grande, Máxima duración, cuidado intensivo" class="product-image" loading="lazy">
                 <div class="product-info">
-                    <div class="product-name">💧 Crema Carotone Aclarante 300ml</div>
+                    <div class="product-name">💧 <span style="color: #ff6f61;">Crema Carotone Aclarante Original 300ml</span></div>
                     <div class="product-description">Grande, Máxima duración, cuidado intensivo</div>
                     <div class="price-section">
                         <div>
-                            <span class="price-current">$99,900</span>
+                            <span class="price-current">$<span style="color: #ff6f61;">99,900</span></span>
                             <span class="price-original">$129,900</span>
                         </div>
                         <div class="discount-badge">23% OFF</div>
                     </div>
-                    <div class="stock-badge">Solo quedan 8 unidades</div>
+                    <div class="stock-badge">Solo quedan <span style="color: #ffffff;">8</span> unidades</div>
                     <div class="benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-shipping-fast"></i>Envío GRATIS
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-money-bill-wave"></i>Pago contra entrega
-                        </div>
+                        <div class="benefit-item"><i class="fas fa-shipping-fast"></i>Envío <strong>GRATIS</strong></div>
+                        <div class="benefit-item"><i class="fas fa-money-bill-wave"></i>Pago contra entrega</div>
                     </div>
                 </div>
             </div>
             
-            <div class="product-card" data-product="Crema Carotone Aclarante 135ml" data-price="79900" data-original="99900" data-stock="10" data-description="Mediana, Tamaño ideal, resultados garantizados">
-                <img src="https://res.cloudinary.com/dewjjckox/image/upload/v1751859121/11.jpg" alt="Crema Carotone Aclarante 135ml de tamaño ideal" class="product-image" loading="lazy">
+            <div class="product-card" data-product="Crema Carotone Aclarante Original 135ml" data-price="79900" data-original="99900" data-stock="10" data-description="Mediana, Tamaño ideal, resultados garantizados">
+                <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/7-1%20Crema%20Carotone%20Aclarante%20135ml.jpg" alt="Crema Carotone Aclarante Original 135ml: Mediana, Tamaño ideal, resultados garantizados" class="product-image" loading="lazy">
                 <div class="product-info">
-                    <div class="product-name">💧 Crema Carotone Aclarante 135ml</div>
+                    <div class="product-name">💧 <span style="color: #ff6f61;">Crema Carotone Aclarante Original 135ml</span></div>
                     <div class="product-description">Mediana, Tamaño ideal, resultados garantizados</div>
                     <div class="price-section">
                         <div>
-                            <span class="price-current">$79,900</span>
+                            <span class="price-current">$<span style="color: #ff6f61;">79,900</span></span>
                             <span class="price-original">$99,900</span>
                         </div>
                         <div class="discount-badge">20% OFF</div>
                     </div>
-                    <div class="stock-badge">Solo quedan 10 unidades</div>
+                    <div class="stock-badge">Solo quedan <span style="color: #ffffff;">10</span> unidades</div>
                     <div class="benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-shipping-fast"></i>Envío GRATIS
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-money-bill-wave"></i>Pago contra entrega
-                        </div>
+                        <div class="benefit-item"><i class="fas fa-shipping-fast"></i>Envío <strong>GRATIS</strong></div>
+                        <div class="benefit-item"><i class="fas fa-money-bill-wave"></i>Pago contra entrega</div>
                     </div>
                 </div>
             </div>
             
             <div class="product-card" data-product="Jabón Carotone 190gr" data-price="60000" data-original="75000" data-stock="12" data-description="Limpieza profunda y cuidado diario">
-                <img src="https://res.cloudinary.com/dewjjckox/image/upload/v1751877757/9.jpg" alt="Jabón Carotone 190gr para limpieza profunda" class="product-image" loading="lazy">
+                <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/9-Jabon%20Carotone%20190gr.jpg" alt="Jabón Carotone 190gr: Limpieza profunda y cuidado diario" class="product-image" loading="lazy">
                 <div class="product-info">
-                    <div class="product-name">✨ Jabón Carotone 190gr</div>
+                    <div class="product-name">✨ <span style="color: #ff6f61;">Jabón Carotone 190gr</span></div>
                     <div class="product-description">Limpieza profunda y cuidado diario</div>
                     <div class="price-section">
                         <div>
-                            <span class="price-current">$60,000</span>
+                            <span class="price-current">$<span style="color: #ff6f61;">60,000</span></span>
                             <span class="price-original">$75,000</span>
                         </div>
                         <div class="discount-badge">20% OFF</div>
                     </div>
-                    <div class="stock-badge">Solo quedan 12 unidades</div>
+                    <div class="stock-badge">Solo quedan <span style="color: #ffffff;">12</span> unidades</div>
                     <div class="benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-shipping-fast"></i>Envío GRATIS
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-money-bill-wave"></i>Pago contra entrega
-                        </div>
+                        <div class="benefit-item"><i class="fas fa-shipping-fast"></i>Envío <strong>GRATIS</strong></div>
+                        <div class="benefit-item"><i class="fas fa-money-bill-wave"></i>Pago contra entrega</div>
                     </div>
                 </div>
             </div>
             
             <div class="product-card" data-product="Serum Aceite Carotone Aclarante 65ml" data-price="69900" data-original="89900" data-stock="6" data-description="Hidratación y aclarado intensivo">
-                <img src="https://res.cloudinary.com/dewjjckox/image/upload/v1751859582/8.jpg" alt="Serum Aceite Carotone Aclarante 65ml para hidratación" class="product-image" loading="lazy">
+                <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/8-Serum%20Aceite%20Carotone%20Aclarante%2065ml.jpg" alt="Serum Aceite Carotone Aclarante 65ml: Hidratación y aclarado intensivo" class="product-image" loading="lazy">
                 <div class="product-info">
-                    <div class="product-name">🌿 Serum Aceite Carotone Aclarante 65ml</div>
+                    <div class="product-name">🌿 <span style="color: #ff6f61;">Serum Aceite Carotone Aclarante 65ml</span></div>
                     <div class="product-description">Hidratación y aclarado intensivo</div>
                     <div class="price-section">
                         <div>
-                            <span class="price-current">$69,900</span>
+                            <span class="price-current">$<span style="color: #ff6f61;">69,900</span></span>
                             <span class="price-original">$89,900</span>
                         </div>
                         <div class="discount-badge">22% OFF</div>
                     </div>
-                    <div class="stock-badge">Solo quedan 6 unidades</div>
+                    <div class="stock-badge">Solo quedan <span style="color: #ffffff;">6</span> unidades</div>
                     <div class="benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-shipping-fast"></i>Envío GRATIS
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-money-bill-wave"></i>Pago contra entrega
-                        </div>
+                        <div class="benefit-item"><i class="fas fa-shipping-fast"></i>Envío <strong>GRATIS</strong></div>
+                        <div class="benefit-item"><i class="fas fa-money-bill-wave"></i>Pago contra entrega</div>
                     </div>
                 </div>
             </div>
             
             <div class="product-card" data-product="Lotion Carotone Manchas Negras Bsc 50ml" data-price="69900" data-original="89900" data-stock="5" data-description="Tratamiento específico para manchas">
-                <img src="https://res.cloudinary.com/dewjjckox/image/upload/v1751877866/10.jpg" alt="Lotion Carotone Manchas Negras Bsc 50ml para manchas" class="product-image" loading="lazy">
+                <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/10-Lotion%20Carotone%20Manchas%20Negras%20Bsc%2050ml.jpg" alt="Lotion Carotone Manchas Negras Bsc 50ml: Tratamiento específico para manchas" class="product-image" loading="lazy">
                 <div class="product-info">
-                    <div class="product-name">🧴 Lotion Carotone Manchas Negras Bsc 50ml</div>
+                    <div class="product-name">🧴 <span style="color: #ff6f61;">Lotion Carotone Manchas Negras Bsc 50ml</span></div>
                     <div class="product-description">Tratamiento específico para manchas</div>
                     <div class="price-section">
                         <div>
-                            <span class="price-current">$69,900</span>
+                            <span class="price-current">$<span style="color: #ff6f61;">69,900</span></span>
                             <span class="price-original">$89,900</span>
                         </div>
                         <div class="discount-badge">22% OFF</div>
                     </div>
-                    <div class="stock-badge">Solo quedan 5 unidades</div>
+                    <div class="stock-badge">Solo quedan <span style="color: #ffffff;">5</span> unidades</div>
                     <div class="benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-shipping-fast"></i>Envío GRATIS
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-money-bill-wave"></i>Pago contra entrega
-                        </div>
+                        <div class="benefit-item"><i class="fas fa-shipping-fast"></i>Envío <strong>GRATIS</strong></div>
+                        <div class="benefit-item"><i class="fas fa-money-bill-wave"></i>Pago contra entrega</div>
                     </div>
                 </div>
             </div>
             
             <div class="product-card" data-product="Locion Corporal Carotone Aclarante 550ml" data-price="99900" data-original="129900" data-stock="4" data-description="Hidratación y aclarado para todo el cuerpo">
-                <img src="https://res.cloudinary.com/dewjjckox/image/upload/v1752126667/12.jpg" alt="Locion Corporal Carotone Aclarante 550ml para todo el cuerpo" class="product-image" loading="lazy">
+                <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/11-Locion%20Corporal%20Carotone%20Aclarante%20550ml.jpg" alt="Locion Corporal Carotone Aclarante 550ml: Hidratación y aclarado para todo el cuerpo" class="product-image" loading="lazy">
                 <div class="product-info">
-                    <div class="product-name">🧴 Locion Corporal Carotone Aclarante 550ml</div>
+                    <div class="product-name">🧴 <span style="color: #ff6f61;">Locion Corporal Carotone Aclarante 550ml</span></div>
                     <div class="product-description">Hidratación y aclarado para todo el cuerpo</div>
                     <div class="price-section">
                         <div>
-                            <span class="price-current">$99,900</span>
+                            <span class="price-current">$<span style="color: #ff6f61;">99,900</span></span>
                             <span class="price-original">$129,900</span>
                         </div>
                         <div class="discount-badge">23% OFF</div>
                     </div>
-                    <div class="stock-badge">Solo quedan 4 unidades</div>
+                    <div class="stock-badge">Solo quedan <span style="color: #ffffff;">4</span> unidades</div>
                     <div class="benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-shipping-fast"></i>Envío GRATIS
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-money-bill-wave"></i>Pago contra entrega
-                        </div>
+                        <div class="benefit-item"><i class="fas fa-shipping-fast"></i>Envío <strong>GRATIS</strong></div>
+                        <div class="benefit-item"><i class="fas fa-money-bill-wave"></i>Pago contra entrega</div>
                     </div>
                 </div>
             </div>
         </div>
         
+        <div class="info-section">
+            <h2>¿<span style="color: #ff6f61; font-weight: 800;">Cansada</span> de las Manchas en tu Piel?</h2>
+            <p>Transforma tu confianza y revela tu belleza natural. Con Carotone, obtén una piel más clara y uniforme en solo semanas.</p>
+        </div>
+        
+        <div class="info-section">
+            <h2>¿Por Qué <span style="color: #ff6f61; font-weight: 800;">Confiar</span> en Carotone?</h2>
+            <div class="reason-item">
+                <h3>Transforma tu Piel con <span style="color: #ff6f61; font-weight: 700;">Resultados Reales</span></h3>
+                <p>Numerosos usuarios han compartido sus experiencias de éxito, destacando la eficacia de Carotone para una piel más clara y uniforme.</p>
+            </div>
+            <div class="reason-item">
+                <h3><span style="color: #4caf50; font-weight: 800;">100%</span> Seguro y Natural</h3>
+                <p>Formulado con ácido kójico y aceite de zanahoria, diseñado para ser suave con tu piel.</p>
+            </div>
+            <div class="reason-item">
+                <h3>Producto <span style="color: #ff9a7a; font-weight: 700;">Original</span></h3>
+                <p>Importado directamente desde África, garantizando 100% autenticidad.</p>
+            </div>
+            <div class="reason-item">
+                <h3>Asequible y Sin <span style="color: #ff6f61; font-weight: 700;">Riesgos</span></h3>
+                <p>Desde $139,900 con envío gratis y pago contra entrega.</p>
+            </div>
+            <div class="reason-item">
+                <h3>Entrega <span style="color: #4caf50; font-weight: 700;">Rápida</span></h3>
+                <p>Recibe tu kit en cualquier ciudad de Colombia sin costo adicional.</p>
+            </div>
+            <div class="reason-item">
+                <h3>Resultados en <span style="color: #ff6f61; font-weight: 700;">Semanas</span></h3>
+                <p>Disfruta de una piel más clara y uniforme en solo 3 semanas.</p>
+            </div>
+        </div>
+        
         <div class="order-form">
-            <div class="form-title">
-                📋 CONFIRMA TU PEDIDO
+            <div class="form-title">📋 <span style="color: #ff6f61;">¡No te lo pierdas! ¿Qué esperas? Reduce manchas, haz tu pedido ya! 🔥</span></div>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
             </div>
             
             <div class="selected-product" id="selectedProduct">
-                <strong>Producto seleccionado:</strong>
+                <strong>🎉 ¡Tu producto elegido!</strong>
                 <div id="selectedProductInfo"></div>
             </div>
             
             <form id="orderForm">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="firstNames" class="form-label">👤 Nombres *</label>
-                        <input type="text" class="form-input" id="firstNames" required aria-required="true">
+                        <label for="firstNames" class="form-label">👤 ¡Tu Nombre! <span style="color: #ff6f61;">*</span></label>
+                        <input type="text" class="form-input" id="firstNames" placeholder="Ej: María" required aria-required="true">
+                        <div class="tooltip">Escribe tu nombre como te gusta que te llamen 😊</div>
                     </div>
                     <div class="form-group">
-                        <label for="lastNames" class="form-label">👤 Apellidos *</label>
-                        <input type="text" class="form-input" id="lastNames" required aria-required="true">
+                        <label for="lastNames" class="form-label">👥 ¡Tu Apellido! <span style="color: #ff6f61;">*</span></label>
+                        <input type="text" class="form-input" id="lastNames" placeholder="Ej: Gómez" required aria-required="true">
+                        <div class="tooltip">Incluye tu apellido para personalizar tu pedido 😄</div>
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="phone" class="form-label">📱 Teléfono o WhatsApp *</label>
-                    <input type="tel" class="form-input" id="phone" placeholder="+573001234567" required aria-required="true">
+                    <label for="phone" class="form-label">📱 ¡Tu Teléfono o WhatsApp! <span style="color: #ff6f61;">*</span></label>
+                    <input type="tel" class="form-input" id="phone" placeholder="Ej: +573001234567" required aria-required="true">
+                    <div class="tooltip">Usa el formato +57 seguido de tu número 😎</div>
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="department" class="form-label">🏛️ Departamento *</label>
-                        <input type="text" class="form-input" id="department" required aria-required="true">
+                        <label for="department" class="form-label">🏛️ ¡Tu Departamento! <span style="color: #ff6f61;">*</span></label>
+                        <input type="text" class="form-input" id="department" placeholder="Ej: Antioquia" required aria-required="true">
+                        <div class="tooltip">¿De qué parte de Colombia eres? 🌟</div>
                     </div>
                     <div class="form-group">
-                        <label for="city" class="form-label">🏙️ Ciudad *</label>
-                        <input type="text" class="form-input" id="city" required aria-required="true">
+                        <label for="city" class="form-label">🏙️ ¡Tu Ciudad! <span style="color: #ff6f61;">*</span></label>
+                        <input type="text" class="form-input" id="city" placeholder="Ej: Medellín" required aria-required="true">
+                        <div class="tooltip">¡Dinos dónde te enviaremos tu kit! 🚚</div>
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="address" class="form-label">🏠 Dirección (Calle o Apto) *</label>
+                    <label for="address" class="form-label">🏠 ¡Tu Dirección! <span style="color: #ff6f61;">*</span></label>
                     <input type="text" class="form-input" id="address" placeholder="Ej: Carrera 20 # 23-03" required aria-required="true">
+                    <div class="tooltip">Incluye detalles como calle o apartamento 📍</div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="quantity" class="form-label">📦 Cantidad *</label>
+                    <label for="quantity" class="form-label">📦 ¡Cuántos Quieres! <span style="color: #ff6f61;">*</span></label>
                     <input type="number" class="form-input" id="quantity" min="1" value="1" required aria-required="true">
+                    <div class="tooltip">Elige la cantidad que necesitas (según stock) 🎁</div>
                 </div>
                 
                 <button type="submit" class="whatsapp-button">
-                    <span>
-                        <i class="fab fa-whatsapp"></i> ¡ENVÍA MI PEDIDO!
-                    </span>
+                    <span><i class="fab fa-whatsapp"></i> ¡<span style="color: #ffd180;">Confirma tu Pedido con Confianza!</span> 💪</span>
                 </button>
-                <div style="text-align: center; margin-top: 10px; font-size: 12px; color: #666;">
+                <div style="text-align: center; margin-top: 15px; font-size: 13px; color: #333;">
                     ¡Únete a los clientes exclusivos de Carotone! Pago contra entrega.
                 </div>
             </form>
             
             <div class="manual-link" id="manualLink">
-                <p>No se pudo abrir WhatsApp automáticamente. Copia el siguiente enlace y pégalo en tu navegador o WhatsApp:</p>
+                <p>No se pudo abrir WhatsApp automáticamente. Por favor, sigue estos pasos con el enlace copiado:</p>
+                <ul style="list-style-type: none; padding-left: 0; font-size: 14px; color: #444;">
+                    <li>1. Copia el enlace que aparece a continuación usando el botón 'Copiar enlace'.</li>
+                    <li>2. Abre WhatsApp en tu teléfono o computadora.</li>
+                    <li>3. Pega el enlace en un nuevo chat con el número proporcionado o usa la opción 'Enviar mensaje' si tu WhatsApp lo permite.</li>
+                    <li>4. Envía el mensaje para confirmar tu pedido con nuestro equipo.</li>
+                </ul>
                 <input type="text" id="whatsappLink" readonly>
                 <button onclick="navigator.clipboard.writeText(document.getElementById('whatsappLink').value); alert('Enlace copiado al portapapeles!');" style="margin-top: 10px; padding: 8px 15px; background: #25D366; color: white; border: none; border-radius: 5px; cursor: pointer;">Copiar enlace</button>
             </div>
@@ -925,19 +1158,19 @@
         <div class="trust-signals">
             <div class="trust-item">
                 <i class="fas fa-shield-alt"></i>
-                <span>100%<br>Seguro</span>
+                <span><span style="color: #4caf50; font-weight: 800;">100%</span><br><em>Seguro</em></span>
             </div>
             <div class="trust-item">
                 <i class="fas fa-truck"></i>
-                <span>Envío<br>Gratis</span>
+                <span>Envío<br><strong>Gratis</strong></span>
             </div>
             <div class="trust-item">
                 <i class="fas fa-money-bill-wave"></i>
-                <span>Pago<br>Contra Entrega</span>
+                <span>Pago<br><strong>Contra Entrega</strong></span>
             </div>
             <div class="trust-item">
                 <i class="fas fa-star"></i>
-                <span>+1,560<br>Clientes</span>
+                <span id="trustBuyersCount"></span>
             </div>
         </div>
     </div>
@@ -948,48 +1181,46 @@
         const selectedProductInfo = document.getElementById('selectedProductInfo');
         const orderForm = document.getElementById('orderForm');
         const buyersCountElement = document.getElementById('buyersCount');
+        const trustBuyersCountElement = document.getElementById('trustBuyersCount');
         const manualLinkDiv = document.getElementById('manualLink');
         const whatsappLinkInput = document.getElementById('whatsappLink');
+        const progress = document.getElementById('progress');
         let selectedProduct = null;
-        let buyersCount = 1247;
-        
+        let buyersCount = 1313;
+
         // Simulador de compras en tiempo real
         function simulateRealTimePurchases() {
             const intervalId = setInterval(() => {
                 const increase = Math.floor(Math.random() * 5) + 1;
                 buyersCount += increase;
-                buyersCountElement.textContent = `+${buyersCount.toLocaleString()} personas`;
+                buyersCountElement.textContent = `+${buyersCount.toLocaleString()} personas compraron hoy`;
+                trustBuyersCountElement.textContent = `+${buyersCount.toLocaleString()} Clientes`;
             }, (Math.random() * 20000) + 10000);
             window.addEventListener('unload', () => clearInterval(intervalId));
         }
-        
+
         // Contador regresivo
         function startCountdown() {
-            const countdownElement = document.querySelector('.timer');
-            let hours = 23, minutes = 45, seconds = 12;
-            
-            const intervalId = setInterval(() => {
-                seconds--;
-                if (seconds < 0) {
-                    seconds = 59;
-                    minutes--;
-                    if (minutes < 0) {
-                        minutes = 59;
-                        hours--;
-                        if (hours < 0) {
-                            hours = 23;
-                            minutes = 59;
-                            seconds = 59;
-                        }
-                    }
+            const now = new Date('2025-07-13T23:51:00-05:00'); // 11:51 PM -05 on July 13, 2025
+            const deadline = new Date('2025-07-14T00:00:00-05:00'); // Midnight of July 14, 2025
+            let timeLeft = Math.floor((deadline - now) / 1000); // Time left in seconds
+
+            const countdownElement = document.getElementById('countdown');
+            setInterval(() => {
+                let hours = Math.floor(timeLeft / 3600);
+                let minutes = Math.floor((timeLeft % 3600) / 60);
+                let seconds = timeLeft % 60;
+                countdownElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                timeLeft--;
+                if (timeLeft < 0) {
+                    const nextDeadline = new Date(deadline);
+                    nextDeadline.setDate(nextDeadline.getDate() + 1);
+                    timeLeft = Math.floor((nextDeadline - new Date()) / 1000);
                 }
-                
-                const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-                countdownElement.innerHTML = `<i class="fas fa-stopwatch"></i> ${timeString}`;
             }, 1000);
             window.addEventListener('unload', () => clearInterval(intervalId));
         }
-        
+
         // Selección de producto
         productCards.forEach(card => {
             card.addEventListener('click', () => {
@@ -1025,7 +1256,7 @@
                 selectedProductDiv.scrollIntoView({ behavior: 'smooth' });
             });
         });
-        
+
         // Envío del formulario
         orderForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -1072,7 +1303,6 @@
             const quantity = parseInt(document.getElementById('quantity').value);
             const totalPrice = productPrice * quantity;
             
-            // Rastreo de compra con Meta Pixel
             fbq('track', 'Purchase', {value: totalPrice, currency: 'COP'});
             
             const message = `Hola, soy ${firstNames} ${lastNames}. 😊 Con estos datos confirmo mi pedido y acepto pagar el total:\n` +
@@ -1094,16 +1324,16 @@
                 if (newWindow && !newWindow.closed) {
                     alert('¡Pedido enviado! Revisa tu WhatsApp para confirmar.');
                 } else {
-                    manualLinkDiv.classList.add('show');
+                    manualLinkDiv.style.display = 'block';
                     whatsappLinkInput.value = whatsappUrl;
                     whatsappLinkInput.select();
-                    alert('No se pudo abrir WhatsApp automáticamente. El enlace está abajo para que lo copies.');
+                    alert('No se pudo abrir WhatsApp automáticamente. El enlace está abajo para que lo copies y uses manualmente.');
                 }
             } catch (error) {
-                manualLinkDiv.classList.add('show');
+                manualLinkDiv.style.display = 'block';
                 whatsappLinkInput.value = whatsappUrl;
                 whatsappLinkInput.select();
-                alert('No se pudo conectar con WhatsApp. El enlace está abajo para que lo copies.');
+                alert('No se pudo conectar con WhatsApp. El enlace está abajo para que lo copies y uses manualmente.');
             }
             
             orderForm.reset();
@@ -1113,11 +1343,11 @@
             selectedProductDiv.classList.remove('show');
             selectedProduct = null;
         });
-        
+
         // Iniciar simuladores
         startCountdown();
         simulateRealTimePurchases();
-        
+
         // Animación de entrada
         window.addEventListener('load', () => {
             const cards = document.querySelectorAll('.product-card');
@@ -1130,7 +1360,7 @@
                 }, index * 200);
             });
         });
-        
+
         // Validación en tiempo real
         document.querySelectorAll('.form-input').forEach(input => {
             input.addEventListener('input', () => {

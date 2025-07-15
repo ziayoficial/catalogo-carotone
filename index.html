@@ -1667,7 +1667,7 @@
             const address = document.getElementById('address').value.trim();
             const notes = document.getElementById('notes').value.trim() || 'Sin notas';
             const message = `¡Nuevo pedido de ${firstNames} ${lastNames}!\nTeléfono: ${phone}\nDepartamento: ${department}\nCiudad: ${city}\nDirección: ${address}\nNotas: ${notes}\nProductos: ${selectedProducts.map(p => `${p.name} x${p.quantity}`).join(', ')}\nTotal: $${totalPrice.toLocaleString()} COP`;
-            const whatsappUrl = `https://wa.me/573001234567?text=${encodeURIComponent(message)}`;
+            const whatsappUrl = `https://wa.me/573207734748?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
 
         // Reset form and cart after successful submission

@@ -16,389 +16,6 @@
     <meta name="twitter:title" content="Kits Carotone - ¡Última Oportunidad!">
     <meta name="twitter:description" content="Kits Carotone con envío gratis y pago contra entrega. ¡Reducir manchas nunca fue tan fácil!">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/1-Kit%20Maximo%20Resplandor.jpg">
-    <title>Carotone - Kits Exclusivos para Reducir Manchas con Envío Gratis 🔥</title>
-    <link rel="canonical" href="https://tu-sitio.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" crossorigin="anonymous">
-    <style>
-        /* Estilos globales */
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Banner dinámico */
-        .dynamic-banner {
-            background-color: #ff6f61;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .banner-content {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .banner-content span {
-            margin: 0 10px;
-            font-size: 14px;
-        }
-
-        /* Exclusividad flotante */
-        .floating-exclusivity {
-            background-color: #ffcc00;
-            color: white;
-            padding: 10px;
-            position: fixed;
-            top: 60px;
-            right: 20px;
-            border-radius: 5px;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-        }
-
-        .floating-exclusivity i {
-            margin-right: 5px;
-        }
-
-        /* Header */
-        .header {
-            text-align: center;
-            padding: 80px 20px 40px;
-            background: linear-gradient(135deg, #ff6f61, #ff8a80);
-            color: white;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .header-content h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .header-content p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-
-        .timer-container {
-            font-size: 1.5em;
-            margin: 10px 0;
-        }
-
-        .timer {
-            font-weight: bold;
-            color: #ffcc00;
-        }
-
-        .urgency-message {
-            font-size: 0.9em;
-            color: #fff;
-        }
-
-        .social-proof {
-            font-size: 1em;
-            margin-top: 10px;
-        }
-
-        .social-proof i {
-            margin-right: 5px;
-        }
-
-        /* Sección de productos */
-        .products-section {
-            margin-top: 20px;
-        }
-
-        .section-title {
-            font-size: 2em;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #ff6f61;
-        }
-
-        .filters {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .filters select {
-            padding: 5px;
-            font-size: 1em;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .product-card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover {
-            transform: scale(1.05);
-        }
-
-        .product-card a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .product-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 10px;
-            text-align: center;
-        }
-
-        .product-name {
-            font-size: 1.2em;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .product-description {
-            font-size: 0.9em;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .price-section {
-            margin-bottom: 10px;
-        }
-
-        .price-current {
-            font-size: 1.1em;
-            font-weight: 500;
-        }
-
-        .price-original {
-            font-size: 0.9em;
-            color: #999;
-            text-decoration: line-through;
-            margin-left: 5px;
-        }
-
-        .discount-badge {
-            background-color: #ff6f61;
-            color: white;
-            padding: 5px;
-            border-radius: 5px;
-            font-size: 0.9em;
-            margin-bottom: 5px;
-        }
-
-        .stock-badge {
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .buy-now {
-            background-color: #25D366;
-            color: white;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            font-size: 1em;
-            cursor: pointer;
-            border-radius: 0 0 10px 10px;
-            transition: background-color 0.3s;
-        }
-
-        .buy-now:hover {
-            background-color: #1DA851;
-        }
-
-        .kit-highlight {
-            border: 2px solid #ffcc00;
-        }
-
-        /* Formulario de pedido */
-        .order-form {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            display: none;
-        }
-
-        .form-title {
-            font-size: 1.5em;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #ff6f61;
-        }
-
-        .selected-product {
-            margin-bottom: 20px;
-        }
-
-        .selected-product-item {
-            margin-bottom: 10px;
-            padding: 10px;
-            background: #f1f1f1;
-            border-radius: 5px;
-        }
-
-        .cart-actions {
-            text-align: center;
-            margin: 10px 0;
-        }
-
-        .cart-actions button {
-            background-color: #ff6f61;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .cart-actions button:hover {
-            background-color: #ff8a80;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        .form-group.invalid input {
-            border-color: #ff6f61;
-        }
-
-        .error {
-            color: #ff6f61;
-            font-size: 0.8em;
-            display: block;
-        }
-
-        .whatsapp-button {
-            background-color: #25D366;
-            color: white;
-            border: none;
-            padding: 15px;
-            width: 100%;
-            font-size: 1.2em;
-            cursor: pointer;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .whatsapp-button i {
-            margin-right: 10px;
-        }
-
-        .whatsapp-button:hover {
-            background-color: #1DA851;
-        }
-
-        .whatsapp-button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-
-        .trust-badges {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .trust-badges span {
-            display: flex;
-            align-items: center;
-        }
-
-        .trust-badges i {
-            margin-right: 5px;
-        }
-
-        /* Barra de notificación */
-        .notification-bar {
-            background-color: #ff6f61;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 5px;
-            display: none;
-            z-index: 1000;
-        }
-
-        .notification-bar.show {
-            display: block;
-        }
-
-        /* Botón de compartir */
-        .share-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ff6f61;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2em;
-            z-index: 1000;
-        }
-
-        .share-button:hover {
-            background-color: #ff8a80;
-        }
-    </style>
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -425,552 +42,1461 @@
         })(window, document, "clarity", "script", "seg1f4pe2z");
     </script>
     <!-- End Clarity Code -->
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KN344WSF');
+    </script>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager -->
+    <title>Carotone - Kits Exclusivos para Reducir Manchas 🔥</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #ff6f61;
+            --secondary-color: #ffd180;
+            --accent-color: #4caf50;
+            --trust-color: #0d47a1;
+            --header-text: #ffffff;
+            --header-bg: rgba(0, 0, 0, 0.8);
+            --background-gradient: linear-gradient(135deg, #f5f7fa, #e0e7f0);
+            --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition-speed: 0.3s;
+            --glass-bg: rgba(255, 255, 255, 0.2);
+            --top-sales-gradient: linear-gradient(90deg, #ffcc00, #ffeb3b);
+            --benefit-bg: #e1bee7;
+            --text-contrast: #212121;
+            --text-secondary: #757575;
+            --button-subtle-bg: #f5e6e6;
+            --button-hover-subtle: #e0c4c4;
+            --sales-notification-bg: #4caf50;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--background-gradient);
+            color: var(--text-contrast);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .dynamic-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(90deg, var(--accent-color), #ff5722);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .dynamic-banner .banner-content {
+            white-space: nowrap;
+            animation: slide 15s linear infinite;
+        }
+
+        .dynamic-banner span {
+            margin: 0 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .header {
+            position: relative;
+            background: linear-gradient(135deg, #ff4e50, #f7b733, #4caf50);
+            color: var(--header-text);
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 15px;
+            margin-top: 60px;
+            box-shadow: var(--card-shadow);
+            animation: gradientAnimation 10s ease infinite;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background: linear-gradient(135deg, #ff4e50, #f7b733, #4caf50); }
+            50% { background: linear-gradient(135deg, #4caf50, #f7b733, #ff4e50); }
+            100% { background: linear-gradient(135deg, #ff4e50, #f7b733, #4caf50); }
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            animation: float 6s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .header-content {
+            padding: 30px;
+            background: var(--header-bg);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .header-content h1 {
+            font-size: clamp(3.2rem, 7.5vw, 4.2rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--header-text);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        .header-content p {
+            font-size: clamp(1.4rem, 4.5vw, 2rem);
+            margin-bottom: 25px;
+            color: var(--header-text);
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .social-proof {
+            font-size: clamp(1.2rem, 3.5vw, 1.4rem);
+            color: var(--trust-color);
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: none;
+            letter-spacing: 0.5px;
+        }
+
+        .social-proof i {
+            margin-right: 10px;
+        }
+
+        .timer-container {
+            font-size: clamp(1.3rem, 4vw, 1.5rem);
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .timer {
+            font-weight: bold;
+            color: #ff9800;
+        }
+
+        .urgency-message {
+            font-size: clamp(1rem, 2.8vw, 1.2rem);
+            color: #d32f2f;
+            font-weight: 600;
+        }
+
+        .products-section {
+            margin-top: 30px;
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .filter-button {
+            padding: 12px 25px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            font-weight: 600;
+            border: none;
+            border-radius: 25px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(5px);
+            color: var(--text-contrast);
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .filter-button:hover, .filter-button:focus {
+            transform: scale(1.1);
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        .filter-button.active {
+            background: var(--top-sales-gradient);
+            color: var(--text-contrast);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform var(--transition-speed) ease;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 0;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .product-name {
+            font-size: clamp(1.2rem, 3vw, 1.3rem);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .benefit-highlight {
+            font-size: clamp(1.1rem, 2.8vw, 1.2rem);
+            font-weight: 600;
+            color: #d81b60;
+            background: var(--benefit-bg);
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            animation: highlight-benefit 3s ease-in-out infinite;
+        }
+
+        .product-description {
+            font-size: clamp(0.95rem, 2.5vw, 1rem);
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.4;
+            font-weight: 400;
+        }
+
+        .product-details {
+            font-size: clamp(0.85rem, 2.3vw, 0.9rem);
+            color: var(--text-secondary);
+            margin: 10px 0;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .product-details p {
+            margin: 5px 0;
+        }
+
+        .product-details strong {
+            color: var(--text-contrast);
+            font-weight: 600;
+        }
+
+        .price-section {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .price-current {
+            font-size: clamp(1.1rem, 2.8vw, 1.2rem);
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .price-original {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: var(--text-secondary);
+            text-decoration: line-through;
+        }
+
+        .payment-option {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .guarantee {
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            color: var(--trust-color);
+            font-weight: 500;
+        }
+
+        .discount-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            margin: 5px 0;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .stock-badge {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: var(--text-secondary);
+            margin: 5px 0;
+        }
+
+        .cart-action {
+            margin-top: auto;
+            padding-top: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .add-to-cart-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+            width: 100%;
+            max-width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .add-to-cart-btn:hover, .add-to-cart-btn:focus {
+            background-color: #388E3C;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        .kit-highlight {
+            border: 2px solid #ffcc00;
+            box-shadow: 0 12px 30px rgba(255, 204, 0, 0.2);
+        }
+
+        .top-sales-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--top-sales-gradient);
+            color: var(--text-contrast);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .top-sales-badge:hover {
+            transform: scale(1.1);
+        }
+
+        .top-sales-badge i {
+            color: var(--text-contrast);
+        }
+
+        .order-form {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            margin-top: 30px;
+        }
+
+        .form-title {
+            font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .selected-product-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f1f1f1;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-controls button {
+            background: var(--button-subtle-bg);
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+        }
+
+        .quantity-controls button:hover, .quantity-controls button:focus {
+            background: var(--button-hover-subtle);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        .quantity-controls span {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+        }
+
+        .remove-item-btn {
+            background: #d32f2f;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+        }
+
+        .remove-item-btn:hover, .remove-item-btn:focus {
+            background: #b71c1c;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        .cart-actions {
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cart-actions button {
+            background-color: #757575;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+        }
+
+        .cart-actions button:hover, .cart-actions button:focus {
+            background-color: #616161;
+            transform: translateY(-1px);
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+        }
+
+        .form-group.invalid input {
+            border-color: var(--primary-color);
+        }
+
+        .error {
+            color: var(--primary-color);
+            font-size: clamp(0.7rem, 2vw, 0.8rem);
+            display: block;
+        }
+
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+        }
+
+        .whatsapp-button:hover, .whatsapp-button:focus {
+            background-color: #1DA851;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(29, 168, 81, 0.4);
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        .whatsapp-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: var(--trust-color);
+        }
+
+        .trust-badges i {
+            margin-right: 8px;
+        }
+
+        .notification-bar, .sales-notification {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+            display: none;
+            z-index: 1000;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease-in-out;
+            max-width: 80%;
+        }
+
+        .sales-notification {
+            background-color: var(--sales-notification-bg);
+            bottom: 80px;
+            left: 20px;
+            transform: none;
+            max-width: 300px;
+        }
+
+        .notification-bar.show, .sales-notification.show {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, 10px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+        }
+
+        .sales-notification.show {
+            animation: fadeInSales 0.5s ease-in-out;
+        }
+
+        @keyframes fadeInSales {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .share-button, .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: clamp(1.1rem, 3vw, 1.2rem);
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(255, 111, 97, 0.3);
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+        }
+
+        .back-to-top {
+            bottom: 80px;
+            display: none;
+        }
+
+        .back-to-top.show {
+            display: block;
+        }
+
+        .share-button:hover, .back-to-top:hover, .share-button:focus, .back-to-top:focus {
+            background-color: #ff8a80;
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(255, 138, 128, 0.4);
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes highlight-benefit {
+            0% { background-color: var(--benefit-bg); }
+            50% { background-color: #ce93d8; }
+            100% { background-color: var(--benefit-bg); }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+                min-height: 350px;
+            }
+            .header-content h1 {
+                font-size: clamp(2.5rem, 6vw, 3rem);
+            }
+            .header-content p {
+                font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+            }
+            .products-grid {
+                grid-template-columns: repeat(2, minmax(200px, 1fr));
+            }
+            .product-image {
+                height: 150px;
+            }
+            .filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            .filter-button {
+                width: 100%;
+                max-width: 200px;
+                margin-bottom: 10px;
+            }
+            .sales-notification {
+                max-width: 90%;
+                left: 10px;
+                bottom: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 30px 15px;
+                min-height: 300px;
+            }
+            .header-content h1 {
+                font-size: clamp(2rem, 5vw, 2.5rem);
+            }
+            .header-content p {
+                font-size: clamp(1rem, 3vw, 1.2rem);
+            }
+            .dynamic-banner {
+                font-size: 14px;
+                height: 35px;
+            }
+            .dynamic-banner span {
+                margin: 0 10px;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .benefit-highlight {
+                font-size: clamp(0.9rem, 2.5vw, 1rem);
+            }
+            .payment-option, .guarantee {
+                font-size: clamp(0.7rem, 2vw, 0.8rem);
+            }
+            .add-to-cart-btn {
+                font-size: clamp(0.8rem, 2vw, 0.9rem);
+            }
+            .sales-notification {
+                max-width: 95%;
+                left: 5px;
+                bottom: 60px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="dynamic-banner">
+        <div class="banner-content">
+            <span>¡Envío Gratis Hoy!</span>
+            <span>Pago Contra Entrega</span>
+            <span>¡Oferta Expira Hoy a Medianoche!</span>
+            <span>100% Originales</span>
+        </div>
+    </div>
     <header class="header">
-        <div class="dynamic-banner">
-            <div class="banner-content">
-                <span>¡Kits con Envío Gratis!</span>
-                <span>Pago Contra Entrega</span>
-                <span>¡Quedan Pocas Unidades!</span>
-                <span>100% Originales</span>
-            </div>
-        </div>
-        <div class="floating-exclusivity">
-            <i class="fas fa-gift"></i> ¡Kits con Descuento Exclusivo!
-        </div>
         <div class="header-content">
-            <h1>¡Kits Carotone Originales que Reducen Manchas!</h1>
-            <p>Transforma tu piel con kits completos – ¡ofertas expiran a medianoche!</p>
-        </div>
-        <div class="timer-container">
-            <div class="timer"><span id="countdown">00:27:28</span></div>
-            <div class="urgency-message">¡Aprovecha los kits ahora!</div>
-        </div>
-        <div class="social-proof">
-            <i class="fas fa-users"></i> +<span id="buyersCount">470</span> compraron kits hoy
+            <h1>¡Transforma tu Piel con Kits Carotone 100% Originales!</h1>
+            <p>Reduce manchas con envío gratis y pago contra entrega. ¡Oferta limitada!</p>
+            <div class="social-proof">
+                <i class="fas fa-users"></i> +<span id="buyersCount">125</span> compraron hoy
+            </div>
+            <div class="timer-container">
+                <div class="timer"><span id="countdown">23:59:59</span></div>
+                <div class="urgency-message">¡Últimas horas para comprar!</div>
+            </div>
         </div>
     </header>
-
     <main class="container">
         <section class="products-section" id="all-products">
-            <h2 class="section-title">Descubre Nuestros Potentes Kits</h2>
+            <h2 class="section-title">Nuestros Kits Más Potentes</h2>
             <div class="filters">
-                <select id="filterCategory" onchange="filterProducts()">
-                    <option value="all">Todas las Ofertas</option>
-                    <option value="kits">Solo Kits</option>
-                    <option value="individual">Individuales</option>
-                </select>
+                <button class="filter-button active" data-filter="all" aria-label="Mostrar todas las ofertas">Todas las Ofertas</button>
+                <button class="filter-button" data-filter="kits" aria-label="Mostrar solo kits">Solo Kits</button>
+                <button class="filter-button" data-filter="individual" aria-label="Mostrar productos individuales">Individuales</button>
             </div>
             <div class="products-grid" id="productsGrid">
-                <!-- Kit Especiales -->
-                <article class="product-card kit-highlight" data-category="kits" data-price="149900" data-original="189900" data-discount="21" data-stock="20" data-product-id="kit-maximo-resplandor" data-description="1 Crema Carotone Aclarante 135ml + 1 Lotion Carotone Manchas Negras Bsc 50ml + 1 Jabón Carotone 190gr">
-                    <a href="#kit-maximo-resplandor" class="product-link" onclick="trackViewContent(this)">
-                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/1-Kit%20Maximo%20Resplandor.jpg" alt="Kit Máximo Resplandor Carotone - Aclara tu piel" class="product-image">
+                <article class="product-card kit-highlight" data-category="kits" data-price="149900" data-original="189900" data-discount="21" data-stock="50" data-product-id="kit-maximo-resplandor" data-description="1 Crema Carotone Aclarante 135ml + 1 Lotion Carotone Manchas Negras Bsc 50ml + 1 Jabón Carotone 190gr" onclick="addToCart(this)">
+                    <div class="top-sales-badge" aria-label="Producto de top ventas"><i class="fas fa-star"></i> Top Ventas</div>
+                    <div class="product-link">
+                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/1-Kit%20Maximo%20Resplandor.jpg" alt="Kit Máximo Resplandor Carotone con crema, loción y jabón para aclarar la piel" class="product-image" loading="lazy">
                         <div class="product-info">
                             <h3 class="product-name">🌟 Kit Máximo Resplandor</h3>
-                            <p class="product-description">1 Crema Carotone Aclarante 135ml + 1 Lotion Carotone Manchas Negras Bsc 50ml + 1 Jabón Carotone 190gr</p>
+                            <div class="benefit-highlight" aria-label="Beneficio principal: Reduce manchas en la piel"><i class="fas fa-star"></i> Reduce Manchas</div>
+                            <p class="product-description">1 Crema + 1 Lotion + 1 Jabón</p>
+                            <div class="product-details">
+                                <p><strong>Cantidad:</strong> 3 productos</p>
+                                <p><strong>Descripción:</strong> 1 Crema Carotone Aclarante 135ml + 1 Lotion Carotone Manchas Negras Bsc 50ml + 1 Jabón Carotone 190gr</p>
+                                <p><strong>Tamaño:</strong> 135ml (Crema), 50ml (Lotion), 190gr (Jabón)</p>
+                            </div>
                             <div class="price-section">
-                                <span class="price-current">$<span style="color: #ff6f61;">149,900</span></span>
+                                <span class="price-current">$<span>149,900</span> - Envío Gratis</span>
                                 <span class="price-original">$189,900</span>
+                                <div class="payment-option">Pago Contra Entrega</div>
+                                <div class="guarantee">Garantía de Satisfacción</div>
                             </div>
                             <div class="discount-badge">21% OFF + Kit Gratis</div>
-                            <div class="stock-badge">Quedan <span style="color: #ff6f61;">20</span></div>
+                            <div class="stock-badge">Quedan <span>50</span></div>
+                            <div class="cart-action">
+                                <button class="add-to-cart-btn" aria-label="Añadir Kit Máximo Resplandor al carrito">Añadir al Carrito</button>
+                            </div>
                         </div>
-                    </a>
-                    <button class="buy-now" onclick="addToCart(this)">Agregar al Pedido</button>
+                    </div>
                 </article>
-                <article class="product-card kit-highlight" data-category="kits" data-price="139900" data-original="179900" data-discount="22" data-stock="20" data-product-id="kit-despigmentante-intenso" data-description="1 Crema Carotone Aclarante 135ml + 1 Lotion Carotone Manchas Negras Bsc 50ml">
-                    <a href="#kit-despigmentante-intenso" class="product-link" onclick="trackViewContent(this)">
-                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/3-Kit%20Despigmentante%20Intenso.jpg" alt="Kit Despigmentante Intenso Carotone - Reduce manchas" class="product-image">
+                <article class="product-card kit-highlight" data-category="kits" data-price="139900" data-original="179900" data-discount="22" data-stock="50" data-product-id="kit-despigmentante-intenso" data-description="1 Crema Carotone Aclarante 135ml + 1 Lotion Carotone Manchas Negras Bsc 50ml" onclick="addToCart(this)">
+                    <div class="top-sales-badge" aria-label="Producto de top ventas"><i class="fas fa-star"></i> Top Ventas</div>
+                    <div class="product-link">
+                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/3-Kit%20Despigmentante%20Intenso.jpg" alt="Kit Despigmentante Intenso Carotone con crema y loción para reducir manchas" class="product-image" loading="lazy">
                         <div class="product-info">
                             <h3 class="product-name">🔥 Kit Despigmentante Intenso</h3>
-                            <p class="product-description">1 Crema Carotone Aclarante 135ml + 1 Lotion Carotone Manchas Negras Bsc 50ml</p>
+                            <div class="benefit-highlight" aria-label="Beneficio principal: Reduce manchas en la piel"><i class="fas fa-star"></i> Reduce Manchas</div>
+                            <p class="product-description">1 Crema + 1 Lotion</p>
+                            <div class="product-details">
+                                <p><strong>Cantidad:</strong> 2 productos</p>
+                                <p><strong>Descripción:</strong> 1 Crema Carotone Aclarante 135ml + 1 Lotion Carotone Manchas Negras Bsc 50ml</p>
+                                <p><strong>Tamaño:</strong> 135ml (Crema), 50ml (Lotion)</p>
+                            </div>
                             <div class="price-section">
-                                <span class="price-current">$<span style="color: #ff6f61;">139,900</span></span>
+                                <span class="price-current">$<span>139,900</span> - Envío Gratis</span>
                                 <span class="price-original">$179,900</span>
+                                <div class="payment-option">Pago Contra Entrega</div>
+                                <div class="guarantee">Garantía de Satisfacción</div>
                             </div>
                             <div class="discount-badge">22% OFF + Kit Gratis</div>
-                            <div class="stock-badge">Quedan <span style="color: #ff6f61;">20</span></div>
+                            <div class="stock-badge">Quedan <span>50</span></div>
+                            <div class="cart-action">
+                                <button class="add-to-cart-btn" aria-label="Añadir Kit Despigmentante Intenso al carrito">Añadir al Carrito</button>
+                            </div>
                         </div>
-                    </a>
-                    <button class="buy-now" onclick="addToCart(this)">Agregar al Pedido</button>
+                    </div>
                 </article>
-                <article class="product-card kit-highlight" data-category="kits" data-price="139900" data-original="179900" data-discount="22" data-stock="20" data-product-id="kit-cuidado-limpieza" data-description="1 Crema Carotone Aclarante 135ml + 1 Jabón Carotone 190gr">
-                    <a href="#kit-cuidado-limpieza" class="product-link" onclick="trackViewContent(this)">
-                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/5-Kit%20Cuidado%20y%20Limpieza.jpg" alt="Kit Cuidado y Limpieza Carotone - Piel saludable" class="product-image">
+                <article class="product-card kit-highlight" data-category="kits" data-price="139900" data-original="179900" data-discount="22" data-stock="50" data-product-id="kit-cuidado-limpieza" data-description="1 Crema Carotone Aclarante 135ml + 1 Jabón Carotone 190gr" onclick="addToCart(this)">
+                    <div class="top-sales-badge" aria-label="Producto de top ventas"><i class="fas fa-star"></i> Top Ventas</div>
+                    <div class="product-link">
+                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/5-Kit%20Cuidado%20y%20Limpieza.jpg" alt="Kit Cuidado y Limpieza Carotone con crema y jabón para piel saludable" class="product-image" loading="lazy">
                         <div class="product-info">
                             <h3 class="product-name">💖 Kit Cuidado y Limpieza</h3>
-                            <p class="product-description">1 Crema Carotone Aclarante 135ml + 1 Jabón Carotone 190gr</p>
+                            <div class="benefit-highlight" aria-label="Beneficio principal: Reduce manchas en la piel"><i class="fas fa-star"></i> Reduce Manchas</div>
+                            <p class="product-description">1 Crema + 1 Jabón</p>
+                            <div class="product-details">
+                                <p><strong>Cantidad:</strong> 2 productos</p>
+                                <p><strong>Descripción:</strong> 1 Crema Carotone Aclarante 135ml + 1 Jabón Carotone 190gr</p>
+                                <p><strong>Tamaño:</strong> 135ml (Crema), 190gr (Jabón)</p>
+                            </div>
                             <div class="price-section">
-                                <span class="price-current">$<span style="color: #ff6f61;">139,900</span></span>
+                                <span class="price-current">$<span>139,900</span> - Envío Gratis</span>
                                 <span class="price-original">$179,900</span>
+                                <div class="payment-option">Pago Contra Entrega</div>
+                                <div class="guarantee">Garantía de Satisfacción</div>
                             </div>
                             <div class="discount-badge">22% OFF + Kit Gratis</div>
-                            <div class="stock-badge">Quedan <span style="color: #ff6f61;">20</span></div>
+                            <div class="stock-badge">Quedan <span>50</span></div>
+                            <div class="cart-action">
+                                <button class="add-to-cart-btn" aria-label="Añadir Kit Cuidado y Limpieza al carrito">Añadir al Carrito</button>
+                            </div>
                         </div>
-                    </a>
-                    <button class="buy-now" onclick="addToCart(this)">Agregar al Pedido</button>
+                    </div>
                 </article>
-
-                <!-- Productos Individuales -->
-                <article class="product-card" data-category="individual" data-price="99900" data-original="129900" data-discount="23" data-stock="20" data-product-id="crema-300ml" data-description="Cuidado intensivo 300ml">
-                    <a href="#crema-300ml" class="product-link" onclick="trackViewContent(this)">
-                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/6-Crema%20Carotone%20Aclarante%20300ml.jpg" alt="Crema Carotone Aclarante 300ml - Cuidado intensivo" class="product-image">
+                <article class="product-card" data-category="individual" data-price="99900" data-original="129900" data-discount="23" data-stock="50" data-product-id="crema-300ml" data-description="Cuidado intensivo 300ml" onclick="addToCart(this)">
+                    <div class="product-link">
+                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/6-Crema%20Carotone%20Aclarante%20300ml.jpg" alt="Crema Carotone Aclarante 300ml para cuidado intensivo de la piel" class="product-image" loading="lazy">
                         <div class="product-info">
                             <h3 class="product-name">💧 Crema Carotone Aclarante 300ml</h3>
-                            <p class="product-description">Grande, Máxima duración, cuidado intensivo</p>
+                            <p class="product-description">Grande, cuidado intensivo</p>
+                            <div class="product-details">
+                                <p><strong>Cantidad:</strong> 1 unidad</p>
+                                <p><strong>Descripción:</strong> Cuidado intensivo 300ml</p>
+                                <p><strong>Tamaño:</strong> 300ml</p>
+                            </div>
                             <div class="price-section">
-                                <span class="price-current">$<span style="color: #ff6f61;">99,900</span></span>
+                                <span class="price-current">$<span>99,900</span></span>
                                 <span class="price-original">$129,900</span>
                             </div>
                             <div class="discount-badge">23% OFF</div>
-                            <div class="stock-badge">Quedan <span style="color: #ff6f61;">20</span></div>
+                            <div class="stock-badge">Quedan <span>50</span></div>
+                            <div class="cart-action">
+                                <button class="add-to-cart-btn" aria-label="Añadir Crema Carotone Aclarante 300ml al carrito">Añadir al Carrito</button>
+                            </div>
                         </div>
-                    </a>
-                    <button class="buy-now" onclick="addToCart(this)">Agregar al Pedido</button>
+                    </div>
                 </article>
-                <article class="product-card" data-category="individual" data-price="79900" data-original="99900" data-discount="20" data-stock="20" data-product-id="crema-135ml" data-description="Tamaño ideal, resultados garantizados">
-                    <a href="#crema-135ml" class="product-link" onclick="trackViewContent(this)">
-                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/7-1%20Crema%20Carotone%20Aclarante%20135ml.jpg" alt="Crema Carotone Aclarante 135ml - Resultados garantizados" class="product-image">
+                <article class="product-card" data-category="individual" data-price="79900" data-original="99900" data-discount="20" data-stock="50" data-product-id="crema-135ml" data-description="Tamaño ideal, resultados garantizados 135ml" onclick="addToCart(this)">
+                    <div class="product-link">
+                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/7-1%20Crema%20Carotone%20Aclarante%20135ml.jpg" alt="Crema Carotone Aclarante 135ml para resultados garantizados" class="product-image" loading="lazy">
                         <div class="product-info">
                             <h3 class="product-name">💧 Crema Carotone Aclarante 135ml</h3>
-                            <p class="product-description">Mediana, Tamaño ideal, resultados garantizados</p>
+                            <p class="product-description">Mediana, resultados garantizados</p>
+                            <div class="product-details">
+                                <p><strong>Cantidad:</strong> 1 unidad</p>
+                                <p><strong>Descripción:</strong> Tamaño ideal, resultados garantizados 135ml</p>
+                                <p><strong>Tamaño:</strong> 135ml</p>
+                            </div>
                             <div class="price-section">
-                                <span class="price-current">$<span style="color: #ff6f61;">79,900</span></span>
+                                <span class="price-current">$<span>79,900</span></span>
                                 <span class="price-original">$99,900</span>
                             </div>
                             <div class="discount-badge">20% OFF</div>
-                            <div class="stock-badge">Quedan <span style="color: #ff6f61;">20</span></div>
+                            <div class="stock-badge">Quedan <span>50</span></div>
+                            <div class="cart-action">
+                                <button class="add-to-cart-btn" aria-label="Añadir Crema Carotone Aclarante 135ml al carrito">Añadir al Carrito</button>
+                            </div>
                         </div>
-                    </a>
-                    <button class="buy-now" onclick="addToCart(this)">Agregar al Pedido</button>
+                    </div>
                 </article>
-                <article class="product-card" data-category="individual" data-price="99900" data-original="129900" data-discount="23" data-stock="20" data-product-id="locion-550ml" data-description="Loción corporal aclarante 550ml">
-                    <a href="#locion-550ml" class="product-link" onclick="trackViewContent(this)">
-                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/11-Locion%20Corporal%20Carotone%20Aclarante%20550ml.jpg" alt="Loción Corporal Carotone Aclarante 550ml" class="product-image">
+                <article class="product-card" data-category="individual" data-price="99900" data-original="129900" data-discount="23" data-stock="50" data-product-id="locion-550ml" data-description="Loción corporal aclarante 550ml" onclick="addToCart(this)">
+                    <div class="product-link">
+                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/11-Locion%20Corporal%20Carotone%20Aclarante%20550ml.jpg" alt="Loción Corporal Carotone Aclarante 550ml para piel luminosa" class="product-image" loading="lazy">
                         <div class="product-info">
                             <h3 class="product-name">🧴 Loción Corporal Carotone Aclarante 550ml</h3>
                             <p class="product-description">Loción corporal aclarante</p>
+                            <div class="product-details">
+                                <p><strong>Cantidad:</strong> 1 unidad</p>
+                                <p><strong>Descripción:</strong> Loción corporal aclarante 550ml</p>
+                                <p><strong>Tamaño:</strong> 550ml</p>
+                            </div>
                             <div class="price-section">
-                                <span class="price-current">$<span style="color: #ff6f61;">99,900</span></span>
+                                <span class="price-current">$<span>99,900</span></span>
                                 <span class="price-original">$129,900</span>
                             </div>
                             <div class="discount-badge">23% OFF</div>
-                            <div class="stock-badge">Quedan <span style="color: #ff6f61;">20</span></div>
+                            <div class="stock-badge">Quedan <span>50</span></div>
+                            <div class="cart-action">
+                                <button class="add-to-cart-btn" aria-label="Añadir Loción Corporal Carotone Aclarante 550ml al carrito">Añadir al Carrito</button>
+                            </div>
                         </div>
-                    </a>
-                    <button class="buy-now" onclick="addToCart(this)">Agregar al Pedido</button>
+                    </div>
                 </article>
-                <article class="product-card" data-category="individual" data-price="69900" data-original="89900" data-discount="22" data-stock="20" data-product-id="lotion-50ml" data-description="Lotion para manchas negras 50ml">
-                    <a href="#lotion-50ml" class="product-link" onclick="trackViewContent(this)">
-                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/10-Lotion%20Carotone%20Manchas%20Negras%20Bsc%2050ml.jpg" alt="Lotion Carotone Manchas Negras Bsc 50ml" class="product-image">
+                <article class="product-card" data-category="individual" data-price="69900" data-original="89900" data-discount="22" data-stock="50" data-product-id="lotion-50ml" data-description="Lotion para manchas negras 50ml" onclick="addToCart(this)">
+                    <div class="product-link">
+                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/10-Lotion%20Carotone%20Manchas%20Negras%20Bsc%2050ml.jpg" alt="Lotion Carotone Manchas Negras Bsc 50ml para reducir manchas" class="product-image" loading="lazy">
                         <div class="product-info">
                             <h3 class="product-name">🧴 Lotion Carotone Manchas Negras Bsc 50ml</h3>
                             <p class="product-description">Lotion para manchas negras</p>
+                            <div class="product-details">
+                                <p><strong>Cantidad:</strong> 1 unidad</p>
+                                <p><strong>Descripción:</strong> Lotion para manchas negras 50ml</p>
+                                <p><strong>Tamaño:</strong> 50ml</p>
+                            </div>
                             <div class="price-section">
-                                <span class="price-current">$<span style="color: #ff6f61;">69,900</span></span>
+                                <span class="price-current">$<span>69,900</span></span>
                                 <span class="price-original">$89,900</span>
                             </div>
                             <div class="discount-badge">22% OFF</div>
-                            <div class="stock-badge">Quedan <span style="color: #ff6f61;">20</span></div>
+                            <div class="stock-badge">Quedan <span>50</span></div>
+                            <div class="cart-action">
+                                <button class="add-to-cart-btn" aria-label="Añadir Lotion Carotone Manchas Negras Bsc 50ml al carrito">Añadir al Carrito</button>
+                            </div>
                         </div>
-                    </a>
-                    <button class="buy-now" onclick="addToCart(this)">Agregar al Pedido</button>
+                    </div>
                 </article>
-                <article class="product-card" data-category="individual" data-price="60000" data-original="79900" data-discount="25" data-stock="20" data-product-id="jabon-190gr" data-description="Jabón aclarador 190gr">
-                    <a href="#jabon-190gr" class="product-link" onclick="trackViewContent(this)">
-                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/9-Jabon%20Carotone%20190gr.jpg" alt="Jabón Carotone 190gr - Aclarador natural" class="product-image">
+                <article class="product-card" data-category="individual" data-price="60000" data-original="79900" data-discount="25" data-stock="50" data-product-id="jabon-190gr" data-description="Jabón aclarador 190gr" onclick="addToCart(this)">
+                    <div class="product-link">
+                        <img src="https://raw.githubusercontent.com/ziayoficial/catalogo-carotone/main/images/9-Jabon%20Carotone%20190gr.jpg" alt="Jabón Carotone 190gr aclarador natural para piel luminosa" class="product-image" loading="lazy">
                         <div class="product-info">
                             <h3 class="product-name">✨ Jabón Carotone 190gr</h3>
                             <p class="product-description">Jabón aclarador</p>
+                            <div class="product-details">
+                                <p><strong>Cantidad:</strong> 1 unidad</p>
+                                <p><strong>Descripción:</strong> Jabón aclarador 190gr</p>
+                                <p><strong>Tamaño:</strong> 190gr</p>
+                            </div>
                             <div class="price-section">
-                                <span class="price-current">$<span style="color: #ff6f61;">60,000</span></span>
+                                <span class="price-current">$<span>60,000</span></span>
                                 <span class="price-original">$79,900</span>
                             </div>
                             <div class="discount-badge">25% OFF</div>
-                            <div class="stock-badge">Quedan <span style="color: #ff6f61;">20</span></div>
+                            <div class="stock-badge">Quedan <span>50</span></div>
+                            <div class="cart-action">
+                                <button class="add-to-cart-btn" aria-label="Añadir Jabón Carotone 190gr al carrito">Añadir al Carrito</button>
+                            </div>
                         </div>
-                    </a>
-                    <button class="buy-now" onclick="addToCart(this)">Agregar al Pedido</button>
+                    </div>
                 </article>
             </div>
         </section>
-
-        <section class="order-form" id="orderFormSection" style="display: none;">
-            <h2 class="form-title">🎉 ¡Confirma tu Pedido de Kits!</h2>
+        <section class="order-form" id="orderFormSection">
+            <h2 class="form-title">🎉 ¡Confirma tu Pedido!</h2>
             <div class="selected-product">
                 <strong>Tu Pedido:</strong>
                 <div id="selectedProductInfo"></div>
                 <div class="cart-actions">
-                    <button onclick="clearCart()">Eliminar Todo</button>
+                    <button onclick="clearCart()" aria-label="Eliminar todos los productos del carrito">Eliminar Todo</button>
                 </div>
-                <div id="totalPrice" style="font-size: 20px; font-weight: 800; color: #ff6f61; margin-top: 10px;">Total: $0 COP</div>
+                <div id="totalPrice">Total: $0 COP</div>
             </div>
-            <form id="orderForm">
+            <form id="orderForm" novalidate>
                 <div class="form-group">
-                    <label for="nombres">👤 Nombres <span style="color: #ff6f61;">*</span></label>
-                    <input type="text" id="nombres" placeholder="Ej: María Gómez" required oninput="validateInput(this)">
+                    <label for="nombres">👤 Nombres <span>*</span></label>
+                    <input type="text" id="nombres" placeholder="Ej: María Gómez" required oninput="validateInput(this)" aria-describedby="nombresError">
                     <span class="error" id="nombresError"></span>
                 </div>
                 <div class="form-group">
-                    <label for="apellidos">👤 Apellidos <span style="color: #ff6f61;">*</span></label>
-                    <input type="text" id="apellidos" placeholder="Ej: Pérez López" required oninput="validateInput(this)">
+                    <label for="apellidos">👤 Apellidos <span>*</span></label>
+                    <input type="text" id="apellidos" placeholder="Ej: Pérez López" required oninput="validateInput(this)" aria-describedby="apellidosError">
                     <span class="error" id="apellidosError"></span>
                 </div>
                 <div class="form-group">
-                    <label for="phone">📱 Teléfono/WhatsApp <span style="color: #ff6f61;">*</span></label>
-                    <input type="tel" id="phone" placeholder="Ej: +573207734748" required oninput="validateInput(this)">
+                    <label for="phone">📱 Teléfono/WhatsApp <span>*</span></label>
+                    <input type="tel" id="phone" placeholder="Ej: +573207734748" required oninput="validateInput(this)" aria-describedby="phoneError">
                     <span class="error" id="phoneError"></span>
                 </div>
                 <div class="form-group">
-                    <label for="address">🏠 Dirección <span style="color: #ff6f61;">*</span></label>
-                    <input type="text" id="address" placeholder="Ej: Carrera 20 # 23-03" required oninput="validateInput(this)">
+                    <label for="address">🏠 Dirección <span>*</span></label>
+                    <input type="text" id="address" placeholder="Ej: Carrera 20 # 23-03" required oninput="validateInput(this)" aria-describedby="addressError">
                     <span class="error" id="addressError"></span>
                 </div>
                 <div class="form-group">
-                    <label for="city">🌆 Ciudad <span style="color: #ff6f61;">*</span></label>
-                    <input type="text" id="city" placeholder="Ej: Bogotá" required oninput="validateInput(this)">
+                    <label for="city">🌆 Ciudad <span>*</span></label>
+                    <input type="text" id="city" placeholder="Ej: Bogotá" required oninput="validateInput(this)" aria-describedby="cityError">
                     <span class="error" id="cityError"></span>
                 </div>
                 <div class="form-group">
-                    <label for="department">🏞️ Departamento <span style="color: #ff6f61;">*</span></label>
-                    <input type="text" id="department" placeholder="Ej: Cundinamarca" required oninput="validateInput(this)">
+                    <label for="department">🏞️ Departamento <span>*</span></label>
+                    <input type="text" id="department" placeholder="Ej: Cundinamarca" required oninput="validateInput(this)" aria-describedby="departmentError">
                     <span class="error" id="departmentError"></span>
                 </div>
                 <div class="form-group">
                     <label for="notes">📝 Notas Adicionales</label>
-                    <input type="text" id="notes" placeholder="Ej: Dejar en portería">
+                    <input type="text" id="notes" placeholder="Ej: Dejar en portería" aria-describedby="notesError">
                     <span class="error" id="notesError"></span>
                 </div>
-                <button type="submit" class="whatsapp-button" disabled>
-                    <i class="fab fa-whatsapp"></i> ¡Comprar Kits Ahora!
+                <button type="submit" class="whatsapp-button" disabled aria-label="Confirmar pedido y enviar por WhatsApp">
+                    <i class="fab fa-whatsapp"></i> ¡Comprar Ahora!
                 </button>
             </form>
             <div class="trust-badges">
-                <span><i class="fas fa-gift"></i> Kits con Bonus</span>
-                <span><i class="fas fa-truck"></i> Envío Gratis</span>
+                <span><i class="fas fa-shield-alt"></i> Garantía de Satisfacción</span>
+                <span><i class="fas fa-truck"></i> Envío Rápido en 24h</span>
                 <span><i class="fas fa-star"></i> +500 Reseñas</span>
             </div>
         </section>
-
         <div class="notification-bar" id="notificationBar"></div>
     </main>
-
-    <button class="share-button" onclick="sharePage()">
+    <button class="share-button" onclick="sharePage()" aria-label="Compartir página">
         <i class="fas fa-share-alt"></i>
     </button>
-
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Volver al inicio">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <script>
-        console.log('Script loading...');
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity || 0), 0);
-        const totalPriceElement = document.getElementById('totalPrice');
-        const notificationBar = document.getElementById('notificationBar');
-        const buyersCountElement = document.getElementById('buyersCount');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Configuración
+            const PHONE_NUMBER = '+573207734748'; // Reemplazar con el número real
 
-        console.log('Script.js loaded, cart:', cart);
+            // Lista de nombres ficticios para notificaciones de ventas (mujeres colombianas)
+            const fakeNames = [
+                'María Alejandra G.', 'Sofía Camila R.', 'Valentina Sofía P.', 'Laura Daniela M.', 
+                'Isabella Valentina S.', 'Ana María T.', 'Camila Andrea L.', 'Paula Alejandra C.', 
+                'Daniela Fernanda V.', 'Mariana Isabel D.', 'Sara Valentina F.', 'Juliana María A.', 
+                'Catalina Sofía B.', 'Natalia Andrea G.', 'Emma Valentina R.', 'Gabriela Alejandra P.', 
+                'Valeria Daniela M.', 'Luciana María S.', 'Carolina Andrea T.', 'Samantha Sofía L.', 
+                'Andrea Carolina C.', 'Mónica Alejandra V.', 'Laura Valentina D.', 'Tatiana María F.', 
+                'Angélica Sofía A.', 'Diana Camila B.', 'Paula Andrea G.', 'Verónica Daniela R.', 
+                'Clara Valentina P.', 'Alejandra Sofía M.'
+            ];
 
-        // Countdown with auto-reset
-        function startCountdown() {
-            let endTime = new Date();
-            endTime.setHours(24, 0, 0, 0); // Siguiente medianoche
-            if (endTime <= new Date()) endTime.setDate(endTime.getDate() + 1);
-            const updateCountdown = () => {
-                const now = new Date().getTime();
-                const distance = endTime - now;
-                if (distance <= 0) {
-                    endTime.setDate(endTime.getDate() + 1);
-                }
-                const hours = Math.floor(distance / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                document.getElementById('countdown').textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            };
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-        }
+            // Lista de productos para notificaciones (basada en index.html)
+            const productsForNotifications = [
+                { id: 'kit-maximo-resplandor', name: '🌟 Kit Máximo Resplandor' },
+                { id: 'kit-despigmentante-intenso', name: '🔥 Kit Despigmentante Intenso' },
+                { id: 'kit-cuidado-limpieza', name: '💖 Kit Cuidado y Limpieza' },
+                { id: 'crema-300ml', name: '💧 Crema Carotone Aclarante 300ml' },
+                { id: 'crema-135ml', name: '💧 Crema Carotone Aclarante 135ml' },
+                { id: 'locion-550ml', name: '🧴 Loción Corporal Carotone Aclarante 550ml' },
+                { id: 'lotion-50ml', name: '🧴 Lotion Carotone Manchas Negras Bsc 50ml' },
+                { id: 'jabon-190gr', name: '✨ Jabón Carotone 190gr' }
+            ];
 
-        // Filter products
-        function filterProducts() {
-            const category = document.getElementById('filterCategory').value;
-            const cards = document.querySelectorAll('.product-card');
-            cards.forEach(card => {
-                const cardCategory = card.dataset.category;
-                const show = category === 'all' || cardCategory === category;
-                card.style.display = show ? 'block' : 'none';
-                if (category === 'kits') card.classList.toggle('kit-highlight', cardCategory === 'kits');
-            });
-        }
+            // Cargar carrito desde localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        // Clear cart
-        function clearCart() {
-            if (cart.length === 0) {
-                showNotification('No hay productos en el pedido.');
-                return;
+            // Guardar carrito en localStorage
+            function saveCart() {
+                localStorage.setItem('cart', JSON.stringify(cart));
             }
-            cart.forEach(item => {
-                const card = document.querySelector(`.product-card[data-product-id="${item.id}"]`);
-                if (card) {
-                    card.dataset.stock = parseInt(card.dataset.stock) + item.quantity;
-                    card.querySelector('.stock-badge').textContent = `Quedan ${card.dataset.stock}`;
-                }
-            });
-            cart = [];
-            totalPrice = 0;
-            updateCart();
-            saveCart();
-            showNotification('¡Pedido eliminado!');
-        }
 
-        // Remove individual item
-        function removeItem(productId) {
-            const itemIndex = cart.findIndex(item => item.id === productId);
-            if (itemIndex !== -1) {
-                const item = cart[itemIndex];
-                const card = document.querySelector(`.product-card[data-product-id="${item.id}"]`);
-                if (card) {
-                    card.dataset.stock = parseInt(card.dataset.stock) + item.quantity;
-                    card.querySelector('.stock-badge').textContent = `Quedan ${card.dataset.stock}`;
-                }
-                totalPrice -= item.price * item.quantity;
-                cart.splice(itemIndex, 1);
-                updateCart();
-                saveCart();
-                showNotification(`¡${item.name} eliminado del pedido!`);
-            }
-        }
-
-        // Update cart display
-        function updateCart() {
-            const selectedProductInfo = document.getElementById('selectedProductInfo');
-            if (cart.length) {
-                selectedProductInfo.innerHTML = cart.map(item => `
-                    <div class="selected-product-item">
-                        ${item.name} x${item.quantity} - $${(item.price * item.quantity).toLocaleString()} COP
-                        <small>${item.description}</small>
-                        <button onclick="editItemQuantity('${item.id}')">Editar</button>
-                        <button onclick="removeItem('${item.id}')">Eliminar</button>
-                    </div>
-                `).join('');
-            } else {
-                selectedProductInfo.innerHTML = 'Tu pedido está vacío. ¡Añade kits!';
-            }
-            totalPriceElement.textContent = `Total: $${totalPrice.toLocaleString()} COP`;
-            const orderFormSection = document.getElementById('orderFormSection');
-            orderFormSection.style.display = cart.length ? 'block' : 'none';
-            if (orderFormSection.style.display === 'block') {
-                window.scrollTo({ top: orderFormSection.offsetTop - 20, behavior: 'smooth' });
-                if (window.fbq) {
-                    fbq('track', 'InitiateCheckout', { value: totalPrice / 100, currency: 'COP', content_ids: cart.map(item => item.id), num_items: cart.length });
-                }
-            }
-            checkFormValidity();
-        }
-
-        // Edit individual item quantity
-        function editItemQuantity(productId) {
-            const item = cart.find(item => item.id === productId);
-            if (item) {
-                const newQty = parseInt(prompt(`Ingresa la nueva cantidad para ${item.name} (máximo ${parseInt(document.querySelector(`.product-card[data-product-id="${item.id}"]`).dataset.stock) + item.quantity}):`, item.quantity));
-                if (newQty >= 0) {
-                    const card = document.querySelector(`.product-card[data-product-id="${item.id}"]`);
-                    if (card) {
-                        const stock = parseInt(card.dataset.stock) + item.quantity;
-                        if (newQty <= stock) {
-                            totalPrice += (newQty - item.quantity) * item.price;
-                            const diff = newQty - item.quantity;
-                            item.quantity = newQty;
-                            card.dataset.stock = stock - diff;
-                            card.querySelector('.stock-badge').textContent = `Quedan ${card.dataset.stock}`;
-                            updateCart();
-                            saveCart();
-                            showNotification(`¡Cantidad de ${item.name} actualizada a ${newQty}!`);
-                        } else {
-                            showNotification(`No hay suficiente stock para ${newQty} unidades de ${item.name}.`);
-                        }
-                    }
-                }
-            }
-        }
-
-        // Save cart to localStorage
-        function saveCart() {
-            localStorage.setItem('cart', JSON.stringify(cart));
-        }
-
-        // Validation
-        function validateInput(input) {
-            if (!(input instanceof HTMLElement) || !input.closest) {
-                console.error('Input no es un elemento DOM válido:', input);
-                return;
-            }
-            const id = input.id;
-            const errorSpan = document.getElementById(`${id}Error`);
-            let isValid = true;
-            switch (id) {
-                case 'nombres':
-                    isValid = input.value.trim().length > 2;
-                    errorSpan.textContent = isValid ? '' : 'Nombres debe tener al menos 3 caracteres.';
-                    break;
-                case 'apellidos':
-                    isValid = input.value.trim().length > 2;
-                    errorSpan.textContent = isValid ? '' : 'Apellidos debe tener al menos 3 caracteres.';
-                    break;
-                case 'phone':
-                    isValid = /^(\+?\d{10,13})$/.test(input.value.trim());
-                    errorSpan.textContent = isValid ? '' : 'Teléfono inválido (ej: +573207734748).';
-                    break;
-                case 'address':
-                    isValid = input.value.trim().length > 5;
-                    errorSpan.textContent = isValid ? '' : 'Dirección debe tener al menos 6 caracteres.';
-                    break;
-                case 'city':
-                    isValid = input.value.trim().length > 2;
-                    errorSpan.textContent = isValid ? '' : 'Ciudad debe tener al menos 3 caracteres.';
-                    break;
-                case 'department':
-                    isValid = input.value.trim().length > 2;
-                    errorSpan.textContent = isValid ? '' : 'Departamento debe tener al menos 3 caracteres.';
-                    break;
-                case 'notes':
-                    isValid = true;
-                    errorSpan.textContent = '';
-                    break;
-            }
-            const formGroup = input.closest('.form-group');
-            if (formGroup) {
-                formGroup.classList.toggle('invalid', !isValid);
-            }
-            checkFormValidity();
-        }
-
-        function checkFormValidity() {
-            const isValid = document.querySelectorAll('.form-group.invalid').length === 0 &&
-                            document.getElementById('nombres').value &&
-                            document.getElementById('apellidos').value &&
-                            document.getElementById('phone').value &&
-                            document.getElementById('address').value &&
-                            document.getElementById('city').value &&
-                            document.getElementById('department').value &&
-                            cart.length > 0;
-            document.querySelector('.whatsapp-button').disabled = !isValid;
-        }
-
-        // Form submission
-        document.getElementById('orderForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            if (cart.length) {
-                const cartItems = cart.map(item => `*${item.quantity} x ${item.name}:* (${item.description})`).join('\n');
-                const whatsappMessage = `Estos son los datos de mi pedido:\n\n*Productos:*\n${cartItems}\n*Total:* $${totalPrice.toLocaleString()} COP\n\n*Detalles:*\n*- Nombres:* ${document.getElementById('nombres').value}\n*- Apellidos:* ${document.getElementById('apellidos').value}\n*- Teléfono:* ${document.getElementById('phone').value}\n*- Dirección:* ${document.getElementById('address').value}\n*- Ciudad:* ${document.getElementById('city').value}\n*- Departamento:* ${document.getElementById('department').value}\n*- Notas Adicionales:* ${document.getElementById('notes').value || 'Ninguna'}`;
-                const whatsappUrl = `https://wa.me/573207734748?text=${encodeURIComponent(whatsappMessage)}`;
-                window.open(whatsappUrl, '_blank');
-                if (window.fbq) {
-                    fbq('track', 'Purchase', { value: totalPrice / 100, currency: 'COP' });
-                }
-                if (window.fbq) {
-                    fbq('track', 'AddPaymentInfo', { value: totalPrice / 100, currency: 'COP', content_ids: cart.map(item => item.id), num_items: cart.length });
-                }
-                showNotification('¡Pedido enviado! Te contactaremos pronto.');
-                clearCart();
-                document.getElementById('orderForm').reset();
-            }
-        });
-
-        // Notification system
-        function showNotification(message) {
-            if (notificationBar) {
+            // Mostrar notificación (para acciones del usuario)
+            function showNotification(message) {
+                const notificationBar = document.getElementById('notificationBar');
                 notificationBar.textContent = message;
                 notificationBar.classList.add('show');
                 setTimeout(() => notificationBar.classList.remove('show'), 3000);
             }
-        }
 
-        // Share functionality
-        function sharePage() {
-            const shareData = { title: 'Kits Carotone', text: '¡Aprovecha los kits Carotone con envío gratis! ' + window.location.href, url: window.location.href };
-            if (navigator.share && window.location.protocol === 'https:') {
-                navigator.share(shareData).catch(() => fallbackShare());
-            } else {
-                fallbackShare();
+            // Mostrar notificación de venta emergente y actualizar contador de compradores
+            function showSalesNotification() {
+                const salesNotification = document.createElement('div');
+                salesNotification.className = 'sales-notification';
+                document.body.appendChild(salesNotification);
+
+                const randomName = fakeNames[Math.floor(Math.random() * fakeNames.length)];
+                const randomProduct = productsForNotifications[Math.floor(Math.random() * productsForNotifications.length)];
+                const randomQuantity = Math.floor(Math.random() * 2) + 1; // 1 o 2 unidades
+                salesNotification.textContent = `${randomName} acaba de comprar ${randomQuantity} x ${randomProduct.name}`;
+
+                salesNotification.classList.add('show');
+                setTimeout(() => {
+                    salesNotification.classList.remove('show');
+                    setTimeout(() => salesNotification.remove(), 500); // Eliminar después de la animación
+                }, 4000); // Mostrar por 4 segundos
+
+                // Incrementar el contador de compradores
+                const buyersCountElement = document.getElementById('buyersCount');
+                let currentBuyers = parseInt(buyersCountElement.textContent) || 125;
+                const increment = Math.floor(Math.random() * 3) + 1; // Incremento aleatorio de 1 a 3
+                currentBuyers += increment;
+                buyersCountElement.textContent = currentBuyers;
+
+                // Programar la próxima notificación en un intervalo aleatorio (10-20 segundos)
+                const nextNotificationDelay = Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000;
+                setTimeout(showSalesNotification, nextNotificationDelay);
             }
-            function fallbackShare() {
-                if (navigator.clipboard) {
-                    navigator.clipboard.writeText(window.location.href).then(() => showNotification('¡Enlace copiado! Comparte y gana descuento.'), () => showNotification('Copia el enlace: ' + window.location.href));
-                } else {
-                    showNotification('Copia el enlace: ' + window.location.href);
+
+            // Actualizar resumen del carrito y total
+            function updateCartSummary() {
+                const selectedProductInfo = document.getElementById('selectedProductInfo');
+                const totalPriceElement = document.getElementById('totalPrice');
+                selectedProductInfo.innerHTML = '';
+                let total = 0;
+
+                cart.forEach((item, index) => {
+                    const productCard = document.querySelector(`[data-product-id="${item.id}"]`);
+                    if (productCard) {
+                        const productName = productCard.querySelector('.product-name').textContent;
+                        const price = parseFloat(productCard.dataset.price) || 0;
+                        const stock = parseInt(productCard.dataset.stock) || 0;
+                        const itemTotal = price * item.quantity;
+                        total += itemTotal;
+                        const itemElement = document.createElement('div');
+                        itemElement.className = 'selected-product-item';
+                        itemElement.innerHTML = `
+                            <span>${productName} - $${price.toLocaleString('es-CO')} x ${item.quantity}</span>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" data-index="${index}" data-action="decrease" aria-label="Reducir cantidad de ${productName}" ${item.quantity <= 1 ? 'disabled' : ''}>-</button>
+                                <span>${item.quantity}</span>
+                                <button class="quantity-btn" data-index="${index}" data-action="increase" aria-label="Aumentar cantidad de ${productName}" ${item.quantity >= stock ? 'disabled' : ''}>+</button>
+                                <button class="remove-item-btn" data-index="${index}" aria-label="Eliminar ${productName} del carrito">🗑️</button>
+                            </div>
+                        `;
+                        selectedProductInfo.appendChild(itemElement);
+                    }
+                });
+
+                totalPriceElement.textContent = `Total: $${total.toLocaleString('es-CO')} COP`;
+                updateWhatsAppButton();
+
+                // Reasignar eventos a los botones de cantidad y eliminación
+                document.querySelectorAll('.quantity-btn').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const index = parseInt(button.dataset.index);
+                        const action = button.dataset.action;
+                        updateQuantity(index, action);
+                    });
+                });
+
+                document.querySelectorAll('.remove-item-btn').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const index = parseInt(button.dataset.index);
+                        removeFromCart(index);
+                    });
+                });
+            }
+
+            // Actualizar cantidad de un producto
+            function updateQuantity(index, action) {
+                if (cart[index]) {
+                    const productCard = document.querySelector(`[data-product-id="${cart[index].id}"]`);
+                    const stock = parseInt(productCard.dataset.stock) || 0;
+                    if (action === 'increase' && cart[index].quantity < stock) {
+                        cart[index].quantity += 1;
+                        showNotification(`Cantidad aumentada: ${cart[index].name}`);
+                    } else if (action === 'decrease' && cart[index].quantity > 1) {
+                        cart[index].quantity -= 1;
+                        showNotification(`Cantidad reducida: ${cart[index].name}`);
+                    } else if (action === 'decrease' && cart[index].quantity === 1) {
+                        removeFromCart(index);
+                        return;
+                    } else if (action === 'increase' && cart[index].quantity >= stock) {
+                        showNotification(`No hay más stock disponible para ${cart[index].name}`);
+                        return;
+                    }
+                    saveCart();
+                    updateCartSummary();
                 }
             }
-        }
 
-        // Simulate purchases
-        let count = 470;
-        setInterval(() => {
-            if (buyersCountElement) {
-                count += Math.floor(Math.random() * 5) + 1;
-                buyersCountElement.textContent = count.toLocaleString();
-                showNotification(`¡${count} compraron kits hoy! ¡Únete ahora!`);
-            }
-        }, 15000);
-
-        // Add to cart
-        window.addToCart = function(button) {
-            console.log('addToCart called with button:', button);
-            const card = button.closest('.product-card');
-            if (!card) {
-                console.error('No se encontró el elemento .product-card');
-                return;
-            }
-            const productId = card.dataset.productId;
-            const productName = card.querySelector('.product-name').textContent;
-            const price = parseInt(card.dataset.price);
-            const description = card.dataset.description;
-            const stock = parseInt(card.dataset.stock);
-            const existingItem = cart.find(item => item.id === productId);
-
-            console.log('Product data:', { productId, productName, price, stock });
-
-            if (stock > 0) {
-                if (existingItem) {
-                    if (existingItem.quantity < stock) existingItem.quantity++;
-                } else {
-                    cart.push({ id: productId, name: productName, price, description, quantity: 1 });
+            // Eliminar un producto del carrito
+            function removeFromCart(index) {
+                if (cart[index]) {
+                    const productName = cart[index].name;
+                    cart.splice(index, 1);
+                    showNotification(`Eliminado del carrito: ${productName}`);
+                    saveCart();
+                    updateCartSummary();
                 }
-                totalPrice += price;
-                updateCart();
+            }
+
+            // Limpiar carrito
+            window.clearCart = function() {
+                if (cart.length === 0) {
+                    showNotification('El carrito ya está vacío');
+                    return;
+                }
+                cart = [];
                 saveCart();
-                showNotification(`¡${productName} añadido al pedido!`);
-                if (window.fbq) {
-                    fbq('track', 'Lead', { value: price / 100, currency: 'COP' });
-                }
-                if (window.fbq) {
-                    fbq('track', 'AddToCart', { value: price / 100, currency: 'COP', content_ids: [productId], content_type: 'product' });
-                }
-                card.dataset.stock = stock - 1;
-                card.querySelector('.stock-badge').textContent = `Quedan ${stock - 1}`;
-            } else {
-                showNotification('Lo siento, este producto se agotó.');
-                button.disabled = true;
-            }
-        };
+                showNotification('Carrito vaciado');
+                updateCartSummary();
+            };
 
-        // Función para rastrear ViewContent
-        window.trackViewContent = function(link) {
-            const card = link.closest('.product-card');
-            if (card) {
-                const productId = card.dataset.productId;
-                const price = parseInt(card.dataset.price);
-                if (window.fbq) {
-                    fbq('track', 'ViewContent', { value: price / 100, currency: 'COP', content_ids: [productId], content_type: 'product' });
-                }
-            }
-        };
+            // Añadir al carrito
+            window.addToCart = function(productCard) {
+                const productName = productCard.querySelector('.product-name').textContent;
+                const productId = productCard.dataset.productId;
+                const stock = parseInt(productCard.dataset.stock) || 0;
+                const existingItem = cart.find(item => item.id === productId);
 
-        // Inicialización
-        document.addEventListener('DOMContentLoaded', () => {
-            startCountdown();
-            updateCart();
-            document.querySelectorAll('input').forEach(input => input.addEventListener('input', validateInput));
+                if (existingItem) {
+                    if (existingItem.quantity < stock) {
+                        existingItem.quantity += 1;
+                        showNotification(`Cantidad aumentada: ${productName}`);
+                    } else {
+                        showNotification(`No hay más stock disponible para ${productName}`);
+                        return;
+                    }
+                } else {
+                    if (stock > 0) {
+                        cart.push({ id: productId, name: productName, quantity: 1 });
+                        showNotification(`Añadido al carrito: ${productName}`);
+                    } else {
+                        showNotification(`No hay stock disponible para ${productName}`);
+                        return;
+                    }
+                }
+
+                saveCart();
+                productCard.style.transform = 'scale(1.05)';
+                setTimeout(() => productCard.style.transform = 'scale(1)', 200);
+                updateCartSummary();
+            };
+
+            // Actualizar estado del botón de WhatsApp
+            function updateWhatsAppButton() {
+                const whatsappButton = document.querySelector('.whatsapp-button');
+                const isFormValid = validateForm(true);
+                whatsappButton.disabled = cart.length === 0 || !isFormValid;
+            }
+
+            // Filtrar productos
+            function filterProducts(category) {
+                const productCards = document.querySelectorAll('.product-card');
+                productCards.forEach(card => {
+                    const productCategory = card.dataset.category || 'all';
+                    card.style.display = (category === 'all' || productCategory === category) ? 'block' : 'none';
+                });
+                document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelector(`.filter-button[data-filter="${category}"]`).classList.add('active');
+                showNotification(`Filtrado por: ${category === 'all' ? 'Todas las Ofertas' : category === 'kits' ? 'Solo Kits' : 'Productos Individuales'}`);
+            }
+
+            // Validar entrada
+            function validateInput(input) {
+                const errorElement = document.getElementById(`${input.id}Error`);
+                let isValid = true;
+                if (input.id === 'nombres' || input.id === 'apellidos') {
+                    const regex = /^[a-zA-Z\s]{2,}$/;
+                    isValid = regex.test(input.value.trim());
+                    errorElement.textContent = isValid ? '' : 'Debe contener al menos 2 caracteres alfabéticos';
+                } else if (input.id === 'phone') {
+                    const regex = /^\+?\d{10,12}$/;
+                    isValid = regex.test(input.value.trim());
+                    errorElement.textContent = isValid ? '' : 'Ingrese un número de teléfono válido (10-12 dígitos)';
+                } else if (input.id === 'address') {
+                    isValid = input.value.trim().length >= 5;
+                    errorElement.textContent = isValid ? '' : 'La dirección debe tener al menos 5 caracteres';
+                } else if (input.id === 'city' || input.id === 'department') {
+                    isValid = input.value.trim().length >= 3;
+                    errorElement.textContent = isValid ? '' : 'Debe tener al menos 3 caracteres';
+                }
+
+                input.parentElement.classList.toggle('invalid', !isValid);
+                updateWhatsAppButton();
+            }
+
+            // Validar formulario
+            function validateForm(silent = false) {
+                const inputs = document.querySelectorAll('#orderForm input[required]');
+                return Array.from(inputs).every(input => {
+                    if (!silent) validateInput(input);
+                    return !input.parentElement.classList.contains('invalid');
+                });
+            }
+
+            // Sanitizar entradas
+            function sanitizeInput(input) {
+                return input.replace(/[<>&"']/g, '');
+            }
+
+            // Compartir página
+            window.sharePage = function() {
+                if (navigator.share) {
+                    navigator.share({
+                        title: document.title,
+                        text: '¡Descubre los kits Carotone con envío gratis y descuentos exclusivos!',
+                        url: window.location.href
+                    }).then(() => showNotification('¡Página compartida con éxito!'))
+                      .catch(err => showNotification('Error al compartir: ' + err));
+                } else if (navigator.clipboard) {
+                    navigator.clipboard.writeText(window.location.href)
+                        .then(() => showNotification('Enlace copiado al portapapeles'))
+                        .catch(() => showNotification('Error al copiar el enlace'));
+                } else {
+                    showNotification('Compartir no soportado. Copia el enlace: ' + window.location.href);
+                }
+            };
+
+            // Iniciar temporizador
+            function startTimer() {
+                const countdownElement = document.getElementById('countdown');
+                function updateTimer() {
+                    const now = new Date();
+                    const midnight = new Date(now);
+                    midnight.setHours(24, 0, 0, 0);
+                    const timeLeft = midnight - now;
+
+                    if (timeLeft <= 0) {
+                        countdownElement.textContent = '00:00:00';
+                        return;
+                    }
+
+                    const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                    countdownElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                }
+                updateTimer();
+                setInterval(updateTimer, 1000);
+            }
+
+            // Event listeners
+            document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const productCard = button.closest('.product-card');
+                    window.addToCart(productCard);
+                });
+            });
+
+            document.querySelector('.cart-actions button').addEventListener('click', window.clearCart);
+
+            document.querySelectorAll('.filter-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.dataset.filter;
+                    filterProducts(category);
+                });
+            });
+
+            document.getElementById('orderForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (validateForm() && cart.length > 0) {
+                    const nombres = sanitizeInput(document.getElementById('nombres').value);
+                    const apellidos = sanitizeInput(document.getElementById('apellidos').value);
+                    const phone = sanitizeInput(document.getElementById('phone').value);
+                    const address = sanitizeInput(document.getElementById('address').value);
+                    const city = sanitizeInput(document.getElementById('city').value);
+                    const department = sanitizeInput(document.getElementById('department').value);
+                    const notes = sanitizeInput(document.getElementById('notes').value);
+
+                    const products = cart.map(item => {
+                        const productCard = document.querySelector(`[data-product-id="${item.id}"]`);
+                        if (productCard) {
+                            const name = productCard.querySelector('.product-name').textContent;
+                            const price = parseFloat(productCard.dataset.price) || 0;
+                            const itemTotal = (price * item.quantity).toLocaleString('es-CO');
+                            const description = productCard.dataset.description || '';
+                            return `*${item.quantity} x ${name}:* (${description}) - $${itemTotal}`;
+                        }
+                        return '';
+                    }).join('\n');
+
+                    const total = cart.reduce((sum, item) => {
+                        const productCard = document.querySelector(`[data-product-id="${item.id}"]`);
+                        return sum + (productCard ? parseFloat(productCard.dataset.price) * item.quantity : 0);
+                    }, 0);
+
+                    const message = encodeURIComponent(
+                        `*Estos son los datos de mi pedido:*\n\n` +
+                        `*Productos:*\n${products}\n\n` +
+                        `*Total:* $${total.toLocaleString('es-CO')} COP\n\n` +
+                        `*Detalles:*\n` +
+                        `*- Nombres:* ${nombres}\n` +
+                        `*- Apellidos:* ${apellidos}\n` +
+                        `*- Teléfono:* ${phone}\n` +
+                        `*- Dirección:* ${address}\n` +
+                        `*- Ciudad:* ${city}\n` +
+                        `*- Departamento:* ${department}\n` +
+                        (notes ? `*- Notas Adicionales:* ${notes}\n` : '')
+                    );
+
+                    window.open(`https://wa.me/${PHONE_NUMBER}?text=${message}`, '_blank');
+                    showNotification('¡Pedido enviado por WhatsApp!');
+                    window.clearCart();
+                    document.getElementById('orderForm').reset();
+                }
+            });
+
+            window.addEventListener('scroll', () => {
+                const backToTop = document.querySelector('.back-to-top');
+                backToTop.classList.toggle('show', window.scrollY > 300);
+            });
+
+            // Inicialización
+            startTimer();
+            filterProducts('all');
+            updateCartSummary();
+            // Iniciar notificaciones de ventas después de 5 segundos
+            setTimeout(showSalesNotification, 5000);
         });
     </script>
 </body>

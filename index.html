@@ -237,7 +237,7 @@
         }
 
         .section-title {
-            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-size: clamp(1.5rem, 4vw, 2 Stelmo);
             text-align: center;
             margin-bottom: 25px;
             color: var(--primary-color);
@@ -1166,6 +1166,8 @@
             }
 
             // Mostrar notificación de venta emergente y actualizar contador de compradores
+            let notificationIndex = 0;
+            const notificationDelays = [10000, 40000, 80000]; // 10s, 40s, 80s in milliseconds
             function showSalesNotification() {
                 const salesNotification = document.createElement('div');
                 salesNotification.className = 'sales-notification';
@@ -1189,9 +1191,10 @@
                 currentBuyers += increment;
                 buyersCountElement.textContent = currentBuyers;
 
-                // Programar la próxima notificación en un intervalo aleatorio (10-20 segundos)
-                const nextNotificationDelay = Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000;
-                setTimeout(showSalesNotification, nextNotificationDelay);
+                // Programar la próxima notificación según el ciclo de 10, 40, 80 segundos
+                const nextDelay = notificationDelays[notificationIndex];
+                notificationIndex = (notificationIndex + 1) % notificationDelays.length; // Ciclar entre 0, 1, 2
+                setTimeout(showSalesNotification, nextDelay);
             }
 
             // Actualizar resumen del carrito y total
@@ -1319,6 +1322,10 @@
                 productCard.style.transform = 'scale(1.05)';
                 setTimeout(() => productCard.style.transform = 'scale(1)', 200);
                 updateCartSummary();
+                
+                // Scroll to the order form section
+                const orderFormSection = document.getElementById('orderFormSection');
+                orderFormSection.scrollIntoView({ behavior: 'smooth' });
             };
 
             // Actualizar estado del botón de WhatsApp

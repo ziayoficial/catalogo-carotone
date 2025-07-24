@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duxe Store - Kits Exclusivos para Reducir Manchas 🔥</title>
+    <title>Duxe Store | Kits Carotone - Reduce Manchas y Aclara tu Piel</title>
+    <meta name="description" content="Kits Carotone profesionales para reducir manchas y aclarar la piel. Envío gratis en Colombia. Resultados visibles en 2 semanas.">
+    <meta name="keywords" content="carotone, kit carotone, crema aclarante, reducir manchas, cuidado de la piel, colombia">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -56,16 +58,17 @@
             --shadow-light: rgba(0, 0, 0, 0.1);
             --shadow-medium: rgba(0, 0, 0, 0.2);
             --border-color: #f06292; /* Rosa medio */
-            --gradient-hero: linear-gradient(135deg, #E91E63 0%, #FF80AB 100%); /* Rosa a Rosa claro */
-            --gradient-button: linear-gradient(45deg, #4CAF50, #8BC34A); /* Verde a Verde claro */
+            --gradient-hero: linear-gradient(135deg, #E91E63 0%, #FF80AB 100%);
+            --gradient-button: linear-gradient(45deg, #4CAF50, #8BC34A);
             --gradient-button-hover: linear-gradient(45deg, #8BC34A, #4CAF50);
             --gradient-badge: linear-gradient(45deg, #FFD700, #FFC107);
             --selected-package-border: #E91E63;
-            --selected-package-bg: #F8BBD0; /* Rosa pastel */
+            --selected-package-bg: #F8BBD0;
             --package-option-color: #6C757D;
             --package-option-selected: #E91E63;
-            --button-option-bg: #F48FB1; /* Rosa más oscuro para opciones */
+            --button-option-bg: #F48FB1;
             --button-option-hover: #EC407A;
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -80,6 +83,7 @@
             color: var(--text-dark);
             background-color: var(--bg-light);
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -113,6 +117,11 @@
             font-weight: 700;
             text-decoration: none;
             color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.03);
         }
 
         .logo-icon {
@@ -141,6 +150,9 @@
             font-weight: 500;
             transition: color 0.3s ease;
             cursor: pointer;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .nav-menu a:hover {
@@ -165,6 +177,7 @@
             color: var(--text-light);
             width: 200px;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .search-box input::placeholder {
@@ -183,6 +196,7 @@
             top: 50%;
             transform: translateY(-50%);
             color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
         }
 
         .cart-icon {
@@ -222,7 +236,7 @@
         .hero {
             background: var(--gradient-hero);
             color: var(--text-light);
-            padding: 3rem 0;
+            padding: 4rem 0 3rem;
             position: relative;
             overflow: hidden;
         }
@@ -234,11 +248,16 @@
             align-items: center;
         }
 
+        .hero-text {
+            padding: 1rem 0;
+        }
+
         .hero-text h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             line-height: 1.2;
+            text-transform: uppercase;
         }
 
         .hero-text .subtitle {
@@ -249,16 +268,17 @@
 
         .subtitle-badge {
             display: inline-block;
-            background: linear-gradient(45deg, #FFD700, #FFC107);
+            background: var(--gradient-badge);
             color: var(--text-dark);
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.2rem;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             box-shadow: 0 3px 10px rgba(255, 193, 7, 0.3);
+            animation: pulse 2s infinite;
         }
 
         .hero-text .rating {
@@ -266,6 +286,7 @@
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
 
         .stars {
@@ -273,7 +294,7 @@
         }
 
         .hero-text .description {
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
             opacity: 0.9;
             line-height: 1.6;
@@ -283,11 +304,10 @@
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
-            justify-content: center;
         }
 
         .btn {
-            padding: 0.8rem 1.5rem;
+            padding: 0.9rem 1.8rem;
             border: none;
             border-radius: 25px;
             font-weight: 600;
@@ -296,8 +316,8 @@
             align-items: center;
             gap: 0.5rem;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
+            transition: var(--transition);
+            font-size: 1rem;
         }
 
         .btn-primary {
@@ -308,7 +328,7 @@
 
         .btn-primary:hover {
             background: var(--gradient-button-hover);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
@@ -323,18 +343,50 @@
             color: var(--primary-color);
         }
 
-        /* Product Cards - Improved Design */
+        /* Hero Product Card */
+        .hero-product-card {
+            background: var(--text-light);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow-medium);
+            transition: var(--transition);
+            position: relative;
+            transform: translateY(0);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow-medium);
+        }
+
+        /* Product Cards */
         .products-section {
-            padding: 4rem 0;
+            padding: 5rem 0;
             background: var(--text-light);
         }
 
         .section-title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 800;
             text-align: center;
             margin-bottom: 1rem;
             color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
         }
 
         .section-subtitle {
@@ -342,6 +394,9 @@
             color: #666;
             margin-bottom: 3rem;
             font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .filter-buttons {
@@ -353,30 +408,29 @@
         }
 
         .filter-btn {
-            padding: 0.8rem 1.5rem;
+            padding: 0.8rem 1.8rem;
             border: 2px solid var(--primary-color);
             background: transparent;
             color: var(--primary-color);
             border-radius: 25px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             font-weight: 600;
+            font-size: 0.95rem;
         }
 
         .filter-btn.active,
         .filter-btn:hover {
             background: var(--primary-color);
             color: var(--text-light);
+            transform: translateY(-2px);
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 2.5rem;
             margin-top: 2rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .product-card {
@@ -384,7 +438,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 8px 25px var(--shadow-light);
-            transition: all 0.3s ease;
+            transition: var(--transition);
             position: relative;
             border: 2px solid transparent;
         }
@@ -411,7 +465,7 @@
 
         .product-image {
             position: relative;
-            height: 250px;
+            height: 280px;
             overflow: hidden;
             cursor: pointer;
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
@@ -420,16 +474,17 @@
         .product-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: transform 0.3s ease;
+            padding: 1rem;
         }
 
         .product-image:hover img {
-            transform: scale(1.08);
+            transform: scale(1.05);
         }
 
         .product-info {
-            padding: 2rem;
+            padding: 1.8rem;
         }
 
         .product-category {
@@ -442,7 +497,7 @@
         }
 
         .product-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 0.8rem;
             color: var(--text-dark);
@@ -454,6 +509,7 @@
             font-size: 0.95rem;
             margin-bottom: 1.2rem;
             line-height: 1.5;
+            min-height: 60px;
         }
 
         .product-rating {
@@ -537,7 +593,7 @@
             flex-shrink: 0;
         }
 
-        /* Package Options - New Design Based on Image */
+        /* Package Options */
         .package-options {
             margin-bottom: 2rem;
         }
@@ -562,25 +618,26 @@
             border-radius: 12px;
             background: #FFFFFF;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             margin-bottom: 1rem;
             position: relative;
             min-height: 80px;
         }
         
         .package-option:hover {
-            border-color: #E91E63;
+            border-color: var(--primary-color);
             background: rgba(233, 30, 99, 0.02);
         }
+        
         .package-option.selected {
-            border-color: #E91E63 !important;
-            background-color: #FCE4EC !important;
+            border-color: var(--primary-color) !important;
+            background-color: var(--selected-package-bg) !important;
             box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.2) !important;
         }
         
         .package-option.selected input[type="radio"] {
-            border-color: #E91E63 !important;
-            background-color: #E91E63 !important;
+            border-color: var(--primary-color) !important;
+            background-color: var(--primary-color) !important;
         }
         
         .package-option.selected input[type="radio"]:before {
@@ -591,18 +648,19 @@
             width: 18px;
             height: 18px;
             margin-right: 1rem;
-            accent-color: #E91E63;
+            accent-color: var(--primary-color);
             cursor: pointer;
             appearance: none;
             border: 2px solid #E0E0E0;
             border-radius: 50%;
             position: relative;
             background: white;
+            flex-shrink: 0;
         }
 
         .package-option input[type="radio"]:checked {
-            border-color: #E91E63;
-            background-color: #E91E63;
+            border-color: var(--primary-color);
+            background-color: var(--primary-color);
         }
 
         .package-option input[type="radio"]:checked::before {
@@ -625,7 +683,7 @@
         }
 
         .package-icon {
-            background: #E91E63;
+            background: var(--primary-color);
             color: white;
             width: 35px;
             height: 35px;
@@ -673,7 +731,7 @@
         .package-price {
             font-size: 1.1rem;
             font-weight: 800;
-            color: #E91E63;
+            color: var(--primary-color);
             white-space: nowrap;
             line-height: 1.2;
         }
@@ -715,7 +773,7 @@
             z-index: 10;
         }
 
-        /* Add to Cart Button - Improved */
+        /* Add to Cart Button */
         .add-to-cart-btn {
             width: 100%;
             background: var(--gradient-button);
@@ -725,12 +783,16 @@
             border-radius: 15px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             margin-bottom: 1rem;
             font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         .add-to-cart-btn:hover {
@@ -757,33 +819,31 @@
             border-radius: 10px;
         }
 
-        /* Hero Product Card */
-        .hero-product-card {
-            background: var(--text-light);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px var(--shadow-medium);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .hero-product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px var(--shadow-medium);
-        }
-
         /* Stats Section */
         .stats-section {
             background: var(--bg-light);
-            padding: 4rem 0;
+            padding: 5rem 0;
             text-align: center;
         }
 
         .stats-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 3rem;
             color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .stats-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
         }
 
         .stats-grid {
@@ -825,8 +885,9 @@
 
         /* Testimonials Section */
         .testimonials-section {
-            padding: 4rem 0;
+            padding: 5rem 0;
             background: var(--text-light);
+            position: relative;
         }
 
         .testimonial-card {
@@ -835,8 +896,20 @@
             border-radius: 20px;
             box-shadow: 0 8px 25px var(--shadow-light);
             text-align: center;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            font-size: 5rem;
+            color: rgba(233, 30, 99, 0.1);
+            font-family: serif;
+            line-height: 1;
         }
 
         .testimonial-text {
@@ -845,6 +918,7 @@
             color: var(--text-dark);
             margin-bottom: 2rem;
             line-height: 1.6;
+            position: relative;
         }
 
         .testimonial-author {
@@ -861,68 +935,9 @@
 
         /* Policies Section */
         .policies-section {
-            display: none; /* Ocultar por defecto */
+            display: none;
             padding: 4rem 0;
             background: var(--bg-light);
-        }
-
-        .policies-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .policy-card {
-            background: var(--text-light);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px var(--shadow-light);
-        }
-
-        .policy-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .policy-description {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 2rem;
-            text-align: center;
-            line-height: 1.6;
-        }
-
-        .policy-section {
-            margin-bottom: 2rem;
-        }
-
-        .policy-subtitle {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-        }
-
-        .policy-list {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .policy-list li {
-            margin-bottom: 0.8rem;
-            line-height: 1.6;
-            color: var(--text-dark);
-        }
-
-        .policy-note {
-            font-style: italic;
-            color: #666;
-            margin-top: 1rem;
-            font-size: 0.9rem;
         }
 
         /* Cart Sidebar */
@@ -982,6 +997,8 @@
             height: 60px;
             border-radius: 8px;
             overflow: hidden;
+            cursor: pointer;
+            flex-shrink: 0;
         }
 
         .cart-item-image img {
@@ -1083,8 +1100,12 @@
             border-radius: 10px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         .checkout-btn:hover {
@@ -1245,6 +1266,7 @@
             border-radius: 8px;
             overflow: hidden;
             cursor: pointer;
+            flex-shrink: 0;
         }
 
         .form-cart-image img {
@@ -1327,8 +1349,12 @@
             border-radius: 10px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         .submit-btn:hover {
@@ -1357,7 +1383,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             box-shadow: 0 4px 15px var(--shadow-medium);
         }
 
@@ -1392,6 +1418,7 @@
             z-index: 4000;
             opacity: 0;
             transition: opacity 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
         }
 
         .notification.show {
@@ -1400,7 +1427,7 @@
 
         /* Banner Animado */
         .animated-banner {
-            background: linear-gradient(90deg, #FF80AB, #FFC107, #4CAF50); /* Rosa, Amarillo, Verde */
+            background: linear-gradient(90deg, #FF80AB, #FFC107, #4CAF50);
             color: var(--text-light);
             padding: 1rem 0;
             text-align: center;
@@ -1420,6 +1447,9 @@
             margin-right: 50px;
             font-size: 1.1rem;
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         @keyframes scroll-left {
@@ -1462,326 +1492,6 @@
             border-bottom: none;
         }
 
-        /* Responsive Design */
-        @media (max-width: 1024px) and (min-width: 769px) {
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-                max-width: 800px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-
-            .search-box input {
-                width: 150px;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-                max-width: 100%;
-                gap: 1.5rem;
-            }
-
-            .cart-sidebar {
-                width: 100%;
-                right: -100%;
-            }
-
-            .modal-content,
-            .form-content {
-                width: 95%;
-                margin: 1rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .floating-buttons {
-                bottom: 1rem;
-                right: 1rem;
-                gap: 0.8rem;
-            }
-
-            .floating-btn {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
-            }
-
-            .package-option {
-                padding: 1.2rem 1rem;
-                min-height: 100px;
-                gap: 1rem;
-                flex-direction: row;
-                align-items: center;
-            }
-
-            .package-info {
-                gap: 1rem;
-                flex-direction: row;
-                align-items: center;
-            }
-
-            .package-icon {
-                width: 35px;
-                height: 35px;
-                font-size: 1rem;
-                margin-right: 0.8rem;
-                flex-shrink: 0;
-            }
-
-            .package-details {
-                flex: 1;
-                text-align: left;
-            }
-
-            .package-label {
-                font-size: 0.9rem;
-                gap: 0.5rem;
-                margin-bottom: 0.3rem;
-                justify-content: flex-start;
-                text-align: left;
-            }
-
-            .package-savings {
-                font-size: 0.9rem;
-                text-align: left;
-            }
-
-            .popular-badge {
-                font-size: 0.7rem;
-                padding: 0.3rem 0.6rem;
-                margin-left: 0.4rem;
-                position: static;
-                display: inline-block;
-            }
-
-            .package-price-container {
-                min-width: 130px;
-                padding-left: 1rem;
-                text-align: right;
-                flex-shrink: 0;
-            }
-
-            .package-price {
-                font-size: 1.1rem;
-            }
-
-            .form-content {
-                grid-template-columns: 1fr;
-                max-width: 95%;
-                width: 95%;
-                margin: 1rem auto;
-            }
-
-            .form-left-column {
-                border-right: none;
-                border-bottom: 1px solid var(--border-color);
-                padding-right: 0;
-                padding-bottom: 1rem;
-            }
-
-            .form-right-column {
-                padding-left: 0;
-                padding-top: 1rem;
-            }
-
-            .form-body {
-                padding: 1rem;
-            }
-
-            .form-group {
-                margin-bottom: 0.8rem;
-            }
-
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                padding: 0.8rem;
-                font-size: 16px; /* Prevents zoom on iOS */
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .package-option {
-                padding: 1.2rem 1rem;
-                min-height: 100px;
-                gap: 1rem;
-            }
-
-            .package-info {
-                gap: 1rem;
-            }
-
-            .package-icon {
-                width: 35px;
-                height: 35px;
-                font-size: 1rem;
-                margin-right: 0.8rem;
-            }
-
-            .package-label {
-                font-size: 0.9rem;
-                gap: 0.5rem;
-                margin-bottom: 0.3rem;
-            }
-
-            .package-savings {
-                font-size: 0.9rem;
-            }
-
-            .popular-badge {
-                font-size: 0.7rem;
-                padding: 0.3rem 0.6rem;
-                margin-left: 0.4rem;
-            }
-
-            .package-price-container {
-                min-width: 130px;
-                padding-left: 1rem;
-            }
-
-            .package-price {
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-
-            .hero {
-                padding: 2rem 0;
-            }
-
-            .hero-text h1 {
-                font-size: 1.8rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .filter-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                max-width: 100%;
-                margin-left: 0;
-                margin-right: 0;
-            }
-
-            .product-card {
-                margin: 0;
-                max-width: 100%;
-            }
-
-            .package-option {
-                padding: 1rem;
-                min-height: 90px;
-                gap: 0.8rem;
-                flex-direction: column;
-                align-items: stretch;
-                text-align: center;
-            }
-
-            .package-info {
-                justify-content: center;
-                gap: 0.8rem;
-            }
-
-            .package-icon {
-                width: 30px;
-                height: 30px;
-                font-size: 0.9rem;
-            }
-
-            .package-label {
-                font-size: 0.9rem;
-                justify-content: center;
-                text-align: center;
-            }
-
-            .package-savings {
-                font-size: 0.9rem;
-                text-align: center;
-            }
-
-            .popular-badge {
-                font-size: 0.65rem;
-                padding: 0.2rem 0.5rem;
-                margin-left: 0.3rem;
-            }
-
-            .package-price-container {
-                min-width: auto;
-                padding-left: 0;
-                text-align: center;
-            }
-
-            .package-price {
-                font-size: 1.0rem;
-            }
-
-            .form-content {
-                max-width: 100%;
-                width: 100%;
-                margin: 0.5rem;
-                border-radius: 10px;
-            }
-
-            .form-body {
-                padding: 0.8rem;
-            }
-
-            .form-group {
-                margin-bottom: 0.7rem;
-            }
-
-            .form-group label {
-                font-size: 0.85rem;
-                margin-bottom: 0.3rem;
-            }
-
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                padding: 0.7rem;
-                font-size: 16px;
-                border-radius: 6px;
-            }
-
-            .submit-btn {
-                padding: 0.8rem;
-                font-size: 0.9rem;
-            }
-        }
-
         /* Loading Animation */
         .loading {
             display: inline-block;
@@ -1791,6 +1501,7 @@
             border-radius: 50%;
             border-top-color: var(--text-light);
             animation: spin 1s ease-in-out infinite;
+            margin-right: 0.5rem;
         }
 
         @keyframes spin {
@@ -1917,20 +1628,158 @@
             font-size: 0.8rem;
         }
 
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                gap: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+        }
+
         @media (max-width: 768px) {
-            .footer-content {
-                flex-direction: column;
+            .nav-menu {
+                display: none;
+            }
+
+            .search-box input {
+                width: 150px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
                 text-align: center;
+                gap: 2rem;
             }
 
-            .footer-section {
-                min-width: unset;
-                width: 100%;
+            .hero-text h1 {
+                font-size: 2.2rem;
             }
 
-            .social-links {
-                display: flex;
+            .hero-buttons {
                 justify-content: center;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .product-card {
+                max-width: 100%;
+            }
+
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+
+            .modal-content,
+            .form-content {
+                width: 95%;
+                margin: 1rem;
+            }
+
+            .form-content {
+                grid-template-columns: 1fr;
+            }
+
+            .form-left-column {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding-right: 0;
+                padding-bottom: 1rem;
+            }
+
+            .form-right-column {
+                padding-left: 0;
+                padding-top: 1rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-buttons {
+                bottom: 1rem;
+                right: 1rem;
+                gap: 0.8rem;
+            }
+
+            .floating-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 2rem 0;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .product-card {
+                margin: 0;
+            }
+
+            .form-content {
+                max-width: 100%;
+                width: 100%;
+                margin: 0.5rem;
+                border-radius: 10px;
+            }
+
+            .form-body {
+                padding: 0.8rem;
+            }
+
+            .form-group {
+                margin-bottom: 0.7rem;
+            }
+
+            .form-group label {
+                font-size: 0.85rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 0.7rem;
+                font-size: 16px;
+                border-radius: 6px;
+            }
+
+            .submit-btn {
+                padding: 0.8rem;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -1977,11 +1826,15 @@
                         <div class="stars">⭐⭐⭐⭐⭐</div>
                         <span>Calificación 4.8/5 | 17,049 Reseñas</span>
                     </div>
-                    <p class="description">Transforma tu piel con nuestros kits especiales para reducir manchas y aclarar de forma natural</p>
+                    <p class="description">Transforma tu piel con nuestros kits especiales para reducir manchas y aclarar de forma natural. Resultados visibles en solo 2 semanas.</p>
                     <div class="hero-buttons">
                         <a href="#productos" class="btn btn-primary" onclick="scrollToSection('productos')">
                             <i class="fas fa-eye"></i>
                             Ver Productos
+                        </a>
+                        <a href="#testimonios" class="btn btn-secondary" onclick="scrollToSection('testimonios')">
+                            <i class="fas fa-comment"></i>
+                            Ver Testimonios
                         </a>
                     </div>
                 </div>
@@ -2005,11 +1858,11 @@
                             <span class="savings">Ahorras $20.000</span>
                         </div>
                         <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Crema Carotone Aclarante 135ml - Para rostro y cuerpo</li>
-                            <li><i class="fas fa-check"></i> Loción Corporal Aclarante 50ml - De rápida absorción</li>
-                            <li><i class="fas fa-check"></i> Jabón Carotone 190gr - Limpieza profunda</li>
-                            <li><i class="fas fa-check"></i> Resultados visibles en 2 semanas</li>
-                            <li><i class="fas fa-check"></i> Fórmula mejorada con ingredientes naturales</li>
+                            <li><i class="fas fa-check"></i> Crema Carotone Aclarante 135ml</li>
+                            <li><i class="fas fa-check"></i> Loción Corporal Aclarante 50ml</li>
+                            <li><i class="fas fa-check"></i> Jabón Carotone 190gr</li>
+                            <li><i class="fas fa-check"></i> Resultados en 2 semanas</li>
+                            <li><i class="fas fa-check"></i> Fórmula con ingredientes naturales</li>
                         </ul>
                         <div class="package-options">
                             <h4 class="package-title">PAQUETES Y AHORROS</h4>
@@ -2049,7 +1902,7 @@
                         </button>
                         <div class="payment-info">
                             <i class="fas fa-truck"></i>
-                            Envío Gratis
+                            Envío Gratis en Colombia
                         </div>
                     </div>
                 </div>
@@ -2061,7 +1914,7 @@
     <section class="animated-banner">
         <div class="animated-banner-content">
             <span><i class="fas fa-truck"></i> PAGO CONTRA ENTREGA</span>
-            <span><i class="fas fa-shield-alt"></i> CALIDAD COMPROBADA</span>
+            <span><i class="fas fa-shield-alt"></i> GARANTÍA DE CALIDAD</span>
             <span><i class="fas fa-headset"></i> ATENCIÓN 24/7</span>
             <span><i class="fas fa-shipping-fast"></i> ENVÍO RÁPIDO</span>
         </div>
@@ -2071,7 +1924,7 @@
     <section class="products-section" id="productos">
         <div class="container">
             <h2 class="section-title">Nuestros Productos Destacados</h2>
-            <p class="section-subtitle">Descubre nuestra colección completa de productos Carotone para el cuidado de tu piel</p>
+            <p class="section-subtitle">Descubre nuestra colección completa de productos Carotone para el cuidado de tu piel con resultados visibles en solo 2 semanas</p>
             
             <div class="filter-buttons">
                 <button class="filter-btn active" onclick="filterProducts('all')">Todos los Productos</button>
@@ -2125,66 +1978,6 @@
         </div>
     </section>
 
-    <!-- Políticas de Garantía Section -->
-    <section class="policies-section" id="politicas">
-        <div class="container">
-            <h2 class="section-title">Políticas de Garantía</h2>
-            <div class="policies-content">
-                <div class="policy-card">
-                    <h3 class="policy-title">Política de Devoluciones</h3>
-                    <p class="policy-description">Esta política aplica a la compra de productos físicos en nuestra tienda online o a través de WhatsApp en Colombia.</p>
-                    
-                    <div class="policy-section">
-                        <h4 class="policy-subtitle">Derecho a Desistir</h4>
-                        <ul class="policy-list">
-                            <li><strong>Tiempo:</strong> Puedes devolver tu compra en 5 días hábiles desde que recibes el producto, sin explicar por qué.</li>
-                            <li><strong>Condiciones:</strong> El producto debe estar sin usar, en su empaque original y en las mismas condiciones en que lo recibiste. Tú cubres los costos de devolución.</li>
-                            <li><strong>Reembolso:</strong> Te devolvemos el 100% del dinero en máximo 15 días, usando el mismo método de pago.</li>
-                        </ul>
-                    </div>
-
-                    <div class="policy-section">
-                        <h4 class="policy-subtitle">Excepciones</h4>
-                        <p>No puedes devolver:</p>
-                        <ul class="policy-list">
-                            <li>Productos personalizados o hechos a medida.</li>
-                            <li>Productos que, por higiene o salud, hayan sido usados o abiertos (ej. ropa interior, cosméticos).</li>
-                        </ul>
-                    </div>
-
-                    <div class="policy-section">
-                        <h4 class="policy-subtitle">Garantías</h4>
-                        <p>Si el producto tiene defectos o no es como lo prometimos:</p>
-                        <ul class="policy-list">
-                            <li>Puedes pedir reparación, cambio o reembolso durante al menos 1 año desde la entrega.</li>
-                            <li>Notifícanos en un plazo razonable (sugerimos dentro de los 30 días desde que notas el problema).</li>
-                            <li>Resolveremos tu solicitud en máximo 15 días hábiles.</li>
-                        </ul>
-                    </div>
-
-                    <div class="policy-section">
-                        <h4 class="policy-subtitle">Cómo Devolver</h4>
-                        <ol class="policy-list">
-                            <li>Escríbenos por WhatsApp al +57 3180646005 dentro del plazo.</li>
-                            <li>Danos el número de orden o detalles de la compra hecha por la tienda online o WhatsApp.</li>
-                            <li>Te indicaremos cómo enviar el producto de vuelta y cuándo recibirás el reembolso.</li>
-                        </ol>
-                    </div>
-
-                    <div class="policy-section">
-                        <h4 class="policy-subtitle">Contáctanos</h4>
-                        <p>Para dudas o reclamos, contáctanos por:</p>
-                        <ul class="policy-list">
-                            <li><strong>WhatsApp:</strong> +57 3180646005</li>
-                            <li><strong>Correo:</strong> vialsabogal@gmail.com</li>
-                        </ul>
-                        <p class="policy-note">Podemos actualizar esta política para cumplir con las normas vigentes.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Cart Sidebar -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
@@ -2223,66 +2016,6 @@
             </div>
             <div class="modal-body" id="modalBody">
                 <!-- Product details will be loaded here -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Policy Modal -->
-    <div class="modal" id="policyModal">
-        <div class="modal-content" style="max-width: 700px;">
-            <div class="modal-header">
-                <h3 class="modal-title">Política de Devoluciones</h3>
-                <button class="modal-close" onclick="closePolicyModal()">&times;</button>
-            </div>
-            <div class="modal-body" style="font-size: 0.85rem; line-height: 1.5;">
-                <p style="margin-bottom: 1rem; color: #666;">Esta política aplica a la compra de productos físicos en nuestra tienda online o a través de WhatsApp en Colombia.</p>
-                
-                <div style="margin-bottom: 1.5rem;">
-                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Derecho a Desistir</h4>
-                    <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
-                        <li style="margin-bottom: 0.5rem;"><strong>Tiempo:</strong> Puedes devolver tu compra en 5 días hábiles desde que recibes el producto, sin explicar por qué.</li>
-                        <li style="margin-bottom: 0.5rem;"><strong>Condiciones:</strong> El producto debe estar sin usar, en su empaque original y en las mismas condiciones en que lo recibiste. Tú cubres los costos de devolución.</li>
-                        <li style="margin-bottom: 0.5rem;"><strong>Reembolso:</strong> Te devolvemos el 100% del dinero en máximo 15 días, usando el mismo método de pago.</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 1.5rem;">
-                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Excepciones</h4>
-                    <p style="margin-bottom: 0.5rem;">No puedes devolver:</p>
-                    <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
-                        <li style="margin-bottom: 0.5rem;">Productos personalizados o hechos a medida.</li>
-                        <li style="margin-bottom: 0.5rem;">Productos que, por higiene o salud, hayan sido usados o abiertos (ej. ropa interior, cosméticos).</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 1.5rem;">
-                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Garantías</h4>
-                    <p style="margin-bottom: 0.5rem;">Si el producto tiene defectos o no es como lo prometimos:</p>
-                    <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
-                        <li style="margin-bottom: 0.5rem;">Puedes pedir reparación, cambio o reembolso durante al menos 1 año desde la entrega.</li>
-                        <li style="margin-bottom: 0.5rem;">Notifícanos en un plazo razonable (sugerimos dentro de los 30 días desde que notas el problema).</li>
-                        <li style="margin-bottom: 0.5rem;">Resolveremos tu solicitud en máximo 15 días hábiles.</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 1.5rem;">
-                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Cómo Devolver</h4>
-                    <ol style="margin-left: 1rem; margin-bottom: 0.8rem;">
-                        <li style="margin-bottom: 0.5rem;">Escríbenos por WhatsApp al +57 3180646005 dentro del plazo.</li>
-                        <li style="margin-bottom: 0.5rem;">Danos el número de orden o detalles de la compra hecha por la tienda online o WhatsApp.</li>
-                        <li style="margin-bottom: 0.5rem;">Te indicaremos cómo enviar el producto de vuelta y cuándo recibirás el reembolso.</li>
-                    </ol>
-                </div>
-
-                <div style="margin-bottom: 1rem;">
-                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Contáctanos</h4>
-                    <p style="margin-bottom: 0.5rem;">Para dudas o reclamos, contáctanos por:</p>
-                    <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
-                        <li style="margin-bottom: 0.5rem;"><strong>WhatsApp:</strong> +57 3180646005</li>
-                        <li style="margin-bottom: 0.5rem;"><strong>Correo:</strong> vialsabogal@gmail.com</li>
-                    </ul>
-                    <p style="font-style: italic; color: #666; font-size: 0.8rem; margin-top: 0.8rem;">Podemos actualizar esta política para cumplir con las normas vigentes.</p>
-                </div>
             </div>
         </div>
     </div>
@@ -2420,6 +2153,37 @@
     <div class="notification" id="notification">
         Producto agregado al carrito
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Duxe Store</h3>
+                    <p>Tu aliado para una piel radiante. Ofrecemos productos de alta calidad para reducir manchas y uniformar el tono de tu piel.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#productos" onclick="scrollToSection('productos')">Productos</a></li>
+                        <li><a href="#testimonios" onclick="scrollToSection('testimonios')">Testimonios</a></li>
+                        <li><a href="#" onclick="showPolicyModal()">Política de Garantía</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section social">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Duxe Store. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Product Data
@@ -2611,7 +2375,7 @@
                 <div class="product-card" data-category="${product.category}">
                     ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
                     <div class="product-image" onclick="showProductModal('${product.id}')">
-                        <img src="${product.image}" alt="${product.name}">
+                        <img src="${product.image}" alt="${product.name}" loading="lazy">
                     </div>
                     <div class="product-info">
                         <div class="product-category">${product.category === 'kits' ? 'Kit Completo' : 'Producto Individual'}</div>
@@ -2627,14 +2391,15 @@
                             <span class="savings">Ahorras $${product.savings.toLocaleString()}</span>
                         </div>
                         <ul class="product-features">
-                            ${product.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                            ${product.features.slice(0, 3).map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                            ${product.features.length > 3 ? '<li><i class="fas fa-plus-circle"></i> Ver más detalles...</li>' : ''}
                         </ul>
                         <div class="package-options">
                             <h4 class="package-title">PAQUETES Y AHORROS</h4>
                             ${product.packages.map((pkg, index) => `
                                 <div class="package-option ${index === 1 ? 'selected' : ''}" onclick="selectPackage('${product.id}', ${index})">
+                                    <input type="radio" name="package-${product.id}" ${index === 1 ? 'checked' : ''}>
                                     <div class="package-info">
-                                        <input type="radio" name="package-${product.id}" ${index === 1 ? 'checked' : ''}>
                                         <div class="package-icon">${pkg.quantity}</div>
                                         <div class="package-details">
                                             <div class="package-label">${pkg.quantity} UNIDAD${pkg.quantity > 1 ? 'ES' : ''} ${pkg.popular ? `<span class="popular-badge">MÁS POPULAR</span>` : ''}</div>
@@ -2784,7 +2549,7 @@
                 return `
                     <div class="cart-item">
                         <div class="cart-item-image" onclick="showProductModal('${item.id}')">
-                            <img src="${item.image}" alt="${item.name}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0yMCAyMEg0MFY0MEgyMFYyMFoiIGZpbGw9IiNEREREREQiLz4KPC9zdmc+Cg=='">
+                            <img src="${item.image}" alt="${item.name}" loading="lazy">
                         </div>
                         <div class="cart-item-info">
                             <div class="cart-item-name">${item.name}</div>
@@ -2924,12 +2689,77 @@
 
         // Show policy modal
         function showPolicyModal() {
-            document.getElementById('policyModal').classList.add('show');
+            const modal = document.createElement('div');
+            modal.className = 'modal show';
+            modal.id = 'policyModal';
+            modal.innerHTML = `
+                <div class="modal-content" style="max-width: 700px;">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Política de Devoluciones</h3>
+                        <button class="modal-close" onclick="closePolicyModal()">&times;</button>
+                    </div>
+                    <div class="modal-body" style="font-size: 0.85rem; line-height: 1.5;">
+                        <p style="margin-bottom: 1rem; color: #666;">Esta política aplica a la compra de productos físicos en nuestra tienda online o a través de WhatsApp en Colombia.</p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Derecho a Desistir</h4>
+                            <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
+                                <li style="margin-bottom: 0.5rem;"><strong>Tiempo:</strong> Puedes devolver tu compra en 5 días hábiles desde que recibes el producto, sin explicar por qué.</li>
+                                <li style="margin-bottom: 0.5rem;"><strong>Condiciones:</strong> El producto debe estar sin usar, en su empaque original y en las mismas condiciones en que lo recibiste. Tú cubres los costos de devolución.</li>
+                                <li style="margin-bottom: 0.5rem;"><strong>Reembolso:</strong> Te devolvemos el 100% del dinero en máximo 15 días, usando el mismo método de pago.</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Excepciones</h4>
+                            <p style="margin-bottom: 0.5rem;">No puedes devolver:</p>
+                            <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
+                                <li style="margin-bottom: 0.5rem;">Productos personalizados o hechos a medida.</li>
+                                <li style="margin-bottom: 0.5rem;">Productos que, por higiene o salud, hayan sido usados o abiertos (ej. ropa interior, cosméticos).</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Garantías</h4>
+                            <p style="margin-bottom: 0.5rem;">Si el producto tiene defectos o no es como lo prometimos:</p>
+                            <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
+                                <li style="margin-bottom: 0.5rem;">Puedes pedir reparación, cambio o reembolso durante al menos 1 año desde la entrega.</li>
+                                <li style="margin-bottom: 0.5rem;">Notifícanos en un plazo razonable (sugerimos dentro de los 30 días desde que notas el problema).</li>
+                                <li style="margin-bottom: 0.5rem;">Resolveremos tu solicitud en máximo 15 días hábiles.</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Cómo Devolver</h4>
+                            <ol style="margin-left: 1rem; margin-bottom: 0.8rem;">
+                                <li style="margin-bottom: 0.5rem;">Escríbenos por WhatsApp al +57 3180646005 dentro del plazo.</li>
+                                <li style="margin-bottom: 0.5rem;">Danos el número de orden o detalles de la compra hecha por la tienda online o WhatsApp.</li>
+                                <li style="margin-bottom: 0.5rem;">Te indicaremos cómo enviar el producto de vuelta y cuándo recibirás el reembolso.</li>
+                            </ol>
+                        </div>
+
+                        <div style="margin-bottom: 1rem;">
+                            <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Contáctanos</h4>
+                            <p style="margin-bottom: 0.5rem;">Para dudas o reclamos, contáctanos por:</p>
+                            <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
+                                <li style="margin-bottom: 0.5rem;"><strong>WhatsApp:</strong> +57 3180646005</li>
+                                <li style="margin-bottom: 0.5rem;"><strong>Correo:</strong> vialsabogal@gmail.com</li>
+                            </ul>
+                            <p style="font-style: italic; color: #666; font-size: 0.8rem; margin-top: 0.8rem;">Podemos actualizar esta política para cumplir con las normas vigentes.</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
         }
 
         // Close policy modal
         function closePolicyModal() {
-            document.getElementById('policyModal').classList.remove('show');
+            const modal = document.getElementById('policyModal');
+            if (modal) {
+                modal.classList.remove('show');
+                setTimeout(() => modal.remove(), 300);
+            }
         }
 
         // Show order form
@@ -2967,7 +2797,7 @@
                 return `
                     <div class="form-cart-item">
                         <div class="form-cart-image" onclick="showProductModal('${item.id}')">
-                            <img src="${item.image}" alt="${item.name}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0xNSAxNUgzNVYzNUgxNVYxNVoiIGZpbGw9IiNEREREREQiLz4KPC9zdmc+Cg=='">
+                            <img src="${item.image}" alt="${item.name}" loading="lazy">
                         </div>
                         <div class="form-cart-info">
                             <div class="form-cart-name">${item.name}</div>
@@ -3156,38 +2986,3 @@
     </script>
 </body>
 </html>
-
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <h3>Duxe Store</h3>
-                    <p>Tu aliado para una piel radiante. Ofrecemos productos de alta calidad para reducir manchas y uniformar el tono de tu piel.</p>
-                </div>
-                <div class="footer-section links">
-                    <h3>Enlaces Rápidos</h3>
-                    <ul>
-                            <li><a href="#productos" onclick="scrollToSection('productos')">Productos</a></li>
-                        <li><a href="#testimonios" onclick="scrollToSection('testimonios')">Testimonios</a></li>
-                        <li><a href="#" onclick="showPolicyModal()">Política de Garantía</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section social">
-                    <h3>Síguenos</h3>
-                    <div class="social-links">
-                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2025 Duxe Store. Todos los derechos reservados.
-            </div>
-        </div>
-    </footer>
-
-

@@ -1372,17 +1372,6 @@
             overflow: hidden;
         }
 
-        .submit-btn .btn-content {
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .submit-btn .btn-content i {
-            pointer-events: none;
-        }
-
         /* Floating Buttons */
         .floating-buttons {
             position: fixed;
@@ -2193,12 +2182,10 @@
                         <textarea id="notas" name="notas" rows="3" placeholder="Instrucciones especiales para la entrega..."></textarea>
                     </div>
                     
-                    <!-- Botón corregido -->
-                    <button type="submit" class="submit-btn" id="whatsappButton">
-                        <span class="btn-content">
-                            <i class="fab fa-whatsapp"></i>
-                            Finalizar Pedido por WhatsApp
-                        </span>
+                    <!-- Botón corregido - versión simplificada -->
+                    <button type="submit" class="submit-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Finalizar Pedido por WhatsApp
                     </button>
                 </form>
             </div>
@@ -2480,13 +2467,76 @@
                 });
             });
 
-            // Handle WhatsApp button click specifically
-            document.getElementById('whatsappButton').addEventListener('click', function(e) {
-                // If the click comes from a child element, redirect it to the button
-                if (e.target !== this) {
-                    e.stopPropagation();
-                    this.click();
+            // Handle form submission
+            document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Play checkout sound
+                const checkoutSound = document.getElementById('checkoutSound');
+                checkoutSound.currentTime = 0;
+                checkoutSound.play();
+                
+                // Vibrate on mobile devices
+                if ('vibrate' in navigator) {
+                    navigator.vibrate([100, 50, 100]);
                 }
+                
+                // Get form data
+                const formData = {
+                    nombre: document.getElementById('nombre').value,
+                    apellido: document.getElementById('apellido').value,
+                    telefono: document.getElementById('telefono').value,
+                    email: document.getElementById('email').value,
+                    departamento: document.getElementById('departamento').value,
+                    ciudad: document.getElementById('ciudad').value,
+                    direccion: document.getElementById('direccion').value,
+                    metodoPago: document.getElementById('metodoPago').value,
+                    notas: document.getElementById('notas').value,
+                    productos: cart.map(item => ({
+                        nombre: item.name,
+                        cantidad: item.quantity,
+                        precio: item.price,
+                        paquete: item.packageQuantity
+                    })),
+                    total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
+                };
+                
+                // Format WhatsApp message
+                let message = `¡Hola! Quiero realizar un pedido:\n\n`;
+                message += `*Nombre:* ${formData.nombre} ${formData.apellido}\n`;
+                message += `*Teléfono:* ${formData.telefono}\n`;
+                message += formData.email ? `*Email:* ${formData.email}\n` : '';
+                message += `*Dirección:* ${formData.direccion}, ${formData.ciudad}, ${formData.departamento}\n`;
+                message += `*Método de pago:* ${formData.metodoPago}\n`;
+                message += formData.notas ? `*Notas:* ${formData.notas}\n\n` : '\n';
+                
+                message += `*Productos:*\n`;
+                cart.forEach(item => {
+                    message += `- ${item.name} (${item.packageQuantity} unidad${item.packageQuantity > 1 ? 'es' : ''}) x ${item.quantity} = $${(item.price * item.quantity).toLocaleString()}\n`;
+                });
+                
+                message += `\n*Total:* $${formData.total.toLocaleString()}\n\n`;
+                message += `Por favor confirmen disponibilidad y envío. ¡Gracias!`;
+                
+                // Encode for WhatsApp URL
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/573180646005?text=${encodedMessage}`;
+                
+                // Open WhatsApp
+                window.open(whatsappUrl, '_blank');
+                
+                // Close form
+                closeOrderForm();
+                toggleCart();
+                
+                // Clear cart
+                cart = [];
+                localStorage.setItem('carotoneCart', JSON.stringify(cart));
+                updateCartUI();
+                updateCartCount();
+                
+                // Show success notification
+                showNotification('Pedido enviado por WhatsApp');
             });
         });
 
@@ -2551,7 +2601,7 @@
             // Initialize selected packages
             filteredProducts.forEach(product => {
                 if (!selectedPackages[product.id]) {
-                    selectedPackages[product.id] = 1; // Default to second package (index 1)
+                    selectedPackages[product.id] = 1; // Default to index 1
                 }
             });
         }
@@ -3053,78 +3103,6 @@
             
             formTotal.textContent = `$${total.toLocaleString()} COP`;
         }
-
-        // Handle form submission
-        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Play checkout sound
-            const checkoutSound = document.getElementById('checkoutSound');
-            checkoutSound.currentTime = 0;
-            checkoutSound.play();
-            
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate([100, 50, 100]);
-            }
-            
-            // Get form data
-            const formData = {
-                nombre: document.getElementById('nombre').value,
-                apellido: document.getElementById('apellido').value,
-                telefono: document.getElementById('telefono').value,
-                email: document.getElementById('email').value,
-                departamento: document.getElementById('departamento').value,
-                ciudad: document.getElementById('ciudad').value,
-                direccion: document.getElementById('direccion').value,
-                metodoPago: document.getElementById('metodoPago').value,
-                notas: document.getElementById('notas').value,
-                productos: cart.map(item => ({
-                    nombre: item.name,
-                    cantidad: item.quantity,
-                    precio: item.price,
-                    paquete: item.packageQuantity
-                })),
-                total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
-            };
-            
-            // Format WhatsApp message
-            let message = `¡Hola! Quiero realizar un pedido:\n\n`;
-            message += `*Nombre:* ${formData.nombre} ${formData.apellido}\n`;
-            message += `*Teléfono:* ${formData.telefono}\n`;
-            message += formData.email ? `*Email:* ${formData.email}\n` : '';
-            message += `*Dirección:* ${formData.direccion}, ${formData.ciudad}, ${formData.departamento}\n`;
-            message += `*Método de pago:* ${formData.metodoPago}\n`;
-            message += formData.notas ? `*Notas:* ${formData.notas}\n\n` : '\n';
-            
-            message += `*Productos:*\n`;
-            cart.forEach(item => {
-                message += `- ${item.name} (${item.packageQuantity} unidad${item.packageQuantity > 1 ? 'es' : ''}) x ${item.quantity} = $${(item.price * item.quantity).toLocaleString()}\n`;
-            });
-            
-            message += `\n*Total:* $${formData.total.toLocaleString()}\n\n`;
-            message += `Por favor confirmen disponibilidad y envío. ¡Gracias!`;
-            
-            // Encode for WhatsApp URL
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/573180646005?text=${encodedMessage}`;
-            
-            // Open WhatsApp
-            window.open(whatsappUrl, '_blank');
-            
-            // Close form
-            closeOrderForm();
-            toggleCart();
-            
-            // Clear cart
-            cart = [];
-            localStorage.setItem('carotoneCart', JSON.stringify(cart));
-            updateCartUI();
-            updateCartCount();
-            
-            // Show success notification
-            showNotification('Pedido enviado por WhatsApp');
-        });
 
         // Show notification
         function showNotification(message) {

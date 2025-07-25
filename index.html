@@ -306,7 +306,11 @@
             flex-wrap: wrap;
         }
 
-        .btn {
+        /* Updated Button Styles */
+        .btn, .add-to-cart-btn, .checkout-btn, .submit-btn {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
             padding: 0.9rem 1.8rem;
             border: none;
             border-radius: 25px;
@@ -314,10 +318,15 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
-            cursor: pointer;
-            transition: var(--transition);
             font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Ensure clickable area covers entire button */
+        .btn *, .add-to-cart-btn *, .checkout-btn *, .submit-btn * {
+            pointer-events: none;
         }
 
         .btn-primary {
@@ -326,10 +335,16 @@
             border: 2px solid transparent;
         }
 
-        .btn-primary:hover {
-            background: var(--gradient-button-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        /* Enhanced hover and active effects */
+        .btn-primary:hover, .add-to-cart-btn:hover, .checkout-btn:hover, .submit-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+            animation: pulse 1.5s infinite;
+        }
+
+        .btn-primary:active, .add-to-cart-btn:active, .checkout-btn:active, .submit-btn:active {
+            transform: translateY(-1px) scale(0.98);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
         }
 
         .btn-secondary {
@@ -341,6 +356,36 @@
         .btn-secondary:hover {
             background: var(--text-light);
             color: var(--primary-color);
+        }
+
+        /* New pulse animation */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+            }
+        }
+
+        /* Click ripple effect */
+        .btn-ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.7);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
         }
 
         /* Hero Product Card */
@@ -769,30 +814,12 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .add-to-cart-btn:hover {
-            background: var(--gradient-button-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
-        }
-
-        .add-to-cart-btn:active {
-            transform: translateY(-1px);
-        }
-
-        .payment-info {
-            text-align: center;
-            color: var(--primary-color);
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            background: rgba(233, 30, 99, 0.1);
-            padding: 0.6rem;
-            border-radius: 10px;
+        .add-to-cart-btn * {
+            pointer-events: none;
         }
 
         /* Stats Section */
@@ -1017,6 +1044,15 @@
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+
+        .quantity-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .quantity-btn:active {
+            transform: scale(0.9);
         }
 
         .quantity-display {
@@ -1034,6 +1070,15 @@
             cursor: pointer;
             font-size: 0.8rem;
             margin-left: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .remove-item:hover {
+            background: #c82333;
+        }
+
+        .remove-item:active {
+            transform: scale(0.95);
         }
 
         .cart-summary {
@@ -1082,10 +1127,12 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .checkout-btn:hover {
-            background: var(--gradient-button-hover);
+        .checkout-btn * {
+            pointer-events: none;
         }
 
         /* Modal Styles */
@@ -1321,10 +1368,19 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .submit-btn:hover {
-            background: var(--gradient-button-hover);
+        .submit-btn .btn-content {
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn .btn-content i {
+            pointer-events: none;
         }
 
         /* Floating Buttons */
@@ -1355,6 +1411,10 @@
 
         .floating-btn:hover {
             transform: scale(1.1);
+        }
+
+        .floating-btn:active {
+            transform: scale(0.95);
         }
 
         .floating-cart {
@@ -1721,7 +1781,9 @@
             }
 
             .form-body {
-                padding: 0.8rem;
+                padding: 1rem;
+                max-height: 80vh;
+                overflow-y: auto;
             }
 
             .form-group {
@@ -1742,6 +1804,39 @@
             }
 
             .submit-btn {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            /* Modal adjustments for mobile */
+            .modal-content {
+                max-height: 85vh;
+                overflow-y: auto;
+            }
+
+            .modal-body {
+                padding: 1rem;
+            }
+
+            /* Package options in modal */
+            .package-option {
+                padding: 0.8rem;
+            }
+
+            .package-label {
+                font-size: 0.9rem;
+            }
+
+            .package-price {
+                font-size: 1rem;
+            }
+
+            .package-original-price {
+                font-size: 0.8rem;
+            }
+
+            /* Add to cart button in modal */
+            .add-to-cart-btn {
                 padding: 0.8rem;
                 font-size: 0.9rem;
             }
@@ -2098,9 +2193,12 @@
                         <textarea id="notas" name="notas" rows="3" placeholder="Instrucciones especiales para la entrega..."></textarea>
                     </div>
                     
-                    <button type="submit" class="submit-btn">
-                        <i class="fab fa-whatsapp"></i>
-                        Finalizar Pedido por WhatsApp
+                    <!-- Botón corregido -->
+                    <button type="submit" class="submit-btn" id="whatsappButton">
+                        <span class="btn-content">
+                            <i class="fab fa-whatsapp"></i>
+                            Finalizar Pedido por WhatsApp
+                        </span>
                     </button>
                 </form>
             </div>
@@ -2156,6 +2254,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Audio elements for micro-interactions (hidden) -->
+    <audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3" preload="auto"></audio>
+    <audio id="addToCartSound" src="https://assets.mixkit.co/sfx/preview/mixkit-positive-interface-beep-221.mp3" preload="auto"></audio>
+    <audio id="checkoutSound" src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3" preload="auto"></audio>
 
     <script>
         // Product Data
@@ -2343,6 +2446,48 @@
             
             // Initialize selected packages for hero product
             selectedPackages['kit-maximo-resplandor-hero'] = 1;
+            
+            // Add ripple effect to all buttons
+            document.querySelectorAll('.btn, .add-to-cart-btn, .checkout-btn, .submit-btn, .floating-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Play click sound
+                    const clickSound = document.getElementById('clickSound');
+                    clickSound.currentTime = 0;
+                    clickSound.play();
+                    
+                    // Vibrate on mobile devices
+                    if ('vibrate' in navigator) {
+                        navigator.vibrate(50);
+                    }
+                    
+                    // Create ripple effect
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('btn-ripple');
+                    this.appendChild(ripple);
+                    
+                    // Get click position
+                    const x = e.clientX - e.target.getBoundingClientRect().left;
+                    const y = e.clientY - e.target.getBoundingClientRect().top;
+                    
+                    // Position the ripple
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    
+                    // Remove ripple after animation
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Handle WhatsApp button click specifically
+            document.getElementById('whatsappButton').addEventListener('click', function(e) {
+                // If the click comes from a child element, redirect it to the button
+                if (e.target !== this) {
+                    e.stopPropagation();
+                    this.click();
+                }
+            });
         });
 
         // Load products into the grid
@@ -2456,6 +2601,16 @@
                     }
                 });
             });
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(30);
+            }
         }
 
         // Get selected package quantity
@@ -2499,6 +2654,17 @@
             updateCartUI();
             updateCartCount();
             updateFormCartItems();
+            
+            // Play add to cart sound
+            const addToCartSound = document.getElementById('addToCartSound');
+            addToCartSound.currentTime = 0;
+            addToCartSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate([100, 50, 100]);
+            }
+            
             showNotification('Producto agregado al carrito');
         }
 
@@ -2566,6 +2732,16 @@
             updateCartUI();
             updateCartCount();
             updateFormCartItems();
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(30);
+            }
         }
 
         // Remove from cart
@@ -2575,6 +2751,16 @@
             updateCartUI();
             updateCartCount();
             updateFormCartItems();
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(100);
+            }
         }
 
         // Update cart count
@@ -2589,6 +2775,16 @@
         function toggleCart() {
             const cartSidebar = document.getElementById('cartSidebar');
             cartSidebar.classList.toggle('open');
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(30);
+            }
         }
 
         // Show product modal
@@ -2634,6 +2830,16 @@
             `;
             
             modal.classList.add('show');
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(30);
+            }
         }
 
         // Select package in modal
@@ -2651,6 +2857,16 @@
                     radio.checked = index === packageIndex;
                 }
             });
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(30);
+            }
         }
 
         // Add to cart from modal
@@ -2662,6 +2878,16 @@
         // Close modal
         function closeModal() {
             document.getElementById('productModal').classList.remove('show');
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(30);
+            }
         }
 
         // Show policy modal
@@ -2728,6 +2954,16 @@
                 </div>
             `;
             document.body.appendChild(modal);
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(30);
+            }
         }
 
         // Close policy modal
@@ -2736,6 +2972,16 @@
             if (modal) {
                 modal.classList.remove('show');
                 setTimeout(() => modal.remove(), 300);
+            }
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(30);
             }
         }
 
@@ -2748,11 +2994,31 @@
             
             updateFormCartItems();
             document.getElementById('orderForm').classList.add('show');
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(50);
+            }
         }
 
         // Close order form
         function closeOrderForm() {
             document.getElementById('orderForm').classList.remove('show');
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(30);
+            }
         }
 
         // Update form cart items
@@ -2774,18 +3040,13 @@
                 return `
                     <div class="form-cart-item">
                         <div class="form-cart-image" onclick="showProductModal('${item.id}')">
-                            <img src="${item.image}" alt="${item.name}" loading="lazy">
+                            <img src="${item.image}" alt="${item.name}">
                         </div>
                         <div class="form-cart-info">
                             <div class="form-cart-name">${item.name}</div>
-                            <div class="form-cart-details">${item.packageQuantity} unidad${item.packageQuantity > 1 ? 'es' : ''} x ${item.quantity}</div>
+                            <div class="form-cart-details">${item.packageQuantity} unidad${item.packageQuantity > 1 ? 'es' : ''} • ${item.quantity} ${item.quantity > 1 ? 'paquetes' : 'paquete'}</div>
                         </div>
-                        <div class="form-cart-controls">
-                            <button class="quantity-btn" onclick="updateCartQuantity('${item.id}', ${item.packageIndex}, -1)">-</button>
-                            <span class="quantity-display">${item.quantity}</span>
-                            <button class="quantity-btn" onclick="updateCartQuantity('${item.id}', ${item.packageIndex}, 1)">+</button>
-                        </div>
-                        <div class="form-cart-price">$${(item.price * item.quantity).toLocaleString()}</div>
+                        <div class="form-cart-price">$${item.price.toLocaleString()}</div>
                     </div>
                 `;
             }).join('');
@@ -2797,134 +3058,73 @@
         document.getElementById('checkoutForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const formData = new FormData(this);
-            const orderData = Object.fromEntries(formData);
+            // Play checkout sound
+            const checkoutSound = document.getElementById('checkoutSound');
+            checkoutSound.currentTime = 0;
+            checkoutSound.play();
             
-            // Validate required fields
-            const requiredFields = ['nombre', 'apellido', 'telefono', 'departamento', 'ciudad', 'direccion', 'metodoPago'];
-            const missingFields = requiredFields.filter(field => !orderData[field]);
-            
-            if (missingFields.length > 0) {
-                showNotification('Por favor completa todos los campos obligatorios');
-                return;
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate([100, 50, 100]);
             }
             
-            // Generate WhatsApp message
-            let message = `🛒 *NUEVO PEDIDO - DUXE STORE*\n\n`;
-            message += `👤 *DATOS DEL CLIENTE:*\n`;
-            message += `• Nombre: ${orderData.nombre} ${orderData.apellido}\n`;
-            message += `• Teléfono: ${orderData.telefono}\n`;
-            if (orderData.email) message += `• Email: ${orderData.email}\n`;
-            message += `• Departamento: ${orderData.departamento}\n`;
-            message += `• Ciudad: ${orderData.ciudad}\n`;
-            message += `• Dirección: ${orderData.direccion}\n`;
-            message += `• Método de pago: ${orderData.metodoPago}\n\n`;
+            // Get form data
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                apellido: document.getElementById('apellido').value,
+                telefono: document.getElementById('telefono').value,
+                email: document.getElementById('email').value,
+                departamento: document.getElementById('departamento').value,
+                ciudad: document.getElementById('ciudad').value,
+                direccion: document.getElementById('direccion').value,
+                metodoPago: document.getElementById('metodoPago').value,
+                notas: document.getElementById('notas').value,
+                productos: cart.map(item => ({
+                    nombre: item.name,
+                    cantidad: item.quantity,
+                    precio: item.price,
+                    paquete: item.packageQuantity
+                })),
+                total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
+            };
             
-            message += `🛍️ *PRODUCTOS PEDIDOS:*\n`;
-            let total = 0;
-            let totalSavings = 0;
+            // Format WhatsApp message
+            let message = `¡Hola! Quiero realizar un pedido:\n\n`;
+            message += `*Nombre:* ${formData.nombre} ${formData.apellido}\n`;
+            message += `*Teléfono:* ${formData.telefono}\n`;
+            message += formData.email ? `*Email:* ${formData.email}\n` : '';
+            message += `*Dirección:* ${formData.direccion}, ${formData.ciudad}, ${formData.departamento}\n`;
+            message += `*Método de pago:* ${formData.metodoPago}\n`;
+            message += formData.notas ? `*Notas:* ${formData.notas}\n\n` : '\n';
             
+            message += `*Productos:*\n`;
             cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                const itemSavings = item.savings * item.quantity;
-                total += itemTotal;
-                totalSavings += itemSavings;
-                
-                message += `• ${item.name}\n`;
-                message += `  Cantidad: ${item.quantity} (${item.packageQuantity} unidad${item.packageQuantity > 1 ? 'es' : ''} c/u)\n`;
-                message += `  Precio: $${itemTotal.toLocaleString()}\n`;
-                message += `  Ahorras: $${itemSavings.toLocaleString()}\n\n`;
+                message += `- ${item.name} (${item.packageQuantity} unidad${item.packageQuantity > 1 ? 'es' : ''}) x ${item.quantity} = $${(item.price * item.quantity).toLocaleString()}\n`;
             });
             
-            message += `💰 *RESUMEN DEL PEDIDO:*\n`;
-            message += `• Subtotal: $${total.toLocaleString()}\n`;
-            message += `• Ahorros totales: $${totalSavings.toLocaleString()}\n`;
-            message += `• *TOTAL: $${total.toLocaleString()} COP*\n\n`;
+            message += `\n*Total:* $${formData.total.toLocaleString()}\n\n`;
+            message += `Por favor confirmen disponibilidad y envío. ¡Gracias!`;
             
-            if (orderData.notas) {
-                message += `📝 *NOTAS ADICIONALES:*\n${orderData.notas}\n\n`;
-            }
+            // Encode for WhatsApp URL
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/573180646005?text=${encodedMessage}`;
             
-            message += `✅ Pedido generado desde: ${window.location.href}`;
-            
-            // Send to WhatsApp
-            const whatsappNumber = '573207734748';
-            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-            
+            // Open WhatsApp
             window.open(whatsappUrl, '_blank');
             
-            // Clear cart and close form
+            // Close form
+            closeOrderForm();
+            toggleCart();
+            
+            // Clear cart
             cart = [];
-            localStorage.removeItem('carotoneCart');
+            localStorage.setItem('carotoneCart', JSON.stringify(cart));
             updateCartUI();
             updateCartCount();
-            closeOrderForm();
-            showNotification('Pedido enviado por WhatsApp. ¡Gracias por tu compra!');
+            
+            // Show success notification
+            showNotification('Pedido enviado por WhatsApp');
         });
-
-        // Search functionality
-        function searchProducts() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const searchResults = document.getElementById('searchResults');
-            
-            if (searchTerm.length < 2) {
-                searchResults.classList.remove('show');
-                return;
-            }
-            
-            const filteredProducts = products.filter(product => 
-                product.name.toLowerCase().includes(searchTerm) ||
-                product.description.toLowerCase().includes(searchTerm) ||
-                product.features.some(feature => feature.toLowerCase().includes(searchTerm))
-            );
-            
-            if (filteredProducts.length > 0) {
-                searchResults.innerHTML = filteredProducts.map(product => `
-                    <div class="search-result-item" onclick="showProductModal('${product.id}'); document.getElementById('searchResults').classList.remove('show');">
-                        <strong>${product.name}</strong><br>
-                        <small>${product.description}</small>
-                    </div>
-                `).join('');
-                searchResults.classList.add('show');
-            } else {
-                searchResults.innerHTML = '<div class="search-result-item">No se encontraron productos</div>';
-                searchResults.classList.add('show');
-            }
-        }
-
-        // Hide search results when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.search-box')) {
-                document.getElementById('searchResults').classList.remove('show');
-            }
-        });
-
-        // Scroll to section
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Scroll to top
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Share website
-        function shareWebsite() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Duxe Store - Kits Carotone',
-                    text: 'Descubre los mejores productos Carotone para el cuidado de tu piel',
-                    url: window.location.href
-                });
-            } else {
-                // Fallback for browsers that don't support Web Share API
-                const url = window.location.href;
-                navigator.clipboard.writeText(url).then(() => {
-                    showNotification('Enlace copiado al portapapeles');
-                });
-            }
-        }
 
         // Show notification
         function showNotification(message) {
@@ -2937,27 +3137,102 @@
             }, 3000);
         }
 
-        // Close modals when clicking outside
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('modal')) {
-                if (e.target.id === 'productModal') {
-                    closeModal();
-                } else if (e.target.id === 'policyModal') {
-                    closePolicyModal();
-                }
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
             }
-            if (e.target.classList.contains('order-form')) {
-                closeOrderForm();
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(30);
             }
-        });
+        }
 
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-                closePolicyModal();
-                closeOrderForm();
-                document.getElementById('cartSidebar').classList.remove('open');
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(30);
+            }
+        }
+
+        // Share website
+        function shareWebsite() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Duxe Store - Kits Carotone',
+                    text: 'Descubre los mejores kits Carotone para aclarar tu piel y reducir manchas',
+                    url: window.location.href
+                }).catch(err => {
+                    console.log('Error sharing:', err);
+                });
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                const shareUrl = `https://wa.me/?text=Descubre%20los%20mejores%20kits%20Carotone%20para%20aclarar%20tu%20piel%20y%20reducir%20manchas%20${encodeURIComponent(window.location.href)}`;
+                window.open(shareUrl, '_blank');
+            }
+            
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(30);
+            }
+        }
+
+        // Search products
+        function searchProducts() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const resultsContainer = document.getElementById('searchResults');
+            
+            if (input.length < 2) {
+                resultsContainer.classList.remove('show');
+                return;
+            }
+            
+            const filteredProducts = products.filter(product => 
+                product.name.toLowerCase().includes(input) || 
+                product.description.toLowerCase().includes(input)
+            );
+            
+            if (filteredProducts.length === 0) {
+                resultsContainer.innerHTML = '<div class="search-result-item">No se encontraron productos</div>';
+            } else {
+                resultsContainer.innerHTML = filteredProducts.map(product => `
+                    <div class="search-result-item" onclick="showProductModal('${product.id}')">
+                        <img src="${product.image}" alt="${product.name}" style="width: 30px; height: 30px; object-fit: cover; border-radius: 4px; margin-right: 0.5rem;">
+                        ${product.name} - $${product.currentPrice.toLocaleString()}
+                    </div>
+                `).join('');
+            }
+            
+            resultsContainer.classList.add('show');
+        }
+
+        // Close search results when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.search-box')) {
+                document.getElementById('searchResults').classList.remove('show');
             }
         });
     </script>

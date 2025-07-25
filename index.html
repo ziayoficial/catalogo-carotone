@@ -468,7 +468,7 @@
             height: 280px;
             overflow: hidden;
             cursor: pointer;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            background: #ffffff;
         }
 
         .product-image img {
@@ -593,74 +593,72 @@
             flex-shrink: 0;
         }
 
-        /* Package Options */
+        /* --- NEW Package Options Styles --- */
         .package-options {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
         }
 
         .package-title {
             font-size: 1rem;
             font-weight: 700;
             color: var(--text-dark);
-            margin-bottom: 1rem;
+            margin-bottom: 0;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             text-align: center;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary-color);
+            padding: 0.8rem;
+            background: var(--bg-light);
+            border-bottom: 1px solid var(--border-color);
         }
-        
+
         .package-option {
             display: flex;
             align-items: center;
-            padding: 1.2rem 1rem;
-            border: 2px solid #E0E0E0;
-            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            border: 2px solid transparent;
+            border-top: 1px solid #fde8f1;
             background: #FFFFFF;
             cursor: pointer;
             transition: var(--transition);
-            margin-bottom: 1rem;
             position: relative;
-            min-height: 80px;
+            margin-bottom: 0;
+            border-radius: 0;
         }
         
+        .package-options .package-option:first-of-type {
+            border-top: none;
+        }
+
         .package-option:hover {
-            border-color: var(--primary-color);
             background: rgba(233, 30, 99, 0.02);
         }
-        
+
         .package-option.selected {
             border-color: var(--primary-color) !important;
             background-color: var(--selected-package-bg) !important;
-            box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.2) !important;
-        }
-        
-        .package-option.selected input[type="radio"] {
-            border-color: var(--primary-color) !important;
-            background-color: var(--primary-color) !important;
-        }
-        
-        .package-option.selected input[type="radio"]:before {
-            background-color: white !important;
+            box-shadow: none !important;
+            z-index: 2;
         }
 
         .package-option input[type="radio"] {
-            width: 18px;
-            height: 18px;
-            margin-right: 1rem;
-            accent-color: var(--primary-color);
-            cursor: pointer;
             appearance: none;
-            border: 2px solid #E0E0E0;
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border: 2px solid #ccc;
             border-radius: 50%;
+            margin-right: 1rem;
+            cursor: pointer;
             position: relative;
-            background: white;
+            transition: all 0.2s ease-in-out;
             flex-shrink: 0;
         }
 
         .package-option input[type="radio"]:checked {
             border-color: var(--primary-color);
-            background-color: var(--primary-color);
         }
 
         .package-option input[type="radio"]:checked::before {
@@ -669,34 +667,23 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 6px;
-            height: 6px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
-            background-color: white;
+            background-color: var(--primary-color);
+        }
+        
+        .package-icon {
+            display: none;
         }
 
         .package-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
             flex: 1;
-        }
-
-        .package-icon {
-            background: var(--primary-color);
-            color: white;
-            width: 35px;
-            height: 35px;
-            border-radius: 8px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            font-weight: 700;
-            flex-shrink: 0;
-            margin-right: 0.8rem;
+            flex-direction: column;
+            gap: 0.1rem;
         }
-
+        
         .package-details {
             flex: 1;
             display: flex;
@@ -705,73 +692,62 @@
         }
 
         .package-label {
-            font-weight: 700;
-            color: #333;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1rem;
         }
 
         .package-savings {
             font-size: 0.9rem;
-            color: #666;
-            font-weight: 500;
+            color: var(--accent-color);
+            font-weight: 600;
         }
 
         .package-price-container {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            gap: 0.3rem;
-            min-width: 120px;
-            padding-left: 1rem;
+            text-align: right;
         }
 
         .package-price {
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            white-space: nowrap;
-            line-height: 1.2;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
         }
 
         .package-original-price {
             font-size: 0.9rem;
             color: #999;
             text-decoration: line-through;
-            line-height: 1.2;
+        }
+
+        .popular-badge, .best-value-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 3;
+            width: max-content;
         }
 
         .popular-badge {
-            position: absolute;
-            top: -8px;
-            right: 15px;
-            background: #FF4757;
+            background: var(--primary-color);
             color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
-            z-index: 10;
+            box-shadow: 0 2px 8px rgba(233, 30, 99, 0.4);
         }
 
         .best-value-badge {
-            position: absolute;
-            top: -8px;
-            right: 15px;
-            background: #2ED573;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            box-shadow: 0 2px 8px rgba(46, 213, 115, 0.3);
-            z-index: 10;
+            background: var(--secondary-color);
+            color: var(--text-dark);
+            box-shadow: 0 2px 8px rgba(255, 193, 7, 0.4);
         }
+        /* --- END NEW Package Options Styles --- */
 
         /* Add to Cart Button */
         .add-to-cart-btn {
@@ -821,7 +797,7 @@
 
         /* Stats Section */
         .stats-section {
-            background: var(--bg-light);
+            background: var(--text-light);
             padding: 5rem 0;
             text-align: center;
         }
@@ -853,7 +829,7 @@
         }
 
         .stat-item {
-            background: var(--text-light);
+            background: #f8f9fa;
             padding: 2.5rem 1.5rem;
             border-radius: 20px;
             box-shadow: 0 8px 25px var(--shadow-light);
@@ -862,6 +838,12 @@
 
         .stat-item:hover {
             transform: translateY(-5px);
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
         }
 
         .stat-number {
@@ -875,12 +857,6 @@
             font-size: 1.1rem;
             color: #666;
             font-weight: 500;
-        }
-
-        .stat-stars {
-            color: #FFD700;
-            font-size: 1.5rem;
-            margin-top: 0.5rem;
         }
 
         /* Testimonials Section */
@@ -1187,12 +1163,12 @@
         .form-content {
             background: var(--text-light);
             border-radius: 15px;
-            max-width: 900px;
+            max-width: 480px;
             width: 90%;
             max-height: 90vh;
             overflow-y: auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 0;
         }
 
@@ -1204,7 +1180,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            grid-column: 1 / -1;
         }
 
         .form-title {
@@ -1222,15 +1197,6 @@
 
         .form-body {
             padding: 1.5rem;
-        }
-
-        .form-left-column {
-            border-right: 1px solid var(--border-color);
-            padding-right: 1.5rem;
-        }
-
-        .form-right-column {
-            padding-left: 1.5rem;
         }
 
         .cart-summary-form {
@@ -1676,26 +1642,9 @@
                 right: -100%;
             }
 
-            .modal-content,
-            .form-content {
+            .modal-content {
                 width: 95%;
                 margin: 1rem;
-            }
-
-            .form-content {
-                grid-template-columns: 1fr;
-            }
-
-            .form-left-column {
-                border-right: none;
-                border-bottom: 1px solid var(--border-color);
-                padding-right: 0;
-                padding-bottom: 1rem;
-            }
-
-            .form-right-column {
-                padding-left: 0;
-                padding-top: 1rem;
             }
 
             .form-row {
@@ -1716,6 +1665,21 @@
 
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-item {
+                padding: 2rem 1rem;
+            }
+            .stat-number {
+                font-size: 2.2rem;
+            }
+            .stat-label {
+                font-size: 1rem;
             }
         }
 
@@ -1861,19 +1825,15 @@
                             <li><i class="fas fa-check"></i> Crema Carotone Aclarante 135ml</li>
                             <li><i class="fas fa-check"></i> Loción Corporal Aclarante 50ml</li>
                             <li><i class="fas fa-check"></i> Jabón Carotone 190gr</li>
-                            <li><i class="fas fa-check"></i> Resultados en 2 semanas</li>
-                            <li><i class="fas fa-check"></i> Fórmula con ingredientes naturales</li>
+                            <li style="cursor: pointer; color: var(--primary-color);" onclick="showProductModal('kit-maximo-resplandor')"><i class="fas fa-plus-circle"></i> Ver más detalles...</li>
                         </ul>
                         <div class="package-options">
                             <h4 class="package-title">PAQUETES Y AHORROS</h4>
                             <div class="package-option" onclick="selectPackage('kit-maximo-resplandor-hero', 0)">
                                 <input type="radio" name="package-kit-maximo-resplandor-hero">
                                 <div class="package-info">
-                                    <div class="package-icon">1</div>
-                                    <div class="package-details">
-                                        <div class="package-label">1 UNIDAD</div>
-                                        <div class="package-savings">Ahorras $20.000</div>
-                                    </div>
+                                    <div class="package-label">1 UNIDAD</div>
+                                    <div class="package-savings">Ahorras $20.000</div>
                                 </div>
                                 <div class="package-price-container">
                                     <div class="package-price">$149.900</div>
@@ -1881,19 +1841,28 @@
                                 </div>
                             </div>
                             <div class="package-option selected" onclick="selectPackage('kit-maximo-resplandor-hero', 1)">
+                                <div class="popular-badge">MÁS POPULAR</div>
                                 <input type="radio" name="package-kit-maximo-resplandor-hero" checked>
                                 <div class="package-info">
-                                    <div class="package-icon">2</div>
-                                    <div class="package-details">
-                                        <div class="package-label">2 UNIDADES</div>
-                                        <div class="package-savings">Ahorras $40.000</div>
-                                    </div>
+                                    <div class="package-label">2 UNIDADES</div>
+                                    <div class="package-savings">Ahorras $60.000</div>
                                 </div>
                                 <div class="package-price-container">
                                     <div class="package-price">$279.800</div>
-                                    <div class="package-original-price">$319.800</div>
+                                    <div class="package-original-price">$339.800</div>
                                 </div>
-                                <div class="popular-badge">MÁS POPULAR</div>
+                            </div>
+                            <div class="package-option" onclick="selectPackage('kit-maximo-resplandor-hero', 2)">
+                                <div class="best-value-badge">MEJOR VALOR</div>
+                                <input type="radio" name="package-kit-maximo-resplandor-hero">
+                                <div class="package-info">
+                                    <div class="package-label">3 UNIDADES</div>
+                                    <div class="package-savings">Ahorras $109.800</div>
+                                </div>
+                                <div class="package-price-container">
+                                    <div class="package-price">$399.900</div>
+                                    <div class="package-original-price">$509.700</div>
+                                </div>
                             </div>
                         </div>
                         <button class="add-to-cart-btn" onclick="addToCart('kit-maximo-resplandor', getSelectedPackageQuantity('kit-maximo-resplandor-hero'))">
@@ -1944,19 +1913,22 @@
             <h2 class="stats-title">Miles de Colombianos Confían en Nosotros</h2>
             <div class="stats-grid">
                 <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
                     <div class="stat-number">15,000+</div>
                     <div class="stat-label">Clientes Satisfechos</div>
                 </div>
                 <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-star"></i></div>
                     <div class="stat-number">4.8/5</div>
                     <div class="stat-label">Calificación Promedio</div>
-                    <div class="stat-stars">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-box-open"></i></div>
                     <div class="stat-number">25,000+</div>
                     <div class="stat-label">Productos Vendidos</div>
                 </div>
                 <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-truck-fast"></i></div>
                     <div class="stat-number">2-5</div>
                     <div class="stat-label">Días de Entrega</div>
                 </div>
@@ -2207,8 +2179,9 @@
                     'Fórmula mejorada con ingredientes naturales'
                 ],
                 packages: [
-                    { quantity: 1, price: 149900, savings: 20000 },
-                    { quantity: 2, price: 279800, savings: 20000, popular: true }
+                    { quantity: 1, price: 149900, originalPrice: 169900, savings: 20000 },
+                    { quantity: 2, price: 279800, originalPrice: 339800, savings: 60000, popular: true },
+                    { quantity: 3, price: 399900, originalPrice: 509700, savings: 109800, bestValue: true }
                 ]
             },
             {
@@ -2229,8 +2202,9 @@
                     'Resultados en 3-4 semanas'
                 ],
                 packages: [
-                    { quantity: 1, price: 139900, savings: 20000 },
-                    { quantity: 2, price: 259800, savings: 20000, popular: true }
+                    { quantity: 1, price: 139900, originalPrice: 159900, savings: 20000 },
+                    { quantity: 2, price: 259800, originalPrice: 319800, savings: 60000, popular: true },
+                    { quantity: 3, price: 369900, originalPrice: 479700, savings: 109800, bestValue: true }
                 ]
             },
             {
@@ -2251,8 +2225,9 @@
                     'Uso diario seguro'
                 ],
                 packages: [
-                    { quantity: 1, price: 139900, savings: 20000 },
-                    { quantity: 2, price: 259800, savings: 20000, popular: true }
+                    { quantity: 1, price: 139900, originalPrice: 159900, savings: 20000 },
+                    { quantity: 2, price: 259800, originalPrice: 319800, savings: 60000, popular: true },
+                    { quantity: 3, price: 369900, originalPrice: 479700, savings: 109800, bestValue: true }
                 ]
             },
             {
@@ -2275,8 +2250,9 @@
                     'Uniforma el tono de la piel - Aspecto saludable'
                 ],
                 packages: [
-                    { quantity: 1, price: 99900, savings: 20000 },
-                    { quantity: 2, price: 179800, savings: 20000, popular: true }
+                    { quantity: 1, price: 99900, originalPrice: 119900, savings: 20000 },
+                    { quantity: 2, price: 179800, originalPrice: 239800, savings: 60000, popular: true },
+                    { quantity: 3, price: 249900, originalPrice: 359700, savings: 109800, bestValue: true }
                 ]
             },
             {
@@ -2298,8 +2274,9 @@
                     'Fácil aplicación - Absorción rápida'
                 ],
                 packages: [
-                    { quantity: 1, price: 79900, savings: 10000 },
-                    { quantity: 2, price: 139800, savings: 20000, popular: true }
+                    { quantity: 1, price: 79900, originalPrice: 89900, savings: 10000 },
+                    { quantity: 2, price: 139800, originalPrice: 179800, savings: 40000, popular: true },
+                    { quantity: 3, price: 199900, originalPrice: 269700, savings: 69800, bestValue: true }
                 ]
             },
             {
@@ -2321,8 +2298,9 @@
                     'Fragancia suave - Agradable aroma'
                 ],
                 packages: [
-                    { quantity: 1, price: 99900, savings: 20000 },
-                    { quantity: 2, price: 179800, savings: 20000, popular: true }
+                    { quantity: 1, price: 99900, originalPrice: 119900, savings: 20000 },
+                    { quantity: 2, price: 179800, originalPrice: 239800, savings: 60000, popular: true },
+                    { quantity: 3, price: 249900, originalPrice: 359700, savings: 109800, bestValue: true }
                 ]
             },
             {
@@ -2344,8 +2322,9 @@
                     'Complemento ideal para los kits'
                 ],
                 packages: [
-                    { quantity: 1, price: 60000, savings: 10000 },
-                    { quantity: 2, price: 100000, savings: 20000, popular: true }
+                    { quantity: 1, price: 60000, originalPrice: 70000, savings: 10000 },
+                    { quantity: 2, price: 100000, originalPrice: 140000, savings: 40000, popular: true },
+                    { quantity: 3, price: 140000, originalPrice: 210000, savings: 70000, bestValue: true }
                 ]
             }
         ];
@@ -2392,23 +2371,22 @@
                         </div>
                         <ul class="product-features">
                             ${product.features.slice(0, 3).map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
-                            ${product.features.length > 3 ? '<li><i class="fas fa-plus-circle"></i> Ver más detalles...</li>' : ''}
+                            ${product.features.length > 3 ? `<li style="cursor: pointer; color: var(--primary-color);" onclick="showProductModal('${product.id}')"><i class="fas fa-plus-circle"></i> Ver más detalles...</li>` : ''}
                         </ul>
                         <div class="package-options">
                             <h4 class="package-title">PAQUETES Y AHORROS</h4>
                             ${product.packages.map((pkg, index) => `
                                 <div class="package-option ${index === 1 ? 'selected' : ''}" onclick="selectPackage('${product.id}', ${index})">
+                                    ${pkg.popular ? `<div class="popular-badge">MÁS POPULAR</div>` : ''}
+                                    ${pkg.bestValue ? `<div class="best-value-badge">MEJOR VALOR</div>` : ''}
                                     <input type="radio" name="package-${product.id}" ${index === 1 ? 'checked' : ''}>
                                     <div class="package-info">
-                                        <div class="package-icon">${pkg.quantity}</div>
-                                        <div class="package-details">
-                                            <div class="package-label">${pkg.quantity} UNIDAD${pkg.quantity > 1 ? 'ES' : ''} ${pkg.popular ? `<span class="popular-badge">MÁS POPULAR</span>` : ''}</div>
-                                            <div class="package-savings">Ahorras $${pkg.savings.toLocaleString()}</div>
-                                        </div>
+                                        <div class="package-label">${pkg.quantity} UNIDAD${pkg.quantity > 1 ? 'ES' : ''}</div>
+                                        <div class="package-savings">Ahorras $${pkg.savings.toLocaleString()}</div>
                                     </div>
                                     <div class="package-price-container">
                                         <div class="package-price">$${pkg.price.toLocaleString()}</div>
-                                        <div class="package-original-price">$${(product.originalPrice * pkg.quantity).toLocaleString()}</div>
+                                        <div class="package-original-price">$${pkg.originalPrice.toLocaleString()}</div>
                                     </div>
                                 </div>
                             `).join('')}
@@ -2460,8 +2438,8 @@
             // Check products grid
             const productCards = document.querySelectorAll('.product-card');
             productCards.forEach(card => {
-                const addToCartBtn = card.querySelector(`[onclick*="${productId}"]`);
-                if (addToCartBtn) {
+                const addToCartBtn = card.querySelector('.add-to-cart-btn');
+                if (addToCartBtn && addToCartBtn.getAttribute('onclick').includes(`'${productId}'`)) {
                     containers.push(card);
                 }
             });
@@ -2509,7 +2487,7 @@
                     name: product.name,
                     image: product.image,
                     price: selectedPackage.price,
-                    originalPrice: product.originalPrice * selectedPackage.quantity,
+                    originalPrice: selectedPackage.originalPrice,
                     savings: selectedPackage.savings,
                     quantity: 1,
                     packageIndex: selectedIndex,
@@ -2633,19 +2611,18 @@
                 </ul>
                 <div class="package-options">
                     <h4 class="package-title">PAQUETES Y AHORROS</h4>
-                    ${product.packages.map((pkg, index) => `
+                     ${product.packages.map((pkg, index) => `
                         <div class="package-option ${index === 1 ? 'selected' : ''}" onclick="selectModalPackage('${product.id}', ${index})">
+                            ${pkg.popular ? `<div class="popular-badge">MÁS POPULAR</div>` : ''}
+                            ${pkg.bestValue ? `<div class="best-value-badge">MEJOR VALOR</div>` : ''}
+                            <input type="radio" name="modal-package-${product.id}" ${index === 1 ? 'checked' : ''}>
                             <div class="package-info">
-                                <input type="radio" name="modal-package-${product.id}" ${index === 1 ? 'checked' : ''}>
-                                <div class="package-icon">${pkg.quantity}</div>
-                                <div class="package-details">
-                                    <div class="package-label">${pkg.quantity} UNIDAD${pkg.quantity > 1 ? 'ES' : ''} ${pkg.popular ? `<span class="popular-badge">MÁS POPULAR</span>` : ''}</div>
-                                    <div class="package-savings">Ahorras $${pkg.savings.toLocaleString()}</div>
-                                </div>
+                                <div class="package-label">${pkg.quantity} UNIDAD${pkg.quantity > 1 ? 'ES' : ''}</div>
+                                <div class="package-savings">Ahorras $${pkg.savings.toLocaleString()}</div>
                             </div>
                             <div class="package-price-container">
                                 <div class="package-price">$${pkg.price.toLocaleString()}</div>
-                                <div class="package-original-price">$${(product.originalPrice * pkg.quantity).toLocaleString()}</div>
+                                <div class="package-original-price">$${pkg.originalPrice.toLocaleString()}</div>
                             </div>
                         </div>
                     `).join('')}

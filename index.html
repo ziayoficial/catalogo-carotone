@@ -8,7 +8,6 @@
     <meta name="keywords" content="carotone, kit carotone, crema aclarante, reducir manchas, cuidado de la piel, colombia">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -45,32 +44,28 @@
     gtag('js', new Date());
     gtag('config', 'G-1HZCN3NQM8');
     </script>
-
     <style>
+        /* CSS Variables - Mejorados para mejor contraste */
         :root {
-            --primary-color: #E91E63; /* Rosa Intenso */
-            --secondary-color: #FFC107; /* Amarillo Brillante */
-            --accent-color: #4CAF50; /* Verde para éxito/agregar */
-            --text-dark: #333333;
-            --text-light: #ffffff;
-            --bg-light: #fce4ec; /* Rosa muy claro */
-            --bg-dark: #880E4F; /* Morado oscuro */
+            --primary-color: #E91E63; /* Rosa fuerte para mejor visibilidad */
+            --secondary-color: #C2185B; /* Rosa oscuro para contraste */
+            --accent-color: #FF4081; /* Rosa brillante para énfasis */
+            --text-dark: #212121; /* Gris muy oscuro casi negro para mejor legibilidad */
+            --text-light: #FFFFFF; /* Blanco puro */
+            --text-gray: #424242; /* Gris oscuro para texto secundario */
+            --text-gray-light: #FFFFFF; /* Blanco para mejor contraste en fondo rosa */
+            --bg-light: #FFF5F7; /* Fondo rosa muy claro */
+            --bg-dark: #880E4F; /* Morado oscuro para fondo del header */
             --shadow-light: rgba(0, 0, 0, 0.1);
-            --shadow-medium: rgba(0, 0, 0, 0.2);
-            --border-color: #f06292; /* Rosa medio */
-            --gradient-hero: linear-gradient(135deg, #E91E63 0%, #FF80AB 100%);
-            --gradient-button: linear-gradient(45deg, #4CAF50, #8BC34A);
-            --gradient-button-hover: linear-gradient(45deg, #8BC34A, #4CAF50);
-            --gradient-badge: linear-gradient(45deg, #FFD700, #FFC107);
-            --selected-package-border: #E91E63;
-            --selected-package-bg: #F8BBD0;
-            --package-option-color: #6C757D;
-            --package-option-selected: #E91E63;
-            --button-option-bg: #F48FB1;
-            --button-option-hover: #EC407A;
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --shadow-dark: rgba(0, 0, 0, 0.3);
             --transition: all 0.3s ease;
+            --gradient-button: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --gradient-hero: linear-gradient(135deg, #FF80AB, #F50057);
+            --border-color: #F8BBD0; /* Rosa claro para bordes */
         }
 
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -83,234 +78,16 @@
             color: var(--text-dark);
             background-color: var(--bg-light);
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1rem;
         }
 
-        /* Header Styles */
-        .header {
-            background: var(--bg-dark);
-            color: var(--text-light);
-            padding: 0.8rem 0;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 10px var(--shadow-medium);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.6rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: var(--text-light);
-            transition: var(--transition);
-        }
-
-        .logo:hover {
-            transform: scale(1.03);
-        }
-
-        .logo-icon {
-            background: var(--primary-color);
-            color: var(--text-light);
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 8px;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 1.8rem;
-        }
-
-        .nav-menu a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            cursor: pointer;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-menu a:hover {
-            color: var(--primary-color);
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .search-box {
-            position: relative;
-        }
-
-        .search-box input {
-            padding: 0.5rem 2.5rem 0.5rem 1rem;
-            border: none;
-            border-radius: 25px;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-light);
-            width: 200px;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .search-box input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .search-box input:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.2);
-            width: 250px;
-        }
-
-        .search-box i {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-        }
-
-        .cart-icon {
-            position: relative;
-            background: var(--primary-color);
-            color: var(--text-light);
-            border: none;
-            padding: 0.6rem;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-        }
-
-        .cart-icon:hover {
-            background: var(--secondary-color);
-            transform: scale(1.05);
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--accent-color);
-            color: var(--text-light);
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            font-weight: bold;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: var(--gradient-hero);
-            color: var(--text-light);
-            padding: 4rem 0 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .hero-text {
-            padding: 1rem 0;
-        }
-
-        .hero-text h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 1.2rem;
-            line-height: 1.2;
-            text-transform: uppercase;
-        }
-
-        .hero-text .subtitle {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            opacity: 0.9;
-        }
-
-        .subtitle-badge {
-            display: inline-block;
-            background: var(--gradient-badge);
-            color: var(--text-dark);
-            padding: 0.5rem 1.2rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 3px 10px rgba(255, 193, 7, 0.3);
-            animation: pulse 2s infinite;
-        }
-
-        .hero-text .rating {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .stars {
-            color: #FFD700;
-        }
-
-        .hero-text .description {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        /* Updated Button Styles */
-        .btn, .add-to-cart-btn, .checkout-btn, .submit-btn {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
+        .btn {
             padding: 0.9rem 1.8rem;
             border: none;
             border-radius: 25px;
@@ -321,7 +98,10 @@
             justify-content: center;
             gap: 0.5rem;
             font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -334,13 +114,259 @@
         /* Enhanced hover and active effects */
         .btn-primary:hover, .add-to-cart-btn:hover, .checkout-btn:hover, .submit-btn:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
-            animation: pulse 1.5s infinite;
+            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
         }
 
         .btn-primary:active, .add-to-cart-btn:active, .checkout-btn:active, .submit-btn:active {
-            transform: translateY(-1px) scale(0.98);
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+            transform: translateY(-1px) scale(1.01);
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--text-light);
+            box-shadow: 0 2px 15px var(--shadow-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--accent-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 0.5rem 1rem 0.5rem 2.5rem;
+            border: 2px solid #F8BBD0;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: var(--transition);
+            width: 200px;
+            color: var(--text-dark);
+            background: var(--text-light);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            width: 250px;
+        }
+
+        .search-box input::placeholder {
+            color: #9E9E9E;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-gray);
+        }
+
+        .cart-icon {
+            position: relative;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cart-icon:hover {
+            color: var(--primary-color);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--accent-color);
+            color: var(--text-light);
+            font-size: 0.7rem;
+            font-weight: bold;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-hero);
+            color: var(--text-light);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .subtitle-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stars {
+            color: #FFC107;
+        }
+
+        .reviews {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
 
         .btn-secondary {
@@ -350,158 +376,17 @@
         }
 
         .btn-secondary:hover {
-            background: var(--text-light);
-            color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        /* New pulse animation */
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
-            }
-        }
-
-        /* Click ripple effect */
-        .btn-ripple {
-            position: absolute;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.7);
-            transform: scale(0);
-            animation: ripple 0.6s linear;
-            pointer-events: none;
-        }
-
-        @keyframes ripple {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
-        }
-
-        /* Hero Product Card */
         .hero-product-card {
             background: var(--text-light);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px var(--shadow-medium);
-            transition: var(--transition);
-            position: relative;
-            transform: translateY(0);
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .hero-product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px var(--shadow-medium);
-        }
-
-        /* Product Cards */
-        .products-section {
-            padding: 5rem 0;
-            background: var(--text-light);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 0.8rem 1.8rem;
-            border: 2px solid var(--primary-color);
-            background: transparent;
-            color: var(--primary-color);
-            border-radius: 25px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: var(--primary-color);
-            color: var(--text-light);
-            transform: translateY(-2px);
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 2.5rem;
-            margin-top: 2rem;
-        }
-
-        .product-card {
-            background: var(--text-light);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px var(--shadow-light);
-            transition: var(--transition);
-            position: relative;
-            border: 2px solid transparent;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px var(--shadow-medium);
-            border-color: var(--primary-color);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--primary-color);
-            color: var(--text-light);
-            padding: 0.4rem 0.8rem;
             border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            z-index: 2;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            color: var(--text-dark);
+            max-width: 400px;
+            margin: 0 auto;
         }
 
         .product-image {
@@ -548,174 +433,78 @@
         .product-description {
             color: #666;
             font-size: 0.95rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             line-height: 1.5;
-            min-height: 60px;
-        }
-
-        .product-rating {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .product-rating .stars {
-            color: #FFD700;
-            font-size: 1.1rem;
-        }
-
-        .product-rating .rating-text {
-            font-size: 0.9rem;
-            color: #666;
-            font-weight: 500;
         }
 
         .product-price {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: linear-gradient(135deg, #fce4ec, #f8bbd9);
-            border-radius: 12px;
-            text-align: center;
         }
 
-        .product-price .current {
+        .current-price {
             font-size: 1.8rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--primary-color);
-            display: block;
         }
 
-        .product-price .original {
-            font-size: 1.1rem;
+        .original-price {
+            font-size: 1.2rem;
             color: #999;
             text-decoration: line-through;
-            margin-top: 0.3rem;
         }
 
-        .product-price .savings {
-            display: block;
-            color: var(--accent-color);
-            font-weight: 700;
-            font-size: 1rem;
-            margin-top: 0.5rem;
-            background: rgba(76, 175, 80, 0.1);
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            display: inline-block;
+        .savings {
+            background: #FFEB3B;
+            color: #333;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
 
-        .product-features {
-            list-style: none;
-            margin-bottom: 2rem;
-            background: #f8f9fa;
-            padding: 1.2rem;
-            border-radius: 12px;
-        }
-
-        .product-features li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-            margin-bottom: 0.6rem;
-            font-size: 0.9rem;
-            color: #555;
-            line-height: 1.4;
-        }
-
-        .product-features li:last-child {
-            margin-bottom: 0;
-        }
-
-        .product-features li i {
-            color: var(--accent-color);
-            font-size: 0.9rem;
-            margin-top: 0.1rem;
-            flex-shrink: 0;
-        }
-
-        /* --- NEW Package Options Styles --- */
         .package-options {
             margin-bottom: 1.5rem;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
         }
 
-        .package-title {
+        .package-options h4 {
             font-size: 1rem;
-            font-weight: 700;
+            margin-bottom: 0.8rem;
             color: var(--text-dark);
-            margin-bottom: 0;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            text-align: center;
-            padding: 0.8rem;
-            background: var(--bg-light);
-            border-bottom: 1px solid var(--border-color);
+        }
+
+        .package-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
         }
 
         .package-option {
             display: flex;
             align-items: center;
-            padding: 1rem 1.2rem;
-            border: 2px solid transparent;
-            border-top: 1px solid #fde8f1;
-            background: #FFFFFF;
+            padding: 0.8rem;
+            border: 2px solid #F8BBD0;
+            border-radius: 10px;
             cursor: pointer;
             transition: var(--transition);
-            position: relative;
-            margin-bottom: 0;
-            border-radius: 0;
-        }
-        
-        .package-options .package-option:first-of-type {
-            border-top: none;
         }
 
         .package-option:hover {
-            background: rgba(233, 30, 99, 0.02);
+            border-color: #E91E63;
         }
 
         .package-option.selected {
-            border-color: var(--primary-color) !important;
-            background-color: var(--selected-package-bg) !important;
-            box-shadow: none !important;
-            z-index: 2;
-        }
-
-        .package-option input[type="radio"] {
-            appearance: none;
-            -webkit-appearance: none;
-            width: 22px;
-            height: 22px;
-            border: 2px solid #ccc;
-            border-radius: 50%;
-            margin-right: 1rem;
-            cursor: pointer;
-            position: relative;
-            transition: all 0.2s ease-in-out;
-            flex-shrink: 0;
-        }
-
-        .package-option input[type="radio"]:checked {
             border-color: var(--primary-color);
+            background: rgba(233, 30, 99, 0.05);
         }
 
-        .package-option input[type="radio"]:checked::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-        }
-        
-        .package-icon {
-            display: none;
+        .package-radio {
+            margin-right: 1rem;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
         }
 
         .package-info {
@@ -724,94 +513,272 @@
             flex-direction: column;
             gap: 0.1rem;
         }
-        
+
         .package-details {
             flex: 1;
             display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .package-label {
-            font-weight: 600;
+        .package-quantity {
+            font-weight: 700;
             color: var(--text-dark);
-            font-size: 1rem;
-        }
-
-        .package-savings {
-            font-size: 0.9rem;
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        .package-price-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            text-align: right;
         }
 
         .package-price {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .package-original-price {
             font-size: 0.9rem;
-            color: #999;
-            text-decoration: line-through;
+            color: var(--primary-color);
+            font-weight: 600;
         }
 
-        .popular-badge, .best-value-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 0.3rem 1rem;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            z-index: 3;
-            width: max-content;
+        .package-savings {
+            font-size: 0.8rem;
+            color: #FF9800;
+            font-weight: 600;
+        }
+
+        .package-badge {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-left: 0.5rem;
         }
 
         .popular-badge {
-            background: var(--primary-color);
+            background: #C2185B;
             color: white;
-            box-shadow: 0 2px 8px rgba(233, 30, 99, 0.4);
         }
 
         .best-value-badge {
-            background: var(--secondary-color);
-            color: var(--text-dark);
-            box-shadow: 0 2px 8px rgba(255, 193, 7, 0.4);
+            background: #880E4F;
+            color: white;
         }
-        /* --- END NEW Package Options Styles --- */
 
-        /* Add to Cart Button */
         .add-to-cart-btn {
             width: 100%;
             background: var(--gradient-button);
             color: var(--text-light);
             border: none;
             padding: 1rem;
-            border-radius: 15px;
-            font-weight: 700;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 10px;
             cursor: pointer;
             transition: var(--transition);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            margin-bottom: 1rem;
             position: relative;
             overflow: hidden;
+        }
+
+        .add-to-cart-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
+        }
+
+        .add-to-cart-btn:active {
+            transform: translateY(-1px) scale(1.01);
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+        }
+
+        .payment-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-gray-light); /* Cambiado para mejor visibilidad */
+            font-weight: 500; /* Aumentado el peso para mejor legibilidad */
+        }
+
+        /* Animated Banner */
+        .animated-banner {
+            background: linear-gradient(90deg, #E91E63, #C2185B, #FF4081);
+            color: var(--text-light);
+            padding: 1rem 0;
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .animated-banner-content {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-left 20s linear infinite;
+        }
+
+        .animated-banner-content span {
+            margin-right: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 5rem 0;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--text-light);
+            border: 2px solid #F8BBD0;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-dark);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-color: var(--primary-color);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--text-light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow-light);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--shadow-medium);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent-color);
+            color: var(--text-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .product-image-container {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            padding: 1rem;
+        }
+
+        .product-image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-details {
+            padding: 1.5rem;
+        }
+
+        .product-category {
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .product-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            color: #FFC107;
+        }
+
+        .reviews {
+            font-size: 0.85rem;
+            color: var(--text-gray-light); /* Cambiado para mejor visibilidad */
+            font-weight: 500; /* Aumentado el peso para mejor legibilidad */
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .current-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .original-price {
+            font-size: 1rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .savings {
+            background: #FFEB3B;
+            color: #333;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
         }
 
         /* Stats Section */
@@ -843,22 +810,22 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
         .stat-item {
-            background: #f8f9fa;
-            padding: 2.5rem 1.5rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px var(--shadow-light);
-            transition: transform 0.3s ease;
+            padding: 2rem;
+            border-radius: 15px;
+            background: rgba(233, 30, 99, 0.05);
+            transition: var(--transition);
         }
 
         .stat-item:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(233, 30, 99, 0.1);
         }
-        
+
         .stat-icon {
             font-size: 2.5rem;
             color: var(--primary-color);
@@ -866,45 +833,43 @@
         }
 
         .stat-number {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
             margin-bottom: 0.5rem;
         }
 
         .stat-label {
             font-size: 1.1rem;
-            color: #666;
-            font-weight: 500;
+            color: var(--text-gray);
         }
 
         /* Testimonials Section */
         .testimonials-section {
             padding: 5rem 0;
-            background: var(--text-light);
-            position: relative;
+            background: var(--bg-light);
         }
 
         .testimonial-card {
-            background: var(--bg-light);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px var(--shadow-light);
-            text-align: center;
             max-width: 800px;
             margin: 0 auto;
+            background: var(--text-light);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            text-align: center;
             position: relative;
         }
 
         .testimonial-card:before {
             content: '"';
             position: absolute;
-            top: 1rem;
-            left: 2rem;
+            top: 20px;
+            left: 20px;
             font-size: 5rem;
-            color: rgba(233, 30, 99, 0.1);
-            font-family: serif;
-            line-height: 1;
+            color: var(--primary-color);
+            opacity: 0.1;
+            font-family: Georgia, serif;
         }
 
         .testimonial-text {
@@ -913,7 +878,6 @@
             color: var(--text-dark);
             margin-bottom: 2rem;
             line-height: 1.6;
-            position: relative;
         }
 
         .testimonial-author {
@@ -955,28 +919,32 @@
 
         .cart-header {
             padding: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid #F8BBD0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: var(--primary-color);
-            color: var(--text-light);
         }
 
         .cart-title {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 700;
+            color: var(--text-dark);
         }
 
-        .cart-close {
+        .close-cart {
             background: none;
             border: none;
-            color: var(--text-light);
             font-size: 1.5rem;
             cursor: pointer;
+            color: #999;
+            transition: var(--transition);
         }
 
-        .cart-content {
+        .close-cart:hover {
+            color: var(--text-dark);
+        }
+
+        .cart-items {
             padding: 1.5rem;
         }
 
@@ -984,137 +952,96 @@
             display: flex;
             gap: 1rem;
             padding: 1rem 0;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid #F8BBD0;
         }
 
         .cart-item-image {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
             border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            flex-shrink: 0;
         }
 
-        .cart-item-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .cart-item-info {
+        .cart-item-details {
             flex: 1;
         }
 
-        .cart-item-name {
+        .cart-item-title {
             font-weight: 600;
-            margin-bottom: 0.3rem;
-            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
         }
 
-        .cart-item-price {
-            color: var(--primary-color);
-            font-weight: 700;
+        .cart-item-info {
+            font-size: 0.9rem;
+            color: #666;
             margin-bottom: 0.5rem;
         }
 
-        .cart-item-controls {
+        .cart-item-price {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .cart-item-actions {
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            margin-top: 0.5rem;
         }
 
         .quantity-btn {
-            background: var(--primary-color);
-            color: var(--text-light);
-            border: none;
             width: 25px;
             height: 25px;
             border-radius: 50%;
+            border: 1px solid #F8BBD0;
+            background: var(--text-light);
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
-            transition: all 0.2s ease;
         }
 
-        .quantity-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .quantity-btn:active {
-            transform: scale(0.9);
-        }
-
-        .quantity-display {
-            min-width: 30px;
-            text-align: center;
+        .item-quantity {
+            font-size: 0.9rem;
             font-weight: 600;
         }
 
         .remove-item {
-            background: #dc3545;
-            color: var(--text-light);
+            background: none;
             border: none;
-            padding: 0.3rem 0.6rem;
-            border-radius: 5px;
+            color: #f44336;
             cursor: pointer;
-            font-size: 0.8rem;
-            margin-left: 0.5rem;
-            transition: all 0.2s ease;
-        }
-
-        .remove-item:hover {
-            background: #c82333;
-        }
-
-        .remove-item:active {
-            transform: scale(0.95);
-        }
-
-        .cart-summary {
-            padding: 1.5rem;
-            border-top: 1px solid var(--border-color);
-            background: var(--bg-light);
+            font-size: 0.9rem;
+            margin-left: auto;
         }
 
         .cart-total {
+            padding: 1.5rem;
+            border-top: 1px solid #F8BBD0;
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-
-        .cart-total.subtotal {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .cart-total.savings {
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        .cart-total.final {
             font-size: 1.2rem;
             font-weight: 700;
+        }
+
+        .total-amount {
             color: var(--primary-color);
-            border-top: 1px solid var(--border-color);
-            padding-top: 0.5rem;
-            margin-top: 0.5rem;
         }
 
         .checkout-btn {
-            width: 100%;
+            width: calc(100% - 3rem);
+            margin: 1.5rem;
             background: var(--gradient-button);
             color: var(--text-light);
             border: none;
             padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
             border-radius: 10px;
-            font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
-            margin-top: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1123,7 +1050,29 @@
             overflow: hidden;
         }
 
-        /* Modal Styles */
+        .checkout-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
+        }
+
+        .checkout-btn:active {
+            transform: translateY(-1px) scale(1.01);
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: #666;
+        }
+
+        .empty-cart i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #F8BBD0;
+        }
+
+        /* Order Form Modal */
         .modal {
             display: none;
             position: fixed;
@@ -1133,8 +1082,8 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
             z-index: 3000;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
         }
 
         .modal.show {
@@ -1144,23 +1093,23 @@
         .modal-content {
             background: var(--text-light);
             border-radius: 15px;
-            max-width: 500px;
             width: 90%;
+            max-width: 600px;
             max-height: 90vh;
             overflow-y: auto;
-            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .modal-header {
             padding: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid #F8BBD0;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .modal-title {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-dark);
         }
@@ -1171,140 +1120,19 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: #999;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--text-dark);
         }
 
         .modal-body {
             padding: 1.5rem;
         }
 
-        /* Order Form */
-        .order-form {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 3000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .order-form.show {
-            display: flex;
-        }
-
-        .form-content {
-            background: var(--text-light);
-            border-radius: 15px;
-            max-width: 480px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
-        }
-
-        .form-header {
-            background: var(--primary-color);
-            color: var(--text-light);
-            padding: 1.5rem;
-            border-radius: 15px 15px 0 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .form-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .form-close {
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 1.5rem;             cursor: pointer;
-        }
-
-        .form-body {
-            padding: 1.5rem;
-        }
-
-        .cart-summary-form {
-            background: var(--bg-light);
-            padding: 1rem;
-            border-radius: 10px;
-            margin-bottom: 1.5rem;
-        }
-
-        .cart-summary-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .form-cart-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .form-cart-item:last-child {
-            border-bottom: none;
-        }
-
-        .form-cart-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            flex-shrink: 0;
-        }
-
-        .form-cart-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .form-cart-info {
-            flex: 1;
-        }
-
-        .form-cart-name {
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .form-cart-details {
-            font-size: 0.8rem;
-            color: #666;
-        }
-
-        .form-cart-controls {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .form-cart-price {
-            color: var(--primary-color);
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-left: 1rem;
-        }
-
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
@@ -1312,26 +1140,26 @@
             margin-bottom: 0.5rem;
             font-weight: 600;
             color: var(--text-dark);
-            font-size: 0.9rem;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.7rem;
-            border: 2px solid var(--border-color);
+            padding: 0.8rem;
+            border: 2px solid #F8BBD0;
             border-radius: 8px;
-            font-size: 0.9rem;
-            transition: border-color 0.3s ease;
-            box-sizing: border-box;
+            font-size: 1rem;
+            transition: var(--transition);
+            color: var(--text-dark);
+            background: var(--text-light);
         }
 
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
-            outline: none;
             border-color: var(--primary-color);
+            outline: none;
         }
 
         .form-row {
@@ -1340,43 +1168,23 @@
             gap: 1rem;
         }
 
-        .submit-btn {
+        .whatsapp-btn {
             width: 100%;
-            background: var(--gradient-button);
+            background: #25D366;
             color: var(--text-light);
             border: none;
             padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
             border-radius: 10px;
-            font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
-            font-size: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
             position: relative;
             overflow: hidden;
-        }
-
-        /* WhatsApp Button Styles - CORREGIDO */
-        .whatsapp-btn {
-            width: 100%;
-            background: #25D366;
-            color: white;
-            border: none;
-            padding: 1rem;
-            border-radius: 10px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            position: relative;
-            overflow: visible;
             margin-top: 1rem;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
             z-index: 1;
@@ -1458,43 +1266,11 @@
             z-index: 4000;
             opacity: 0;
             transition: opacity 0.3s ease;
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
         }
 
         .notification.show {
             opacity: 1;
-        }
-
-        /* Banner Animado */
-        .animated-banner {
-            background: linear-gradient(90deg, #FF80AB, #FFC107, #4CAF50);
-            color: var(--text-light);
-            padding: 1rem 0;
-            text-align: center;
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .animated-banner-content {
-            display: inline-block;
-            padding-left: 100%;
-            animation: scroll-left 20s linear infinite;
-        }
-
-        .animated-banner-content span {
-            margin-right: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        @keyframes scroll-left {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-100%); }
         }
 
         /* Search Results */
@@ -1512,123 +1288,77 @@
             z-index: 1001;
         }
 
-        .search-results.show {
-            display: block;
-        }
-
         .search-result-item {
-            padding: 0.8rem;
-            border-bottom: 1px solid var(--border-color);
+            padding: 1rem;
+            border-bottom: 1px solid #F8BBD0;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            color: var(--text-dark);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .search-result-item:hover {
-            background: var(--bg-light);
+            background: #FFF5F7;
         }
 
-        .search-result-item:last-child {
-            border-bottom: none;
+        .search-result-image {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
         }
 
-        /* Loading Animation */
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: var(--text-light);
-            animation: spin 1s ease-in-out infinite;
-            margin-right: 0.5rem;
+        .search-result-info {
+            flex: 1;
         }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .search-result-title {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            color: var(--text-dark);
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .search-result-price {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 600;
         }
 
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        /* Accessibility */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        /* Focus styles for better accessibility */
-        button:focus,
-        input:focus,
-        select:focus,
-        textarea:focus {
-            outline: 2px solid var(--primary-color);
-            outline-offset: 2px;
-        }
-
-        /* Footer Styles */
+        /* Footer */
         .footer {
             background: var(--bg-dark);
             color: var(--text-light);
-            padding: 3rem 0 1.5rem;
-            font-size: 0.9rem;
+            padding: 4rem 0 2rem;
         }
 
         .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
         }
 
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
         }
 
-        .footer-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
         }
 
         .footer-section p {
             color: rgba(255, 255, 255, 0.7);
             line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
         .footer-section ul {
@@ -1642,7 +1372,7 @@
         .footer-section ul li a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
 
         .footer-section ul li a:hover {
@@ -1650,10 +1380,10 @@
         }
 
         .social-links a {
-            color: var(--text-light);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 1.5rem;
             margin-right: 1rem;
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
 
         .social-links a:hover {
@@ -1673,7 +1403,7 @@
             .hero-content {
                 gap: 2rem;
             }
-            
+
             .products-grid {
                 grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             }
@@ -1738,142 +1468,148 @@
             }
 
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr));
-            }
-        }
-
-        @media (max-width: 520px) {
-            .stats-grid {
                 grid-template-columns: 1fr;
             }
-            .stat-item {
-                padding: 2rem 1rem;
+
+            .testimonial-card {
+                padding: 2rem 1.5rem;
             }
-            .stat-number {
-                font-size: 2.2rem;
-            }
-            .stat-label {
+
+            .testimonial-text {
                 font-size: 1rem;
             }
         }
 
         @media (max-width: 480px) {
             .container {
-                padding: 0 1rem;
+                width: 95%;
+            }
+
+            .section-title {
+                font-size: 2rem;
             }
 
             .hero {
-                padding: 2rem 0;
+                padding: 3rem 0;
             }
 
             .hero-text h1 {
                 font-size: 1.8rem;
             }
 
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .filter-buttons {
-                flex-direction: column;
-                align-items: center;
+            .hero-description {
+                font-size: 1rem;
             }
 
             .hero-buttons {
                 flex-direction: column;
+                gap: 1rem;
             }
 
-            .product-card {
-                margin: 0;
-            }
-
-            .form-content {
-                max-width: 100%;
+            .btn {
                 width: 100%;
-                margin: 0.5rem;
-                border-radius: 10px;
             }
 
-            .form-body {
-                padding: 1rem;
-                max-height: 80vh;
-                overflow-y: auto;
+            .filter-buttons {
+                gap: 0.5rem;
             }
 
-            .form-group {
-                margin-bottom: 0.7rem;
-            }
-
-            .form-group label {
-                font-size: 0.85rem;
-                margin-bottom: 0.3rem;
-            }
-
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                padding: 0.7rem;
-                font-size: 16px;
-                border-radius: 6px;
-            }
-
-            .submit-btn {
-                padding: 0.8rem;
+            .filter-btn {
+                padding: 0.6rem 1rem;
                 font-size: 0.9rem;
             }
 
-            /* Modal adjustments for mobile */
-            .modal-content {
-                max-height: 85vh;
-                overflow-y: auto;
+            .stats-title {
+                font-size: 1.8rem;
             }
 
-            .modal-body {
-                padding: 1rem;
+            .stat-number {
+                font-size: 2rem;
             }
 
-            /* Package options in modal */
-            .package-option {
-                padding: 0.8rem;
+            .testimonial-card {
+                padding: 1.5rem 1rem;
             }
 
-            .package-label {
-                font-size: 0.9rem;
+            .cart-sidebar {
+                padding-bottom: 60px;
             }
 
-            .package-price {
-                font-size: 1rem;
+            .checkout-btn {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                border-radius: 0;
+                margin: 0;
+                padding: 1.2rem;
+                z-index: 2001;
             }
+        }
 
-            .package-original-price {
-                font-size: 0.8rem;
-            }
+        /* Ripple Effect */
+        .btn-ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.7);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
 
-            /* Add to cart button in modal */
-            .add-to-cart-btn {
-                padding: 0.8rem;
-                font-size: 0.9rem;
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
             }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #FFF5F7;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C2185B;
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="contact-info">
+                        <span><i class="fas fa-phone"></i> +57 3180646005</span>
+                        <span><i class="fas fa-envelope"></i> vialsabogal@gmail.com</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
-            <nav class="nav-container">
-                <a href="#" class="logo">
-                    <div class="logo-icon">D</div>
-                    Duxe Store
-                </a>
-                
+            <div class="nav-container">
+                <a href="#" class="logo"><i class="fas fa-store"></i> Duxe Store</a>
                 <ul class="nav-menu">
-                    <li><a href="#productos" onclick="scrollToSection('productos')">PRODUCTOS</a></li>
-                    <li><a href="#productos" onclick="filterProducts('kits')">KITS</a></li>
-                    <li><a href="#testimonios" onclick="scrollToSection('testimonios')">TESTIMONIOS</a></li>
+                    <li><a href="#productos" onclick="scrollToSection('productos')">Productos</a></li>
+                    <li><a href="#testimonios" onclick="scrollToSection('testimonios')">Testimonios</a></li>
+                    <li><a href="#" onclick="showPolicyModal()">Política de Garantía</a></li>
                 </ul>
-                
-                <div class="nav-right">
+                <div class="nav-icons">
                     <div class="search-box">
                         <input type="text" id="searchInput" placeholder="Buscar productos..." onkeyup="searchProducts()">
                         <i class="fas fa-search"></i>
@@ -1884,7 +1620,7 @@
                         <span class="cart-count" id="cartCount">0</span>
                     </button>
                 </div>
-            </nav>
+            </div>
         </div>
     </header>
 
@@ -1893,94 +1629,84 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <div class="subtitle-badge">Más de 15,000 clientes satisfechos</div>
+                    <div class="subtitle-badge">Más de 15,000 clientes satisfechas</div>
                     <h1>KITS CAROTONE</h1>
                     <div class="rating">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <span>Calificación 4.8/5 | 17,049 Reseñas</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="reviews">4.8 (1204 reseñas)</div>
                     </div>
-                    <p class="description">Transforma tu piel con nuestros kits especiales para reducir manchas y aclarar de forma natural. Resultados visibles en solo 2 semanas.</p>
+                    <p class="hero-description">El kit completo para aclarar y uniformar el tono de tu piel. Resultados visibles en solo 2 semanas con nuestra fórmula mejorada con ingredientes naturales.</p>
                     <div class="hero-buttons">
-                        <a href="#productos" class="btn btn-primary" onclick="scrollToSection('productos')">
-                            <i class="fas fa-eye"></i>
-                            Ver Productos
-                        </a>
-                        <a href="#testimonios" class="btn btn-secondary" onclick="scrollToSection('testimonios')">
-                            <i class="fas fa-comment"></i>
-                            Ver Testimonios
-                        </a>
+                        <button class="btn btn-primary" onclick="scrollToSection('productos')">
+                            <i class="fas fa-shopping-bag"></i>COMPRAR AHORA
+                        </button>
+                        <button class="btn btn-secondary" onclick="scrollToSection('testimonios')">
+                            <i class="fas fa-comments"></i>VER RESEÑAS
+                        </button>
+                    </div>
+                    <div class="payment-info">
+                        <i class="fas fa-truck"></i>Envío Gratis en Colombia
                     </div>
                 </div>
-                
                 <div class="hero-product-card">
-                    <div class="product-badge">Oferta Especial</div>
-                    <div class="product-image" onclick="showProductModal('kit-maximo-resplandor')">
+                    <div class="product-image">
                         <img src="https://cdn.jsdelivr.net/gh/ziayoficial/catalogo-carotone@main/images/1-Kit%20Maximo%20Resplandor.jpg" alt="Kit Máximo Resplandor">
                     </div>
                     <div class="product-info">
-                        <div class="product-category">Kit Completo</div>
+                        <div class="product-category">KIT COMPLETO</div>
                         <h3 class="product-title">Kit Máximo Resplandor</h3>
                         <p class="product-description">El kit completo para aclarar y uniformar el tono de tu piel</p>
-                        <div class="product-rating">
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <span class="rating-text">4.8/5 | 1,204 Reseñas</span>
-                        </div>
                         <div class="product-price">
-                            <span class="current">$149.900</span>
-                            <span class="original">$169.900</span>
-                            <span class="savings">Ahorras $20.000</span>
+                            <div class="current-price">$149,900</div>
+                            <div class="original-price">$169,900</div>
+                            <div class="savings">Ahorra $20,000</div>
                         </div>
-                        <ul class="product-features">
-                            <li><i class="fas fa-check"></i> Crema Carotone Aclarante 135ml</li>
-                            <li><i class="fas fa-check"></i> Loción Corporal Aclarante 50ml</li>
-                            <li><i class="fas fa-check"></i> Jabón Carotone 190gr</li>
-                            <li style="cursor: pointer; color: var(--primary-color);" onclick="showProductModal('kit-maximo-resplandor')"><i class="fas fa-plus-circle"></i> Ver más detalles...</li>
-                        </ul>
                         <div class="package-options">
-                            <h4 class="package-title">PAQUETES Y AHORROS</h4>
-                            <div class="package-option" onclick="selectPackage('kit-maximo-resplandor-hero', 0)">
-                                <input type="radio" name="package-kit-maximo-resplandor-hero">
-                                <div class="package-info">
-                                    <div class="package-label">1 UNIDAD</div>
-                                    <div class="package-savings">Ahorras $20.000</div>
+                            <h4>Selecciona la cantidad:</h4>
+                            <div class="package-list">
+                                <div class="package-option selected" onclick="selectHeroPackage(0)">
+                                    <input type="radio" name="hero-package" class="package-radio" checked>
+                                    <div class="package-info">
+                                        <div class="package-details">
+                                            <span class="package-quantity">1 unidad</span>
+                                            <span class="package-price">$149,900</span>
+                                        </div>
+                                        <div class="package-savings">Ahorra $0</div>
+                                    </div>
                                 </div>
-                                <div class="package-price-container">
-                                    <div class="package-price">$149.900</div>
-                                    <div class="package-original-price">$169.900</div>
+                                <div class="package-option" onclick="selectHeroPackage(1)">
+                                    <input type="radio" name="hero-package" class="package-radio">
+                                    <div class="package-info">
+                                        <div class="package-details">
+                                            <span class="package-quantity">2 unidades</span>
+                                            <span class="package-price">$139,900 c/u</span>
+                                        </div>
+                                        <div class="package-savings">Ahorra $20,000 <span class="package-badge popular-badge">MÁS POPULAR</span></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="package-option selected" onclick="selectPackage('kit-maximo-resplandor-hero', 1)">
-                                <div class="popular-badge">MÁS POPULAR</div>
-                                <input type="radio" name="package-kit-maximo-resplandor-hero" checked>
-                                <div class="package-info">
-                                    <div class="package-label">2 UNIDADES</div>
-                                    <div class="package-savings">Ahorras $60.000</div>
-                                </div>
-                                <div class="package-price-container">
-                                    <div class="package-price">$279.800</div>
-                                    <div class="package-original-price">$339.800</div>
-                                </div>
-                            </div>
-                            <div class="package-option" onclick="selectPackage('kit-maximo-resplandor-hero', 2)">
-                                <div class="best-value-badge">MEJOR VALOR</div>
-                                <input type="radio" name="package-kit-maximo-resplandor-hero">
-                                <div class="package-info">
-                                    <div class="package-label">3 UNIDADES</div>
-                                    <div class="package-savings">Ahorras $109.800</div>
-                                </div>
-                                <div class="package-price-container">
-                                    <div class="package-price">$399.900</div>
-                                    <div class="package-original-price">$509.700</div>
+                                <div class="package-option" onclick="selectHeroPackage(2)">
+                                    <input type="radio" name="hero-package" class="package-radio">
+                                    <div class="package-info">
+                                        <div class="package-details">
+                                            <span class="package-quantity">3 unidades</span>
+                                            <span class="package-price">$129,950 c/u</span>
+                                        </div>
+                                        <div class="package-savings">Ahorra $60,000 <span class="package-badge best-value-badge">MEJOR VALOR</span></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <button class="add-to-cart-btn" onclick="addToCart('kit-maximo-resplandor', getSelectedPackageQuantity('kit-maximo-resplandor-hero'))">
-                            <i class="fas fa-cart-plus"></i>
-                            AGREGAR AL CARRITO
+                        <button class="add-to-cart-btn" onclick="addToCart('kit-maximo-resplandor-hero', getSelectedHeroPackage())">
+                            <i class="fas fa-cart-plus"></i>AGREGAR AL CARRITO
                         </button>
                         <div class="payment-info">
-                            <i class="fas fa-truck"></i>
-                            Envío Gratis en Colombia
+                            <i class="fas fa-truck"></i>Envío Gratis en Colombia
                         </div>
                     </div>
                 </div>
@@ -2003,13 +1729,11 @@
         <div class="container">
             <h2 class="section-title">Nuestros Productos Destacados</h2>
             <p class="section-subtitle">Descubre nuestra colección completa de productos Carotone para el cuidado de tu piel con resultados visibles en solo 2 semanas</p>
-            
             <div class="filter-buttons">
                 <button class="filter-btn active" onclick="filterProducts('all')">Todos los Productos</button>
                 <button class="filter-btn" onclick="filterProducts('kits')">Kits Completos</button>
                 <button class="filter-btn" onclick="filterProducts('individual')">Productos Individuales</button>
             </div>
-            
             <div class="products-grid" id="productsGrid">
                 <!-- Products will be dynamically loaded here -->
             </div>
@@ -2019,12 +1743,12 @@
     <!-- Stats Section -->
     <section class="stats-section">
         <div class="container">
-            <h2 class="stats-title">Miles de Colombianos Confían en Nosotros</h2>
+            <h2 class="stats-title">Miles de Colombianas Confían en Nosotros</h2>
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-icon"><i class="fas fa-users"></i></div>
                     <div class="stat-number">15,000+</div>
-                    <div class="stat-label">Clientes Satisfechos</div>
+                    <div class="stat-label">Clientes Satisfechas</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-icon"><i class="fas fa-star"></i></div>
@@ -2032,14 +1756,14 @@
                     <div class="stat-label">Calificación Promedio</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-box-open"></i></div>
-                    <div class="stat-number">25,000+</div>
-                    <div class="stat-label">Productos Vendidos</div>
+                    <div class="stat-icon"><i class="fas fa-truck"></i></div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Envío Gratis</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-truck-fast"></i></div>
-                    <div class="stat-number">2-5</div>
-                    <div class="stat-label">Días de Entrega</div>
+                    <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="stat-number">30 Días</div>
+                    <div class="stat-label">Garantía de Devolución</div>
                 </div>
             </div>
         </div>
@@ -2048,9 +1772,8 @@
     <!-- Testimonials Section -->
     <section class="testimonials-section" id="testimonios">
         <div class="container">
-            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            <h2 class="section-title">Lo que dicen nuestras clientas</h2>
             <p class="section-subtitle">Resultados reales de personas que han transformado su piel</p>
-            
             <div class="testimonial-card">
                 <p class="testimonial-text">"Después de probar muchos productos, los kits Carotone fueron los únicos que realmente funcionaron. En 3 semanas mis manchas casi han desaparecido. ¡Increíble!"</p>
                 <div class="testimonial-author">María González</div>
@@ -2059,67 +1782,40 @@
         </div>
     </section>
 
+    <!-- Policies Section -->
+    <section class="policies-section" id="politicas">
+        <div class="container">
+            <!-- Policy content will be loaded in modal -->
+        </div>
+    </section>
+
     <!-- Cart Sidebar -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h3 class="cart-title">Carrito • <span id="cartItemCount">0</span> productos</h3>
-            <button class="cart-close" onclick="toggleCart()">×</button>
+            <h3 class="cart-title">Tu Carrito</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
         </div>
-        <div class="cart-content" id="cartContent">
+        <div class="cart-items" id="cartItems">
             <!-- Cart items will be dynamically loaded here -->
         </div>
-        <div class="cart-summary">
-            <div class="cart-total subtotal">
-                <span>Subtotal</span>
-                <span id="cartSubtotal">$0</span>
-            </div>
-            <div class="cart-total savings">
-                <span>AHORROS TOTALES</span>
-                <span id="cartSavings">-$0</span>
-            </div>
-            <div class="cart-total final">
-                <span>Total</span>
-                <span id="cartTotal">$0 COP</span>
-            </div>
-            <button class="checkout-btn" onclick="showOrderForm()">
-                <i class="fas fa-credit-card"></i>
-                Finalizar compra
-            </button>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span class="total-amount" id="cartTotal">$0</span>
         </div>
+        <button class="checkout-btn" onclick="openOrderForm()">
+            <i class="fas fa-credit-card"></i>FINALIZAR COMPRA
+        </button>
     </div>
 
-    <!-- Product Modal -->
-    <div class="modal" id="productModal">
+    <!-- Order Form Modal -->
+    <div class="modal" id="orderFormModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="modalTitle">Detalles del Producto</h3>
-                <button class="modal-close" onclick="closeModal()">&times;</button>
+                <h3 class="modal-title">Finalizar Pedido</h3>
+                <button class="modal-close" onclick="closeOrderForm()">&times;</button>
             </div>
-            <div class="modal-body" id="modalBody">
-                <!-- Product details will be loaded here -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Order Form -->
-    <div class="order-form" id="orderForm">
-        <div class="form-content">
-            <div class="form-header">
-                <h3 class="form-title">Completa tu Pedido</h3>
-                <button class="form-close" onclick="closeOrderForm()">&times;</button>
-            </div>
-            <div class="form-body">
-                <div class="cart-summary-form">
-                    <h4 class="cart-summary-title">Artículos en tu Carrito</h4>
-                    <div id="formCartItems">
-                        <!-- Cart items will be displayed here -->
-                    </div>
-                    <div class="cart-total final" style="margin-top: 1rem;">
-                        <span>Total: <span id="formTotal">$0 COP</span></span>
-                    </div>
-                </div>
-                
-                <form id="checkoutForm">
+            <div class="modal-body">
+                <form id="orderForm">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="nombre">Nombre *</label>
@@ -2130,27 +1826,26 @@
                             <input type="text" id="apellido" name="apellido" required>
                         </div>
                     </div>
-                    
                     <div class="form-row">
                         <div class="form-group">
                             <label for="telefono">Teléfono *</label>
                             <input type="tel" id="telefono" name="telefono" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Correo Electrónico</label>
+                            <label for="email">Email</label>
                             <input type="email" id="email" name="email">
                         </div>
                     </div>
-                    
                     <div class="form-row">
                         <div class="form-group">
                             <label for="departamento">Departamento *</label>
                             <select id="departamento" name="departamento" required>
-                                <option value="">Selecciona tu departamento</option>
+                                <option value="">Selecciona un departamento</option>
                                 <option value="Amazonas">Amazonas</option>
                                 <option value="Antioquia">Antioquia</option>
                                 <option value="Arauca">Arauca</option>
                                 <option value="Atlántico">Atlántico</option>
+                                <option value="Bogotá">Bogotá</option>
                                 <option value="Bolívar">Bolívar</option>
                                 <option value="Boyacá">Boyacá</option>
                                 <option value="Caldas">Caldas</option>
@@ -2186,12 +1881,10 @@
                             <input type="text" id="ciudad" name="ciudad" required>
                         </div>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="direccion">Dirección *</label>
+                        <label for="direccion">Dirección completa *</label>
                         <input type="text" id="direccion" name="direccion" required>
                     </div>
-                    
                     <div class="form-group">
                         <label for="metodoPago">Método de Pago *</label>
                         <select id="metodoPago" name="metodoPago" required>
@@ -2201,21 +1894,80 @@
                             <option value="daviplata">Daviplata</option>
                         </select>
                     </div>
-                    
                     <div class="form-group">
                         <label for="notas">Notas adicionales</label>
                         <textarea id="notas" name="notas" rows="3" placeholder="Instrucciones especiales para la entrega..."></textarea>
                     </div>
-                    
                     <!-- Botón de WhatsApp - CORREGIDO -->
-                    <button type="button" class="whatsapp-btn" onclick="submitWhatsAppOrder()">
-                        <i class="fab fa-whatsapp"></i>
-                        Finalizar Pedido por WhatsApp
+                    <button type="button" class="whatsapp-btn" id="whatsappSubmitButton">
+                        <i class="fab fa-whatsapp"></i>Finalizar Pedido por WhatsApp
                     </button>
                 </form>
             </div>
         </div>
     </div>
+
+    <!-- Policy Modal -->
+    <div class="modal" id="policyModal">
+        <div class="modal-content" style="max-width: 700px;">
+            <div class="modal-header">
+                <h3 class="modal-title">Política de Devoluciones</h3>
+                <button class="modal-close" onclick="closePolicyModal()">&times;</button>
+            </div>
+            <div class="modal-body" style="font-size: 0.85rem; line-height: 1.5;">
+                <p style="margin-bottom: 1rem; color: #666;">Esta política aplica a la compra de productos físicos en nuestra tienda online o a través de WhatsApp en Colombia.</p>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Derecho a Desistir</h4>
+                    <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Tiempo:</strong> Puedes devolver tu compra en 5 días hábiles desde que recibes el producto, sin explicar por qué.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Condiciones:</strong> El producto debe estar sin usar, en su empaque original y en las mismas condiciones en que lo recibiste. Tú cubres los costos de devolución.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Reembolso:</strong> Te devolvemos el 100% del dinero en máximo 15 días, usando el mismo método de pago.</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Excepciones</h4>
+                    <p style="margin-bottom: 0.5rem;">No puedes devolver:</p>
+                    <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
+                        <li style="margin-bottom: 0.5rem;">Productos personalizados o hechos a medida.</li>
+                        <li style="margin-bottom: 0.5rem;">Productos que, por higiene o salud, hayan sido usados o abiertos (ej. ropa interior, cosméticos).</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Garantías</h4>
+                    <p style="margin-bottom: 0.5rem;">Si el producto tiene defectos o no es como lo prometimos:</p>
+                    <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
+                        <li style="margin-bottom: 0.5rem;">Puedes pedir reparación, cambio o reembolso durante al menos 1 año desde la entrega.</li>
+                        <li style="margin-bottom: 0.5rem;">Notifícanos en un plazo razonable (sugerimos dentro de los 30 días desde que notas el problema).</li>
+                        <li style="margin-bottom: 0.5rem;">Resolveremos tu solicitud en máximo 15 días hábiles.</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Cómo Devolver</h4>
+                    <ol style="margin-left: 1rem; margin-bottom: 0.8rem;">
+                        <li style="margin-bottom: 0.5rem;">Escríbenos por WhatsApp al +57 3180646005 dentro del plazo.</li>
+                        <li style="margin-bottom: 0.5rem;">Danos el número de orden o detalles de la compra hecha por la tienda online o WhatsApp.</li>
+                        <li style="margin-bottom: 0.5rem;">Te indicaremos cómo enviar el producto de vuelta y cuándo recibirás el reembolso.</li>
+                    </ol>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Contáctanos</h4>
+                    <p style="margin-bottom: 0.5rem;">Para dudas o reclamos, contáctanos por:</p>
+                    <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>WhatsApp:</strong> +57 3180646005</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Correo:</strong> vialsabogal@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">Producto agregado al carrito</div>
 
     <!-- Floating Buttons -->
     <div class="floating-buttons">
@@ -2229,11 +1981,6 @@
         <button class="floating-btn floating-top" onclick="scrollToTop()" title="Volver Arriba">
             <i class="fas fa-arrow-up"></i>
         </button>
-    </div>
-
-    <!-- Notification -->
-    <div class="notification" id="notification">
-        Producto agregado al carrito
     </div>
 
     <!-- Footer -->
@@ -2267,14 +2014,10 @@
         </div>
     </footer>
 
-    <!-- Audio elements for micro-interactions (hidden) -->
-    <audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3" preload="auto"></audio>
-    <audio id="addToCartSound" src="https://assets.mixkit.co/sfx/preview/mixkit-positive-interface-beep-221.mp3" preload="auto"></audio>
-    <audio id="checkoutSound" src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3" preload="auto"></audio>
-
     <script>
-        // Product Data
+        // Product data - Productos solicitados eliminados
         const products = [
+            // Kits (Primero los kits)
             {
                 id: 'kit-maximo-resplandor',
                 name: 'Kit Máximo Resplandor',
@@ -2294,9 +2037,9 @@
                     'Fórmula mejorada con ingredientes naturales'
                 ],
                 packages: [
-                    { quantity: 1, price: 149900, originalPrice: 169900, savings: 20000 },
-                    { quantity: 2, price: 279800, originalPrice: 339800, savings: 60000, popular: true },
-                    { quantity: 3, price: 399900, originalPrice: 509700, savings: 109800, bestValue: true }
+                    { quantity: 1, price: 149900, originalPrice: 169900, savings: 0 },
+                    { quantity: 2, price: 279800, originalPrice: 339800, savings: 20000, popular: true },
+                    { quantity: 3, price: 389850, originalPrice: 509700, savings: 60000, bestValue: true }
                 ]
             },
             {
@@ -2317,9 +2060,9 @@
                     'Resultados en 3-4 semanas'
                 ],
                 packages: [
-                    { quantity: 1, price: 139900, originalPrice: 159900, savings: 20000 },
-                    { quantity: 2, price: 259800, originalPrice: 319800, savings: 60000, popular: true },
-                    { quantity: 3, price: 369900, originalPrice: 479700, savings: 109800, bestValue: true }
+                    { quantity: 1, price: 139900, originalPrice: 159900, savings: 0 },
+                    { quantity: 2, price: 259800, originalPrice: 319800, savings: 20000, popular: true },
+                    { quantity: 3, price: 369900, originalPrice: 479700, savings: 60000, bestValue: true }
                 ]
             },
             {
@@ -2340,11 +2083,13 @@
                     'Uso diario seguro'
                 ],
                 packages: [
-                    { quantity: 1, price: 139900, originalPrice: 159900, savings: 20000 },
-                    { quantity: 2, price: 259800, originalPrice: 319800, savings: 60000, popular: true },
-                    { quantity: 3, price: 369900, originalPrice: 479700, savings: 109800, bestValue: true }
+                    { quantity: 1, price: 139900, originalPrice: 159900, savings: 0 },
+                    { quantity: 2, price: 259800, originalPrice: 319800, savings: 20000, popular: true },
+                    { quantity: 3, price: 369900, originalPrice: 479700, savings: 60000, bestValue: true }
                 ]
             },
+
+            // Productos Individuales (Después los productos individuales)
             {
                 id: 'crema-carotone-300ml',
                 name: 'Crema Carotone 300ml',
@@ -2356,7 +2101,6 @@
                 currentPrice: 99900,
                 originalPrice: 119900,
                 savings: 20000,
-                badge: 'Más Vendida',
                 features: [
                     'Tamaño familiar 300ml - Dura hasta 3 meses',
                     'Para rostro y cuerpo - Uso múltiple',
@@ -2365,9 +2109,9 @@
                     'Uniforma el tono de la piel - Aspecto saludable'
                 ],
                 packages: [
-                    { quantity: 1, price: 99900, originalPrice: 119900, savings: 20000 },
-                    { quantity: 2, price: 179800, originalPrice: 239800, savings: 60000, popular: true },
-                    { quantity: 3, price: 249900, originalPrice: 359700, savings: 109800, bestValue: true }
+                    { quantity: 1, price: 99900, originalPrice: 119900, savings: 0 },
+                    { quantity: 2, price: 179800, originalPrice: 239800, savings: 20000, popular: true },
+                    { quantity: 3, price: 249900, originalPrice: 359700, savings: 60000, bestValue: true }
                 ]
             },
             {
@@ -2389,9 +2133,9 @@
                     'Fácil aplicación - Absorción rápida'
                 ],
                 packages: [
-                    { quantity: 1, price: 79900, originalPrice: 89900, savings: 10000 },
-                    { quantity: 2, price: 139800, originalPrice: 179800, savings: 40000, popular: true },
-                    { quantity: 3, price: 199900, originalPrice: 269700, savings: 69800, bestValue: true }
+                    { quantity: 1, price: 79900, originalPrice: 89900, savings: 0 },
+                    { quantity: 2, price: 139800, originalPrice: 179800, savings: 20000, popular: true },
+                    { quantity: 3, price: 189700, originalPrice: 269700, savings: 60000, bestValue: true }
                 ]
             },
             {
@@ -2413,9 +2157,33 @@
                     'Fragancia suave - Agradable aroma'
                 ],
                 packages: [
-                    { quantity: 1, price: 99900, originalPrice: 119900, savings: 20000 },
-                    { quantity: 2, price: 179800, originalPrice: 239800, savings: 60000, popular: true },
-                    { quantity: 3, price: 249900, originalPrice: 359700, savings: 109800, bestValue: true }
+                    { quantity: 1, price: 99900, originalPrice: 119900, savings: 0 },
+                    { quantity: 2, price: 179800, originalPrice: 239800, savings: 20000, popular: true },
+                    { quantity: 3, price: 249900, originalPrice: 359700, savings: 60000, bestValue: true }
+                ]
+            },
+            {
+                id: 'locion-manchas-negras-50ml',
+                name: 'Lotion Carotone Manchas Negras Bsc 50ml',
+                category: 'individual',
+                description: 'Tratamiento especializado para eliminar manchas oscuras',
+                image: 'https://cdn.jsdelivr.net/gh/ziayoficial/catalogo-carotone@main/images/10-Lotion%20Carotone%20Manchas%20Negras%20Bsc%2050ml.jpg',
+                rating: 4.9,
+                reviews: 876,
+                currentPrice: 89900,
+                originalPrice: 99900,
+                savings: 10000,
+                features: [
+                    'Fórmula concentrada - Para manchas resistentes',
+                    'Resultados visibles en 3-4 semanas',
+                    'Textura ligera - Absorción rápida',
+                    'Para todo tipo de piel - Incluyendo sensible',
+                    'Uso diario seguro'
+                ],
+                packages: [
+                    { quantity: 1, price: 89900, originalPrice: 99900, savings: 0 },
+                    { quantity: 2, price: 159800, originalPrice: 199800, savings: 20000, popular: true },
+                    { quantity: 3, price: 219700, originalPrice: 299700, savings: 60000, bestValue: true }
                 ]
             },
             {
@@ -2437,9 +2205,9 @@
                     'Complemento ideal para los kits'
                 ],
                 packages: [
-                    { quantity: 1, price: 60000, originalPrice: 70000, savings: 10000 },
-                    { quantity: 2, price: 100000, originalPrice: 140000, savings: 40000, popular: true },
-                    { quantity: 3, price: 140000, originalPrice: 210000, savings: 70000, bestValue: true }
+                    { quantity: 1, price: 60000, originalPrice: 70000, savings: 0 },
+                    { quantity: 2, price: 100000, originalPrice: 140000, savings: 20000, popular: true },
+                    { quantity: 3, price: 130000, originalPrice: 210000, savings: 60000, bestValue: true }
                 ]
             }
         ];
@@ -2447,12 +2215,14 @@
         // Cart functionality
         let cart = JSON.parse(localStorage.getItem('carotoneCart')) || [];
         let selectedPackages = {};
+        let selectedHeroPackageIndex = 0;
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
             loadProducts();
             updateCartUI();
             updateCartCount();
+            
             // Set default payment method
             document.getElementById('metodoPago').value = 'contraentrega';
             
@@ -2491,9 +2261,9 @@
                     }, 600);
                 });
             });
-
+            
             // Asegurar que el botón de WhatsApp funcione en toda su área
-            document.querySelector('.whatsapp-btn').addEventListener('click', function(e) {
+            document.getElementById('whatsappSubmitButton').addEventListener('click', function(e) {
                 submitWhatsAppOrder();
             });
         });
@@ -2507,7 +2277,7 @@
             
             // Vibrate on mobile devices
             if ('vibrate' in navigator) {
-                navigator.vibrate([100, 50, 100]);
+                navigator.vibrate(30);
             }
             
             // Validate required fields
@@ -2553,12 +2323,16 @@
             let message = `¡Hola! Quiero realizar un pedido:\n\n`;
             message += `*Nombre:* ${formData.nombre} ${formData.apellido}\n`;
             message += `*Teléfono:* ${formData.telefono}\n`;
-            message += formData.email ? `*Email:* ${formData.email}\n` : '';
+            if (formData.email) {
+                message += `*Email:* ${formData.email}\n`;
+            }
             message += `*Dirección:* ${formData.direccion}, ${formData.ciudad}, ${formData.departamento}\n`;
             message += `*Método de pago:* ${formData.metodoPago}\n`;
-            message += formData.notas ? `*Notas:* ${formData.notas}\n\n` : '\n';
+            if (formData.notas) {
+                message += `*Notas:* ${formData.notas}\n`;
+            }
+            message += `\n*Productos:*\n`;
             
-            message += `*Productos:*\n`;
             cart.forEach(item => {
                 message += `- ${item.name} (${item.packageQuantity} unidad${item.packageQuantity > 1 ? 'es' : ''}) x ${item.quantity} = $${(item.price * item.quantity).toLocaleString()}\n`;
             });
@@ -2593,62 +2367,58 @@
             const filteredProducts = filter === 'all' ? products : products.filter(p => p.category === filter);
             
             grid.innerHTML = filteredProducts.map(product => `
-                <div class="product-card" data-category="${product.category}">
-                    ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
-                    <div class="product-image" onclick="showProductModal('${product.id}')">
-                        <img src="${product.image}" alt="${product.name}" loading="lazy">
+                <div class="product-card">
+                    <div class="product-badge">${product.category === 'kits' ? 'KIT' : 'INDIVIDUAL'}</div>
+                    <div class="product-image-container" onclick="selectPackage('${product.id}', 0)">
+                        <img src="${product.image}" alt="${product.name}">
                     </div>
-                    <div class="product-info">
-                        <div class="product-category">${product.category === 'kits' ? 'Kit Completo' : 'Producto Individual'}</div>
+                    <div class="product-details">
+                        <div class="product-category">${product.category === 'kits' ? 'KIT COMPLETO' : 'PRODUCTO INDIVIDUAL'}</div>
                         <h3 class="product-title">${product.name}</h3>
                         <p class="product-description">${product.description}</p>
                         <div class="product-rating">
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <span class="rating-text">${product.rating}/5 | ${product.reviews.toLocaleString()} Reseñas</span>
+                            <div class="stars">
+                                ${Array(Math.floor(product.rating)).fill('<i class="fas fa-star"></i>').join('')}
+                                ${product.rating % 1 !== 0 ? '<i class="fas fa-star-half-alt"></i>' : ''}
+                                ${Array(5 - Math.ceil(product.rating)).fill('<i class="far fa-star"></i>').join('')}
+                            </div>
+                            <div class="reviews">(${product.reviews})</div>
                         </div>
                         <div class="product-price">
-                            <span class="current">$${product.currentPrice.toLocaleString()}</span>
-                            <span class="original">$${product.originalPrice.toLocaleString()}</span>
-                            <span class="savings">Ahorras $${product.savings.toLocaleString()}</span>
+                            <div class="current-price">$${product.currentPrice.toLocaleString()}</div>
+                            <div class="original-price">$${product.originalPrice.toLocaleString()}</div>
+                            <div class="savings">Ahorra $${product.savings.toLocaleString()}</div>
                         </div>
-                        <ul class="product-features">
-                            ${product.features.slice(0, 3).map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
-                            ${product.features.length > 3 ? `<li style="cursor: pointer; color: var(--primary-color);" onclick="showProductModal('${product.id}')"><i class="fas fa-plus-circle"></i> Ver más detalles...</li>` : ''}
-                        </ul>
                         <div class="package-options">
-                            <h4 class="package-title">PAQUETES Y AHORROS</h4>
-                            ${product.packages.map((pkg, index) => `
-                                <div class="package-option ${index === 1 ? 'selected' : ''}" onclick="selectPackage('${product.id}', ${index})">
-                                    ${pkg.popular ? `<div class="popular-badge">MÁS POPULAR</div>` : ''}
-                                    ${pkg.bestValue ? `<div class="best-value-badge">MEJOR VALOR</div>` : ''}
-                                    <input type="radio" name="package-${product.id}" ${index === 1 ? 'checked' : ''}>
-                                    <div class="package-info">
-                                        <div class="package-label">${pkg.quantity} UNIDAD${pkg.quantity > 1 ? 'ES' : ''}</div>
-                                        <div class="package-savings">Ahorras $${pkg.savings.toLocaleString()}</div>
+                            <div class="package-list">
+                                ${product.packages.map((pkg, index) => `
+                                    <div class="package-option ${selectedPackages[product.id] === index ? 'selected' : ''}" onclick="selectPackage('${product.id}', ${index})">
+                                        <input type="radio" name="package-${product.id}" class="package-radio" ${selectedPackages[product.id] === index ? 'checked' : ''}>
+                                        <div class="package-info">
+                                            <div class="package-details">
+                                                <span class="package-quantity">${pkg.quantity} unidad${pkg.quantity > 1 ? 'es' : ''}</span>
+                                                <span class="package-price">$${Math.round(pkg.price / pkg.quantity).toLocaleString()} c/u</span>
+                                            </div>
+                                            <div class="package-savings">Ahorra $${pkg.savings.toLocaleString()} ${pkg.popular ? '<span class="package-badge popular-badge">MÁS POPULAR</span>' : ''} ${pkg.bestValue ? '<span class="package-badge best-value-badge">MEJOR VALOR</span>' : ''}</div>
+                                        </div>
                                     </div>
-                                    <div class="package-price-container">
-                                        <div class="package-price">$${pkg.price.toLocaleString()}</div>
-                                        <div class="package-original-price">$${pkg.originalPrice.toLocaleString()}</div>
-                                    </div>
-                                </div>
-                            `).join('')}
+                                `).join('')}
+                            </div>
                         </div>
                         <button class="add-to-cart-btn" onclick="addToCart('${product.id}', getSelectedPackageQuantity('${product.id}'))">
-                            <i class="fas fa-cart-plus"></i>
-                            AGREGAR AL CARRITO
+                            <i class="fas fa-cart-plus"></i>AGREGAR AL CARRITO
                         </button>
                         <div class="payment-info">
-                            <i class="fas fa-shield-alt"></i>
-                            Pago contra entrega disponible
+                            <i class="fas fa-shield-alt"></i>Pago contra entrega disponible
                         </div>
                     </div>
                 </div>
             `).join('');
-
+            
             // Initialize selected packages
             filteredProducts.forEach(product => {
-                if (!selectedPackages[product.id]) {
-                    selectedPackages[product.id] = 1; // Default to index 1
+                if (selectedPackages[product.id] === undefined) {
+                    selectedPackages[product.id] = 0; // Default to first package
                 }
             });
         }
@@ -2658,7 +2428,6 @@
             // Update active filter button
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
-            
             loadProducts(category);
             // Scroll to products section
             scrollToSection('productos');
@@ -2680,475 +2449,273 @@
             // Check products grid
             const productCards = document.querySelectorAll('.product-card');
             productCards.forEach(card => {
-                const addToCartBtn = card.querySelector('.add-to-cart-btn');
-                if (addToCartBtn && addToCartBtn.getAttribute('onclick').includes(`'${productId}'`)) {
+                if (card.querySelector(`.add-to-cart-btn`).getAttribute('onclick').includes(productId)) {
                     containers.push(card);
                 }
             });
             
-            // Update all containers
+            // Update UI for each container
             containers.forEach(container => {
-                const options = container.querySelectorAll('.package-option');
+                const packageOptions = container.querySelectorAll('.package-option');
+                const radioButtons = container.querySelectorAll('.package-radio');
                 
-                options.forEach((option, index) => {
-                    option.classList.toggle('selected', index === packageIndex);
-                    const radio = option.querySelector('input[type="radio"]');
-                    if (radio) {
-                        radio.checked = index === packageIndex;
+                packageOptions.forEach((option, index) => {
+                    if (index === packageIndex) {
+                        option.classList.add('selected');
+                        radioButtons[index].checked = true;
+                    } else {
+                        option.classList.remove('selected');
+                        radioButtons[index].checked = false;
                     }
                 });
             });
+        }
+
+        // Select hero package
+        function selectHeroPackage(index) {
+            selectedHeroPackageIndex = index;
             
-            // Play click sound
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
+            // Update UI
+            const packageOptions = document.querySelectorAll('.hero-product-card .package-option');
+            const radioButtons = document.querySelectorAll('.hero-product-card .package-radio');
             
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate(30);
-            }
+            packageOptions.forEach((option, i) => {
+                if (i === index) {
+                    option.classList.add('selected');
+                    radioButtons[i].checked = true;
+                } else {
+                    option.classList.remove('selected');
+                    radioButtons[i].checked = false;
+                }
+            });
+        }
+
+        // Get selected hero package
+        function getSelectedHeroPackage() {
+            const heroProduct = products.find(p => p.id === 'kit-maximo-resplandor');
+            return heroProduct.packages[selectedHeroPackageIndex].quantity;
         }
 
         // Get selected package quantity
         function getSelectedPackageQuantity(productId) {
-            const product = products.find(p => p.id === productId.replace('-hero', ''));
-            if (!product) return 1;
+            if (productId === 'kit-maximo-resplandor-hero') {
+                return getSelectedHeroPackage();
+            }
             
-            const selectedIndex = selectedPackages[productId] || 1; // Default to index 1
-            return product.packages[selectedIndex].quantity;
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                const selectedIndex = selectedPackages[productId] || 0;
+                return product.packages[selectedIndex].quantity;
+            }
+            return 1;
         }
 
-        // Add to cart
-        function addToCart(productId, quantity = 1) {
-            // Handle hero product ID
-            const actualProductId = productId.replace('-hero', '');
-            const product = products.find(p => p.id === actualProductId);
+        // Add to cart function
+        function addToCart(productId, quantity) {
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(30);
+            }
+            
+            let product;
+            
+            // Special handling for hero product
+            if (productId === 'kit-maximo-resplandor-hero') {
+                product = {
+                    ...products.find(p => p.id === 'kit-maximo-resplandor'),
+                    id: 'kit-maximo-resplandor-hero'
+                };
+            } else {
+                product = products.find(p => p.id === productId);
+            }
+            
             if (!product) return;
-
-            const selectedIndex = selectedPackages[productId] || selectedPackages[actualProductId] || 1; // Default to index 1
+            
+            // Get the selected package
+            let selectedIndex = 0;
+            if (productId === 'kit-maximo-resplandor-hero') {
+                selectedIndex = selectedHeroPackageIndex;
+            } else {
+                selectedIndex = selectedPackages[productId] || 0;
+            }
+            
             const selectedPackage = product.packages[selectedIndex];
             
-            const existingItem = cart.find(item => item.id === actualProductId && item.packageIndex === selectedIndex);
+            // Check if item already exists in cart
+            const existingItemIndex = cart.findIndex(item => 
+                item.id === product.id && item.packageQuantity === selectedPackage.quantity
+            );
             
-            if (existingItem) {
-                existingItem.quantity += 1;
+            if (existingItemIndex > -1) {
+                // Update quantity
+                cart[existingItemIndex].quantity += quantity;
             } else {
+                // Add new item
                 cart.push({
-                    id: actualProductId,
+                    id: product.id,
                     name: product.name,
+                    price: selectedPackage.price / selectedPackage.quantity,
+                    quantity: quantity,
                     image: product.image,
-                    price: selectedPackage.price,
-                    originalPrice: selectedPackage.originalPrice,
-                    savings: selectedPackage.savings,
-                    quantity: 1,
-                    packageIndex: selectedIndex,
                     packageQuantity: selectedPackage.quantity
                 });
             }
             
+            // Save to localStorage
             localStorage.setItem('carotoneCart', JSON.stringify(cart));
+            
+            // Update UI
             updateCartUI();
             updateCartCount();
-            updateFormCartItems();
             
-            // Play add to cart sound
-            const addToCartSound = document.getElementById('addToCartSound');
-            addToCartSound.currentTime = 0;
-            addToCartSound.play();
-            
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate([100, 50, 100]);
-            }
-            
+            // Show notification
             showNotification('Producto agregado al carrito');
+            
+            // Auto-open cart on mobile
+            if (window.innerWidth <= 768) {
+                toggleCart();
+            }
         }
 
         // Update cart UI
         function updateCartUI() {
-            const cartContent = document.getElementById('cartContent');
-            const cartSubtotal = document.getElementById('cartSubtotal');
-            const cartSavings = document.getElementById('cartSavings');
+            const cartItems = document.getElementById('cartItems');
             const cartTotal = document.getElementById('cartTotal');
             
             if (cart.length === 0) {
-                cartContent.innerHTML = '<p style="text-align: center; color: #666; padding: 2rem;">Tu carrito está vacío</p>';
-                cartSubtotal.textContent = '$0';
-                cartSavings.textContent = '-$0';
-                cartTotal.textContent = '$0 COP';
-                return;
-            }
-            
-            let subtotal = 0;
-            let totalSavings = 0;
-            
-            cartContent.innerHTML = cart.map(item => {
-                subtotal += item.price * item.quantity;
-                totalSavings += item.savings * item.quantity;
-                
-                return `
-                    <div class="cart-item">
-                        <div class="cart-item-image" onclick="showProductModal('${item.id}')">
-                            <img src="${item.image}" alt="${item.name}" loading="lazy">
-                        </div>
-                        <div class="cart-item-info">
-                            <div class="cart-item-name">${item.name}</div>
-                            <div class="cart-item-price">$${item.price.toLocaleString()}</div>
-                            <div class="cart-item-controls">
-                                <button class="quantity-btn" onclick="updateCartQuantity('${item.id}', ${item.packageIndex}, -1)">-</button>
-                                <span class="quantity-display">${item.quantity}</span>
-                                <button class="quantity-btn" onclick="updateCartQuantity('${item.id}', ${item.packageIndex}, 1)">+</button>
-                                <button class="remove-item" onclick="removeFromCart('${item.id}', ${item.packageIndex})">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Tu carrito está vacío</p>
                     </div>
                 `;
-            }).join('');
-            
-            cartSubtotal.textContent = `$${subtotal.toLocaleString()}`;
-            cartSavings.textContent = `-$${totalSavings.toLocaleString()}`;
-            cartTotal.textContent = `$${subtotal.toLocaleString()} COP`;
-        }
-
-        // Update cart quantity
-        function updateCartQuantity(productId, packageIndex, change) {
-            const item = cart.find(item => item.id === productId && item.packageIndex === packageIndex);
-            if (!item) return;
-            
-            item.quantity += change;
-            
-            if (item.quantity <= 0) {
-                removeFromCart(productId, packageIndex);
+                cartTotal.textContent = '$0';
                 return;
             }
             
-            localStorage.setItem('carotoneCart', JSON.stringify(cart));
-            updateCartUI();
-            updateCartCount();
-            updateFormCartItems();
+            // Calculate total
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = `$${total.toLocaleString()}`;
             
-            // Play click sound
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
-            
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate(30);
-            }
-        }
-
-        // Remove from cart
-        function removeFromCart(productId, packageIndex) {
-            cart = cart.filter(item => !(item.id === productId && item.packageIndex === packageIndex));
-            localStorage.setItem('carotoneCart', JSON.stringify(cart));
-            updateCartUI();
-            updateCartCount();
-            updateFormCartItems();
-            
-            // Play click sound
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
-            
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate(100);
-            }
+            // Render cart items
+            cartItems.innerHTML = cart.map((item, index) => `
+                <div class="cart-item">
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <h4 class="cart-item-title">${item.name}</h4>
+                        <div class="cart-item-info">${item.packageQuantity} unidad${item.packageQuantity > 1 ? 'es' : ''} x $${Math.round(item.price).toLocaleString()}</div>
+                        <div class="cart-item-price">$${(item.price * item.quantity).toLocaleString()}</div>
+                        <div class="cart-item-actions">
+                            <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                            <span class="item-quantity">${item.quantity}</span>
+                            <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                            <button class="remove-item" onclick="removeFromCart(${index})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
         }
 
         // Update cart count
         function updateCartCount() {
-            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
             document.getElementById('cartCount').textContent = count;
             document.getElementById('floatingCartCount').textContent = count;
-            document.getElementById('cartItemCount').textContent = count;
         }
 
-        // Toggle cart sidebar
+        // Update quantity
+        function updateQuantity(index, change) {
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(20);
+            }
+            
+            cart[index].quantity += change;
+            
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            
+            localStorage.setItem('carotoneCart', JSON.stringify(cart));
+            updateCartUI();
+            updateCartCount();
+        }
+
+        // Remove from cart
+        function removeFromCart(index) {
+            // Play click sound
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(30);
+            }
+            
+            cart.splice(index, 1);
+            localStorage.setItem('carotoneCart', JSON.stringify(cart));
+            updateCartUI();
+            updateCartCount();
+        }
+
+        // Toggle cart visibility
         function toggleCart() {
             const cartSidebar = document.getElementById('cartSidebar');
             cartSidebar.classList.toggle('open');
             
-            // Play click sound
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
-            
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate(30);
-            }
+            // Prevent body scroll when cart is open
+            document.body.style.overflow = cartSidebar.classList.contains('open') ? 'hidden' : '';
         }
 
-        // Show product modal
-        function showProductModal(productId) {
-            const product = products.find(p => p.id === productId);
-            if (!product) return;
-            
-            const modal = document.getElementById('productModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalBody = document.getElementById('modalBody');
-            
-            modalTitle.textContent = product.name;
-            modalBody.innerHTML = `
-                <div style="text-align: center; margin-bottom: 1.5rem;">
-                    <img src="${product.image}" alt="${product.name}" style="max-width: 200px; height: auto;">
-                </div>
-                <h4 style="color: var(--primary-color); margin-bottom: 1rem;">${product.description}</h4>
-                <ul style="list-style: none; margin-bottom: 1.5rem;">
-                    ${product.features.map(feature => `<li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 0.5rem;"></i> ${feature}</li>`).join('')}
-                </ul>
-                <div class="package-options">
-                    <h4 class="package-title">PAQUETES Y AHORROS</h4>
-                     ${product.packages.map((pkg, index) => `
-                        <div class="package-option ${index === 1 ? 'selected' : ''}" onclick="selectModalPackage('${product.id}', ${index})">
-                            ${pkg.popular ? `<div class="popular-badge">MÁS POPULAR</div>` : ''}
-                            ${pkg.bestValue ? `<div class="best-value-badge">MEJOR VALOR</div>` : ''}
-                            <input type="radio" name="modal-package-${product.id}" ${index === 1 ? 'checked' : ''}>
-                            <div class="package-info">
-                                <div class="package-label">${pkg.quantity} UNIDAD${pkg.quantity > 1 ? 'ES' : ''}</div>
-                                <div class="package-savings">Ahorras $${pkg.savings.toLocaleString()}</div>
-                            </div>
-                            <div class="package-price-container">
-                                <div class="package-price">$${pkg.price.toLocaleString()}</div>
-                                <div class="package-original-price">$${pkg.originalPrice.toLocaleString()}</div>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-                <button class="add-to-cart-btn" onclick="addToCartFromModal('${product.id}')" style="margin-top: 1rem;">
-                    <i class="fas fa-cart-plus"></i>
-                    AGREGAR AL CARRITO
-                </button>
-            `;
-            
-            modal.classList.add('show');
-            
-            // Play click sound
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
-            
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate(30);
-            }
-        }
-
-        // Select package in modal
-        function selectModalPackage(productId, packageIndex) {
-            selectedPackages[productId] = packageIndex;
-            
-            // Update modal UI
-            const modal = document.getElementById('productModal');
-            const options = modal.querySelectorAll('.package-option');
-            
-            options.forEach((option, index) => {
-                option.classList.toggle('selected', index === packageIndex);
-                const radio = option.querySelector('input[type="radio"]');
-                if (radio) {
-                    radio.checked = index === packageIndex;
-                }
-            });
-            
-            // Play click sound
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
-            
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate(30);
-            }
-        }
-
-        // Add to cart from modal
-        function addToCartFromModal(productId) {
-            addToCart(productId, getSelectedPackageQuantity(productId));
-            closeModal();
-        }
-
-        // Close modal
-        function closeModal() {
-            document.getElementById('productModal').classList.remove('show');
-            
-            // Play click sound
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
-            
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate(30);
-            }
-        }
-
-        // Show policy modal
-        function showPolicyModal() {
-            const modal = document.createElement('div');
-            modal.className = 'modal show';
-            modal.id = 'policyModal';
-            modal.innerHTML = `
-                <div class="modal-content" style="max-width: 700px;">
-                    <div class="modal-header">
-                        <h3 class="modal-title">Política de Devoluciones</h3>
-                        <button class="modal-close" onclick="closePolicyModal()">&times;</button>
-                    </div>
-                    <div class="modal-body" style="font-size: 0.85rem; line-height: 1.5;">
-                        <p style="margin-bottom: 1rem; color: #666;">Esta política aplica a la compra de productos físicos en nuestra tienda online o a través de WhatsApp en Colombia.</p>
-                        
-                        <div style="margin-bottom: 1.5rem;">
-                            <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Derecho a Desistir</h4>
-                            <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
-                                <li style="margin-bottom: 0.5rem;"><strong>Tiempo:</strong> Puedes devolver tu compra en 5 días hábiles desde que recibes el producto, sin explicar por qué.</li>
-                                <li style="margin-bottom: 0.5rem;"><strong>Condiciones:</strong> El producto debe estar sin usar, en su empaque original y en las mismas condiciones en que lo recibiste. Tú cubres los costos de devolución.</li>
-                                <li style="margin-bottom: 0.5rem;"><strong>Reembolso:</strong> Te devolvemos el 100% del dinero en máximo 15 días, usando el mismo método de pago.</li>
-                            </ul>
-                        </div>
-
-                        <div style="margin-bottom: 1.5rem;">
-                            <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Excepciones</h4>
-                            <p style="margin-bottom: 0.5rem;">No puedes devolver:</p>
-                            <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
-                                <li style="margin-bottom: 0.5rem;">Productos personalizados o hechos a medida.</li>
-                                <li style="margin-bottom: 0.5rem;">Productos que, por higiene o salud, hayan sido usados o abiertos (ej. ropa interior, cosméticos).</li>
-                            </ul>
-                        </div>
-
-                        <div style="margin-bottom: 1.5rem;">
-                            <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Garantías</h4>
-                            <p style="margin-bottom: 0.5rem;">Si el producto tiene defectos o no es como lo prometimos:</p>
-                            <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
-                                <li style="margin-bottom: 0.5rem;">Puedes pedir reparación, cambio o reembolso durante al menos 1 año desde la entrega.</li>
-                                <li style="margin-bottom: 0.5rem;">Notifícanos en un plazo razonable (sugerimos dentro de los 30 días desde que notas el problema).</li>
-                                <li style="margin-bottom: 0.5rem;">Resolveremos tu solicitud en máximo 15 días hábiles.</li>
-                            </ul>
-                        </div>
-
-                        <div style="margin-bottom: 1.5rem;">
-                            <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Cómo Devolver</h4>
-                            <ol style="margin-left: 1rem; margin-bottom: 0.8rem;">
-                                <li style="margin-bottom: 0.5rem;">Escríbenos por WhatsApp al +57 3180646005 dentro del plazo.</li>
-                                <li style="margin-bottom: 0.5rem;">Danos el número de orden o detalles de la compra hecha por la tienda online o WhatsApp.</li>
-                                <li style="margin-bottom: 0.5rem;">Te indicaremos cómo enviar el producto de vuelta y cuándo recibirás el reembolso.</li>
-                            </ol>
-                        </div>
-
-                        <div style="margin-bottom: 1rem;">
-                            <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Contáctanos</h4>
-                            <p style="margin-bottom: 0.5rem;">Para dudas o reclamos, contáctanos por:</p>
-                            <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
-                                <li style="margin-bottom: 0.5rem;"><strong>WhatsApp:</strong> +57 3180646005</li>
-                                <li style="margin-bottom: 0.5rem;"><strong>Correo:</strong> vialsabogal@gmail.com</li>
-                            </ul>
-                            <p style="font-style: italic; color: #666; font-size: 0.8rem; margin-top: 0.8rem;">Podemos actualizar esta política para cumplir con las normas vigentes.</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.appendChild(modal);
-            
-            // Play click sound
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
-            
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate(30);
-            }
-        }
-
-        // Close policy modal
-        function closePolicyModal() {
-            const modal = document.getElementById('policyModal');
-            if (modal) {
-                modal.classList.remove('show');
-                setTimeout(() => modal.remove(), 300);
-            }
-            
-            // Play click sound
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
-            
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate(30);
-            }
-        }
-
-        // Show order form
-        function showOrderForm() {
+        // Open order form
+        function openOrderForm() {
             if (cart.length === 0) {
-                showNotification('Tu carrito está vacío. Agrega productos antes de realizar el pedido.');
+                showNotification('Tu carrito está vacío');
                 return;
             }
             
-            updateFormCartItems();
-            document.getElementById('orderForm').classList.add('show');
-            
-            // Play click sound
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
-            
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate(50);
-            }
+            document.getElementById('orderFormModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
         }
 
         // Close order form
         function closeOrderForm() {
-            document.getElementById('orderForm').classList.remove('show');
+            document.getElementById('orderFormModal').classList.remove('show');
+            document.body.style.overflow = '';
             
-            // Play click sound
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
+            // Reset form
+            document.getElementById('orderForm').reset();
             
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate(30);
-            }
+            // Reset validation styles
+            const inputs = document.querySelectorAll('#orderForm input, #orderForm select');
+            inputs.forEach(input => {
+                input.style.borderColor = '';
+            });
         }
 
-        // Update form cart items
-        function updateFormCartItems() {
-            const formCartItems = document.getElementById('formCartItems');
-            const formTotal = document.getElementById('formTotal');
-            
-            if (cart.length === 0) {
-                formCartItems.innerHTML = '<p style="text-align: center; color: #666;">No hay productos en el carrito</p>';
-                formTotal.textContent = '$0 COP';
-                return;
-            }
-            
-            let total = 0;
-            
-            formCartItems.innerHTML = cart.map(item => {
-                total += item.price * item.quantity;
-                
-                return `
-                    <div class="form-cart-item">
-                        <div class="form-cart-image" onclick="showProductModal('${item.id}')">
-                            <img src="${item.image}" alt="${item.name}">
-                        </div>
-                        <div class="form-cart-info">
-                            <div class="form-cart-name">${item.name}</div>
-                            <div class="form-cart-details">${item.packageQuantity} unidad${item.packageQuantity > 1 ? 'es' : ''} • ${item.quantity} ${item.quantity > 1 ? 'paquetes' : 'paquete'}</div>
-                        </div>
-                        <div class="form-cart-price">$${item.price.toLocaleString()}</div>
-                    </div>
-                `;
-            }).join('');
-            
-            formTotal.textContent = `$${total.toLocaleString()} COP`;
+        // Show policy modal
+        function showPolicyModal() {
+            document.getElementById('policyModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close policy modal
+        function closePolicyModal() {
+            document.getElementById('policyModal').classList.remove('show');
+            document.body.style.overflow = '';
         }
 
         // Show notification
@@ -3168,34 +2735,11 @@
             if (section) {
                 section.scrollIntoView({ behavior: 'smooth' });
             }
-            
-            // Play click sound
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
-            
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate(30);
-            }
         }
 
         // Scroll to top
         function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-            
-            // Play click sound
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
-            
-            // Vibrate on mobile devices
-            if ('vibrate' in navigator) {
-                navigator.vibrate(30);
-            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // Share website
@@ -3211,55 +2755,75 @@
             } else {
                 // Fallback for browsers that don't support Web Share API
                 const shareUrl = `https://wa.me/?text=Descubre%20los%20mejores%20kits%20Carotone%20para%20aclarar%20tu%20piel%20y%20reducir%20manchas%20${encodeURIComponent(window.location.href)}`;
-                window.open(shareUrl, '_blank');
+                
+                // Copy to clipboard
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    showNotification('Enlace copiado al portapapeles');
+                }).catch(err => {
+                    console.log('Error copying link:', err);
+                    // Fallback to opening WhatsApp
+                    window.open(shareUrl, '_blank');
+                });
             }
-            
-            // Play click sound
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
             
             // Vibrate on mobile devices
             if ('vibrate' in navigator) {
-                navigator.vibrate(30);
+                navigator.vibrate([100, 50, 100]);
             }
         }
 
         // Search products
         function searchProducts() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const resultsContainer = document.getElementById('searchResults');
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const searchTerm = searchInput.value.toLowerCase();
             
-            if (input.length < 2) {
-                resultsContainer.classList.remove('show');
+            if (searchTerm.length < 2) {
+                searchResults.style.display = 'none';
                 return;
             }
             
             const filteredProducts = products.filter(product => 
-                product.name.toLowerCase().includes(input) || 
-                product.description.toLowerCase().includes(input)
+                product.name.toLowerCase().includes(searchTerm) || 
+                product.description.toLowerCase().includes(searchTerm)
             );
             
             if (filteredProducts.length === 0) {
-                resultsContainer.innerHTML = '<div class="search-result-item">No se encontraron productos</div>';
-            } else {
-                resultsContainer.innerHTML = filteredProducts.map(product => `
-                    <div class="search-result-item" onclick="showProductModal('${product.id}')">
-                        <img src="${product.image}" alt="${product.name}" style="width: 30px; height: 30px; object-fit: cover; border-radius: 4px; margin-right: 0.5rem;">
-                        ${product.name} - $${product.currentPrice.toLocaleString()}
-                    </div>
-                `).join('');
+                searchResults.innerHTML = '<div class="search-result-item">No se encontraron productos</div>';
+                searchResults.style.display = 'block';
+                return;
             }
             
-            resultsContainer.classList.add('show');
+            searchResults.innerHTML = filteredProducts.map(product => `
+                <div class="search-result-item" onclick="scrollToSection('productos'); searchResults.style.display='none'; searchInput.value=''">
+                    <img src="${product.image}" alt="${product.name}" class="search-result-image">
+                    <div class="search-result-info">
+                        <div class="search-result-title">${product.name}</div>
+                        <div class="search-result-price">$${product.currentPrice.toLocaleString()}</div>
+                    </div>
+                </div>
+            `).join('');
+            
+            searchResults.style.display = 'block';
         }
 
         // Close search results when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.search-box')) {
-                document.getElementById('searchResults').classList.remove('show');
+        document.addEventListener('click', function(event) {
+            const searchBox = document.querySelector('.search-box');
+            const searchResults = document.getElementById('searchResults');
+            
+            if (!searchBox.contains(event.target)) {
+                searchResults.style.display = 'none';
             }
         });
     </script>
+    
+    <!-- Audio elements for sound effects -->
+    <audio id="clickSound" preload="auto">
+        <source src="audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" type="audio/mpeg">
+    </audio>
+    <audio id="checkoutSound" preload="auto">
+        <source src="audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" type="audio/mpeg">
+    </audio>
 </body>
 </html>

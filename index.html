@@ -324,11 +324,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Ensure clickable area covers entire button */
-        .btn *, .add-to-cart-btn *, .checkout-btn *, .submit-btn * {
-            pointer-events: none;
-        }
-
         .btn-primary {
             background: var(--gradient-button);
             color: var(--text-light);
@@ -818,10 +813,6 @@
             overflow: hidden;
         }
 
-        .add-to-cart-btn * {
-            pointer-events: none;
-        }
-
         /* Stats Section */
         .stats-section {
             background: var(--text-light);
@@ -1131,10 +1122,6 @@
             overflow: hidden;
         }
 
-        .checkout-btn * {
-            pointer-events: none;
-        }
-
         /* Modal Styles */
         .modal {
             display: none;
@@ -1238,8 +1225,7 @@
             background: none;
             border: none;
             color: var(--text-light);
-            font-size: 1.5rem;
-            cursor: pointer;
+            font-size: 1.5rem;             cursor: pointer;
         }
 
         .form-body {
@@ -2183,7 +2169,7 @@
                     </div>
                     
                     <!-- Botón corregido - versión simplificada -->
-                    <button type="submit" class="submit-btn">
+                    <button type="button" id="whatsappSubmitBtn" class="submit-btn">
                         <i class="fab fa-whatsapp"></i>
                         Finalizar Pedido por WhatsApp
                     </button>
@@ -2467,10 +2453,8 @@
                 });
             });
 
-            // Handle form submission
-            document.getElementById('checkoutForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
+            // Handle WhatsApp button click
+            document.getElementById('whatsappSubmitBtn').addEventListener('click', function() {
                 // Play checkout sound
                 const checkoutSound = document.getElementById('checkoutSound');
                 checkoutSound.currentTime = 0;
@@ -2479,6 +2463,25 @@
                 // Vibrate on mobile devices
                 if ('vibrate' in navigator) {
                     navigator.vibrate([100, 50, 100]);
+                }
+                
+                // Validate required fields
+                const requiredFields = ['nombre', 'apellido', 'telefono', 'departamento', 'ciudad', 'direccion'];
+                let isValid = true;
+                
+                requiredFields.forEach(fieldId => {
+                    const field = document.getElementById(fieldId);
+                    if (!field.value.trim()) {
+                        field.style.borderColor = 'red';
+                        isValid = false;
+                    } else {
+                        field.style.borderColor = '';
+                    }
+                });
+                
+                if (!isValid) {
+                    showNotification('Por favor completa todos los campos obligatorios');
+                    return;
                 }
                 
                 // Get form data

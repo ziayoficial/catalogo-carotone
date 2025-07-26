@@ -322,6 +322,7 @@
             gap: 0.5rem;
             font-size: 1rem;
             transition: all 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .btn-primary {
@@ -1358,6 +1359,44 @@
             overflow: hidden;
         }
 
+        /* WhatsApp Button Styles - CORREGIDO */
+        .whatsapp-btn {
+            width: 100%;
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: visible;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            z-index: 1;
+        }
+
+        .whatsapp-btn::before,
+        .whatsapp-btn::after {
+            content: none;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
         /* Floating Buttons */
         .floating-buttons {
             position: fixed;
@@ -1699,7 +1738,7 @@
             }
 
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr));
             }
         }
 
@@ -2168,8 +2207,8 @@
                         <textarea id="notas" name="notas" rows="3" placeholder="Instrucciones especiales para la entrega..."></textarea>
                     </div>
                     
-                    <!-- Botón corregido - versión simplificada -->
-                    <button type="button" id="whatsappSubmitBtn" class="submit-btn">
+                    <!-- Botón de WhatsApp - CORREGIDO -->
+                    <button type="button" class="whatsapp-btn" onclick="submitWhatsAppOrder()">
                         <i class="fab fa-whatsapp"></i>
                         Finalizar Pedido por WhatsApp
                     </button>
@@ -2421,7 +2460,7 @@
             selectedPackages['kit-maximo-resplandor-hero'] = 1;
             
             // Add ripple effect to all buttons
-            document.querySelectorAll('.btn, .add-to-cart-btn, .checkout-btn, .submit-btn, .floating-btn').forEach(button => {
+            document.querySelectorAll('.btn, .add-to-cart-btn, .checkout-btn, .submit-btn, .floating-btn, .whatsapp-btn').forEach(button => {
                 button.addEventListener('click', function(e) {
                     // Play click sound
                     const clickSound = document.getElementById('clickSound');
@@ -2453,95 +2492,100 @@
                 });
             });
 
-            // Handle WhatsApp button click
-            document.getElementById('whatsappSubmitBtn').addEventListener('click', function() {
-                // Play checkout sound
-                const checkoutSound = document.getElementById('checkoutSound');
-                checkoutSound.currentTime = 0;
-                checkoutSound.play();
-                
-                // Vibrate on mobile devices
-                if ('vibrate' in navigator) {
-                    navigator.vibrate([100, 50, 100]);
-                }
-                
-                // Validate required fields
-                const requiredFields = ['nombre', 'apellido', 'telefono', 'departamento', 'ciudad', 'direccion'];
-                let isValid = true;
-                
-                requiredFields.forEach(fieldId => {
-                    const field = document.getElementById(fieldId);
-                    if (!field.value.trim()) {
-                        field.style.borderColor = 'red';
-                        isValid = false;
-                    } else {
-                        field.style.borderColor = '';
-                    }
-                });
-                
-                if (!isValid) {
-                    showNotification('Por favor completa todos los campos obligatorios');
-                    return;
-                }
-                
-                // Get form data
-                const formData = {
-                    nombre: document.getElementById('nombre').value,
-                    apellido: document.getElementById('apellido').value,
-                    telefono: document.getElementById('telefono').value,
-                    email: document.getElementById('email').value,
-                    departamento: document.getElementById('departamento').value,
-                    ciudad: document.getElementById('ciudad').value,
-                    direccion: document.getElementById('direccion').value,
-                    metodoPago: document.getElementById('metodoPago').value,
-                    notas: document.getElementById('notas').value,
-                    productos: cart.map(item => ({
-                        nombre: item.name,
-                        cantidad: item.quantity,
-                        precio: item.price,
-                        paquete: item.packageQuantity
-                    })),
-                    total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
-                };
-                
-                // Format WhatsApp message
-                let message = `¡Hola! Quiero realizar un pedido:\n\n`;
-                message += `*Nombre:* ${formData.nombre} ${formData.apellido}\n`;
-                message += `*Teléfono:* ${formData.telefono}\n`;
-                message += formData.email ? `*Email:* ${formData.email}\n` : '';
-                message += `*Dirección:* ${formData.direccion}, ${formData.ciudad}, ${formData.departamento}\n`;
-                message += `*Método de pago:* ${formData.metodoPago}\n`;
-                message += formData.notas ? `*Notas:* ${formData.notas}\n\n` : '\n';
-                
-                message += `*Productos:*\n`;
-                cart.forEach(item => {
-                    message += `- ${item.name} (${item.packageQuantity} unidad${item.packageQuantity > 1 ? 'es' : ''}) x ${item.quantity} = $${(item.price * item.quantity).toLocaleString()}\n`;
-                });
-                
-                message += `\n*Total:* $${formData.total.toLocaleString()}\n\n`;
-                message += `Por favor confirmen disponibilidad y envío. ¡Gracias!`;
-                
-                // Encode for WhatsApp URL
-                const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/573180646005?text=${encodedMessage}`;
-                
-                // Open WhatsApp
-                window.open(whatsappUrl, '_blank');
-                
-                // Close form
-                closeOrderForm();
-                toggleCart();
-                
-                // Clear cart
-                cart = [];
-                localStorage.setItem('carotoneCart', JSON.stringify(cart));
-                updateCartUI();
-                updateCartCount();
-                
-                // Show success notification
-                showNotification('Pedido enviado por WhatsApp');
+            // Asegurar que el botón de WhatsApp funcione en toda su área
+            document.querySelector('.whatsapp-btn').addEventListener('click', function(e) {
+                submitWhatsAppOrder();
             });
         });
+
+        // Submit WhatsApp order function
+        function submitWhatsAppOrder() {
+            // Play checkout sound
+            const checkoutSound = document.getElementById('checkoutSound');
+            checkoutSound.currentTime = 0;
+            checkoutSound.play();
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate([100, 50, 100]);
+            }
+            
+            // Validate required fields
+            const requiredFields = ['nombre', 'apellido', 'telefono', 'departamento', 'ciudad', 'direccion'];
+            let isValid = true;
+            
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (!field.value.trim()) {
+                    field.style.borderColor = 'red';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = '';
+                }
+            });
+            
+            if (!isValid) {
+                showNotification('Por favor completa todos los campos obligatorios');
+                return;
+            }
+            
+            // Get form data
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                apellido: document.getElementById('apellido').value,
+                telefono: document.getElementById('telefono').value,
+                email: document.getElementById('email').value,
+                departamento: document.getElementById('departamento').value,
+                ciudad: document.getElementById('ciudad').value,
+                direccion: document.getElementById('direccion').value,
+                metodoPago: document.getElementById('metodoPago').value,
+                notas: document.getElementById('notas').value,
+                productos: cart.map(item => ({
+                    nombre: item.name,
+                    cantidad: item.quantity,
+                    precio: item.price,
+                    paquete: item.packageQuantity
+                })),
+                total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
+            };
+            
+            // Format WhatsApp message
+            let message = `¡Hola! Quiero realizar un pedido:\n\n`;
+            message += `*Nombre:* ${formData.nombre} ${formData.apellido}\n`;
+            message += `*Teléfono:* ${formData.telefono}\n`;
+            message += formData.email ? `*Email:* ${formData.email}\n` : '';
+            message += `*Dirección:* ${formData.direccion}, ${formData.ciudad}, ${formData.departamento}\n`;
+            message += `*Método de pago:* ${formData.metodoPago}\n`;
+            message += formData.notas ? `*Notas:* ${formData.notas}\n\n` : '\n';
+            
+            message += `*Productos:*\n`;
+            cart.forEach(item => {
+                message += `- ${item.name} (${item.packageQuantity} unidad${item.packageQuantity > 1 ? 'es' : ''}) x ${item.quantity} = $${(item.price * item.quantity).toLocaleString()}\n`;
+            });
+            
+            message += `\n*Total:* $${formData.total.toLocaleString()}\n\n`;
+            message += `Por favor confirmen disponibilidad y envío. ¡Gracias!`;
+            
+            // Encode for WhatsApp URL
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/573180646005?text=${encodedMessage}`;
+            
+            // Open WhatsApp
+            window.open(whatsappUrl, '_blank');
+            
+            // Close form
+            closeOrderForm();
+            toggleCart();
+            
+            // Clear cart
+            cart = [];
+            localStorage.setItem('carotoneCart', JSON.stringify(cart));
+            updateCartUI();
+            updateCartCount();
+            
+            // Show success notification
+            showNotification('Pedido enviado por WhatsApp');
+        }
 
         // Load products into the grid
         function loadProducts(filter = 'all') {

@@ -47,15 +47,6 @@
             background-color: var(--background-light);
             overflow-x: hidden;
         }
-        
-        /* NUEVA CLASE PARA SOLUCIONAR EL PROBLEMA DEL SCROLL EN MÓVILES */
-        .body-no-scroll {
-            overflow: hidden;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-        }
-        
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -1255,6 +1246,24 @@
                 transform: translateY(0);
             }
         }
+        /* Urgency Timer */
+        .urgency-timer {
+            background: #FFF5F7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+            border: 1px solid #F8BBD0;
+        }
+        .urgency-timer h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .timer {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+        }
         /* Responsive Design */
         @media (max-width: 768px) {
             .container {
@@ -1497,24 +1506,6 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #C2185B;
         }
-        /* Urgency Timer */
-        .urgency-timer {
-            background: #FFF5F7;
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0;
-            text-align: center;
-            border: 1px solid #F8BBD0;
-        }
-        .urgency-timer h4 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-        .timer {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--text-dark);
-        }
     </style>
 </head>
 <body>
@@ -1750,7 +1741,6 @@
                         <p class="testimonial-text">"Resultados visibles en solo 2 semanas. ¡Mi confianza ha aumentado enormemente!"</p>
                         <div class="testimonial-author">Cliente Satisfecha</div>
                         <div class="testimonial-location">Colombia</div>
-                
                     </div>
                 </div>
             </div>
@@ -1804,29 +1794,29 @@
                 </div>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        Es apta para todo tipo de piel, incluyendo piel sensible. Su fórmula suave pero efectiva la hace ideal para uso diario.
+                        Es apta para todo tipo de piel que busque aclarar y unificar el tono. Su fórmula suave la hace ideal para uso diario.
                     </div>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFAQ(this)">
-                    ¿En cuánto tiempo se ven los resultados?
+                    ¿Con qué frecuencia debo usar la crema?
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        Los resultados son visibles desde la primera semana de uso, pero los mejores resultados se obtienen después de 2-4 semanas de uso constante.
+                        Se recomienda usarla diariamente por la noche. Puedes ajustar la frecuencia según la tolerancia de tu piel.
                     </div>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFAQ(this)">
-                    ¿Cómo se debe aplicar la crema?
+                    ¿Qué beneficios tiene la Crema Aclarante Carotone?
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        Aplica una pequeña cantidad sobre la piel limpia y seca, masajea suavemente hasta su completa absorción. Úsala preferiblemente en la noche y siempre usa protector solar durante el día.
+                        Ofrece aclarado y unificación del tono, hidratación profunda gracias al colágeno y glicerina, y protección UV para prevenir el oscurecimiento y daño ambiental.
                     </div>
                 </div>
             </div>
@@ -1836,73 +1826,64 @@
     <!-- Cart Sidebar -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h3 class="cart-title">Mi Carrito</h3>
-            <button class="close-cart" onclick="toggleCart()">
-                <i class="fas fa-times"></i>
-            </button>
+            <h3 class="cart-title">Tu Carrito</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
         </div>
         <div class="cart-items" id="cartItems">
-            <div class="empty-cart">
-                <i class="fas fa-shopping-cart"></i>
-                <p>Tu carrito está vacío</p>
-            </div>
+            <!-- Cart items will be dynamically loaded here -->
         </div>
-        <div class="urgency-timer" id="urgencyTimer" style="display: none;">
-            <h4>¡Oferta por tiempo limitado!</h4>
+        <div class="urgency-timer">
+            <h4>¡Pedido guardado por 15 minutos!</h4>
             <div class="timer" id="timer">15:00</div>
-            <p>Completa tu compra antes de que termine</p>
         </div>
         <div class="cart-total">
             <span>Total:</span>
             <span class="total-amount" id="cartTotal">$0</span>
         </div>
         <button class="checkout-btn" onclick="openOrderForm()">
-            <i class="fab fa-whatsapp"></i>FINALIZAR COMPRA
+            <i class="fas fa-credit-card"></i>FINALIZAR COMPRA
         </button>
     </div>
 
     <!-- Order Form Modal -->
-    <div class="modal" id="orderModal">
+    <div class="modal" id="orderFormModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">Finalizar Pedido</h3>
-                <button class="modal-close" onclick="closeOrderForm()">
-                    <i class="fas fa-times"></i>
-                </button>
+                <button class="modal-close" onclick="closeOrderForm()">&times;</button>
             </div>
             <div class="modal-body">
                 <form id="orderForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="nombre">Nombre Completo *</label>
+                            <label for="nombre">Nombre *</label>
                             <input type="text" id="nombre" name="nombre" required>
                         </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido *</label>
+                            <input type="text" id="apellido" name="apellido" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
                         <div class="form-group">
                             <label for="telefono">Teléfono *</label>
                             <input type="tel" id="telefono" name="telefono" required>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="direccion">Dirección Completa *</label>
-                        <textarea id="direccion" name="direccion" placeholder="Incluye barrio, ciudad y departamento" required></textarea>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="ciudad">Ciudad *</label>
-                            <input type="text" id="ciudad" name="ciudad" required>
-                        </div>
-                        <div class="form-group">
                             <label for="departamento">Departamento *</label>
                             <select id="departamento" name="departamento" required>
-                                <option value="">Selecciona tu departamento</option>
+                                <option value="">Selecciona un departamento</option>
                                 <option value="Amazonas">Amazonas</option>
                                 <option value="Antioquia">Antioquia</option>
                                 <option value="Arauca">Arauca</option>
                                 <option value="Atlántico">Atlántico</option>
+                                <option value="Bogotá">Bogotá</option>
                                 <option value="Bolívar">Bolívar</option>
                                 <option value="Boyacá">Boyacá</option>
                                 <option value="Caldas">Caldas</option>
@@ -1933,24 +1914,81 @@
                                 <option value="Vichada">Vichada</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for="ciudad">Ciudad *</label>
+                            <input type="text" id="ciudad" name="ciudad" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección completa *</label>
+                        <input type="text" id="direccion" name="direccion" required>
                     </div>
                     <div class="form-group">
                         <label for="metodoPago">Método de Pago *</label>
                         <select id="metodoPago" name="metodoPago" required>
-                            <option value="contraentrega">Pago Contra Entrega</option>
-                            <option value="transferencia">Transferencia Bancaria</option>
+                            <option value="contraentrega">Pago contra entrega</option>
+                            <option value="transferencia">Transferencia bancaria</option>
+                            <option value="nequi">Nequi</option>
+                            <option value="daviplata">Daviplata</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="comentarios">Comentarios Adicionales</label>
-                        <textarea id="comentarios" name="comentarios" placeholder="Instrucciones especiales para la entrega, referencias, etc."></textarea>
+                        <label for="notas">Notas adicionales</label>
+                        <textarea id="notas" name="notas" rows="3" placeholder="Instrucciones especiales para la entrega..."></textarea>
                     </div>
-                    <button type="button" class="whatsapp-btn" id="whatsappSubmitButton">
-                        <i class="fab fa-whatsapp"></i>ENVIAR PEDIDO POR WHATSAPP
+                    <button type="button" class="whatsapp-btn" id="whatsappSubmitButton" onclick="submitWhatsAppOrder()">
+                        <i class="fab fa-whatsapp"></i>Finalizar Pedido por WhatsApp
                     </button>
                 </form>
-                <div style="margin-top: 1rem; padding: 1rem; background: #FFF5F7; border-radius: 8px; border: 1px solid #F8BBD0;">
-                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Información de Contacto:</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- Policy Modal -->
+    <div class="modal" id="policyModal">
+        <div class="modal-content" style="max-width: 700px;">
+            <div class="modal-header">
+                <h3 class="modal-title">Política de Devoluciones</h3>
+                <button class="modal-close" onclick="closePolicyModal()">&times;</button>
+            </div>
+            <div class="modal-body" style="font-size: 0.85rem; line-height: 1.5;">
+                <p style="margin-bottom: 1rem; color: #666;">Esta política aplica a la compra de productos físicos en nuestra tienda online o a través de WhatsApp en Colombia.</p>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Derecho a Desistir</h4>
+                    <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Tiempo:</strong> Puedes devolver tu compra en 5 días hábiles desde que recibes el producto, sin explicar por qué.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Condiciones:</strong> El producto debe estar sin usar, en su empaque original y en las mismas condiciones en que lo recibiste. Tú cubres los costos de devolución.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Reembolso:</strong> Te devolvemos el 100% del dinero en máximo 15 días, usando el mismo método de pago.</li>
+                    </ul>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Excepciones</h4>
+                    <p style="margin-bottom: 0.5rem;">No puedes devolver:</p>
+                    <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
+                        <li style="margin-bottom: 0.5rem;">Productos personalizados o hechos a medida.</li>
+                        <li style="margin-bottom: 0.5rem;">Productos que, por higiene o salud, hayan sido usados o abiertos (ej. ropa interior, cosméticos).</li>
+                    </ul>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Garantías</h4>
+                    <p style="margin-bottom: 0.5rem;">Si el producto tiene defectos o no es como lo prometimos:</p>
+                    <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
+                        <li style="margin-bottom: 0.5rem;">Puedes pedir reparación, cambio o reembolso durante al menos 1 año desde la entrega.</li>
+                        <li style="margin-bottom: 0.5rem;">Notifícanos en un plazo razonable (sugerimos dentro de los 30 días desde que notas el problema).</li>
+                        <li style="margin-bottom: 0.5rem;">Resolveremos tu solicitud en máximo 15 días hábiles.</li>
+                    </ul>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Cómo Devolver</h4>
+                    <ol style="margin-left: 1rem; margin-bottom: 0.8rem;">
+                        <li style="margin-bottom: 0.5rem;">Escríbenos por WhatsApp al +57 3207734748 dentro del plazo.</li>
+                        <li style="margin-bottom: 0.5rem;">Danos el número de orden o detalles de la compra hecha por la tienda online o WhatsApp.</li>
+                        <li style="margin-bottom: 0.5rem;">Te indicaremos cómo enviar el producto de vuelta y cuándo recibirás el reembolso.</li>
+                    </ol>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.8rem; border-bottom: 1px solid var(--primary-color); padding-bottom: 0.3rem;">Contáctanos</h4>
+                    <p style="margin-bottom: 0.5rem;">Para dudas o reclamos, contáctanos por:</p>
                     <ul style="margin-left: 1rem; margin-bottom: 0.8rem;">
                         <li style="margin-bottom: 0.5rem;"><strong>WhatsApp:</strong> +57 3207734748</li>
                         <li style="margin-bottom: 0.5rem;"><strong>Correo:</strong> vialsabogal@gmail.com</li>
@@ -2010,7 +2048,7 @@
     </footer>
 
     <script>
-        // Product data - Productos solicitados eliminados
+        // Product data
         const products = [
             // Kits (Primero los kits)
             {
@@ -2204,7 +2242,6 @@
                     { quantity: 3, price: 130000, originalPrice: 210000, savings: 60000, bestValue: true }
                 ]
             }
-        
         ];
 
         // Cart functionality
@@ -2254,7 +2291,7 @@
                 });
             });
 
-            // CORRECCIÓN: Event listener único y limpio para el botón de WhatsApp
+            // Event listener para el botón de WhatsApp
             const whatsappButton = document.getElementById('whatsappSubmitButton');
             if (whatsappButton) {
                 whatsappButton.addEventListener('click', function(e) {
@@ -2281,118 +2318,174 @@
                 input.addEventListener('change', checkFormValidity);
             });
 
-            // Add video play functionality
-            document.querySelectorAll('.testimonial-video-container').forEach(container => {
-                container.addEventListener('click', function() {
-                    const video = this.querySelector('video');
-                    const overlay = this.querySelector('.play-button-overlay');
-                    
-                    if (video.paused) {
-                        video.play();
-                        overlay.style.display = 'none';
-                    } else {
-                        video.pause();
-                        overlay.style.display = 'flex';
-                    }
-                });
-            });
+            // Video play functionality
+            const videoContainers = document.querySelectorAll('.testimonial-video-container');
+            videoContainers.forEach(container => {
+                const video = container.querySelector('video');
+                const playButton = container.querySelector('.play-button-overlay');
 
-            // Handle video ended event
-            document.querySelectorAll('.testimonial-video-container video').forEach(video => {
-                video.addEventListener('ended', function() {
-                    const overlay = this.parentElement.querySelector('.play-button-overlay');
-                    overlay.style.display = 'flex';
-                });
+                if (video && playButton) {
+                    container.addEventListener('click', () => {
+                        if (video.paused) {
+                            video.play();
+                            playButton.style.display = 'none';
+                        } else {
+                            video.pause();
+                            playButton.style.display = 'flex';
+                        }
+                    });
+
+                    video.addEventListener('pause', () => {
+                        playButton.style.display = 'flex';
+                    });
+
+                    video.addEventListener('play', () => {
+                        playButton.style.display = 'none';
+                    });
+                }
             });
         });
 
-        // Check form validity
-        function checkFormValidity() {
-            const form = document.getElementById('orderForm');
-            const whatsappBtn = document.getElementById('whatsappSubmitButton');
-            const requiredInputs = form.querySelectorAll('input[required], select[required], textarea[required]');
-            
-            let allValid = true;
-            requiredInputs.forEach(input => {
-                if (!input.value.trim()) {
-                    allValid = false;
-                }
-            });
-            
-            if (allValid) {
-                whatsappBtn.classList.add('enabled');
-            } else {
-                whatsappBtn.classList.remove('enabled');
-            }
-        }
-
-        // Start urgency timer
+        // Timer function
         function startTimer() {
-            const timerElement = document.getElementById('timer');
-            const urgencyTimer = document.getElementById('urgencyTimer');
-            
-            if (!timerElement || !urgencyTimer) return;
-            
-            urgencyTimer.style.display = 'block';
-            
-            if (timerInterval) {
-                clearInterval(timerInterval);
-            }
-            
+            clearInterval(timerInterval);
+            timeLeft = 15 * 60; // Reset to 15 minutes
+            updateTimerDisplay();
+
             timerInterval = setInterval(() => {
-                const minutes = Math.floor(timeLeft / 60);
-                const seconds = timeLeft % 60;
-                timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-                
+                timeLeft--;
+                updateTimerDisplay();
+
                 if (timeLeft <= 0) {
                     clearInterval(timerInterval);
-                    urgencyTimer.style.display = 'none';
-                    timeLeft = 15 * 60; // Reset timer
+                    // Clear cart
+                    cart = [];
+                    localStorage.setItem('carotoneCart', JSON.stringify(cart));
+                    updateCartUI();
+                    updateCartCount();
+                    showNotification('Tu carrito se ha vaciado por inactividad');
+                    toggleCart(); // Close cart
                 }
-                
-                timeLeft--;
             }, 1000);
         }
 
-        // Submit WhatsApp order
-        function submitWhatsAppOrder() {
-            try {
-                const form = document.getElementById('orderForm');
-                const formData = new FormData(form);
-                
-                // Validar campos requeridos
-                const requiredFields = ['nombre', 'telefono', 'direccion', 'ciudad', 'departamento', 'metodoPago'];
-                for (let field of requiredFields) {
-                    if (!formData.get(field)) {
-                        showNotification(`Por favor completa el campo: ${field}`);
-                        return;
-                    }
-                }
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            const timerElement = document.getElementById('timer');
+            if (timerElement) {
+                timerElement.textContent =
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+        }
 
-                // Calcular total del carrito
+        // Función de validación mejorada
+        function checkFormValidity() {
+            const form = document.getElementById('orderForm');
+            const whatsappButton = document.getElementById('whatsappSubmitButton');
+            
+            if (!form || !whatsappButton) return;
+
+            const requiredFields = form.querySelectorAll('input[required], select[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value || field.value.trim() === '') {
+                    isValid = false;
+                }
+            });
+
+            // Habilitar/deshabilitar botón
+            if (isValid) {
+                whatsappButton.classList.add('enabled');
+            } else {
+                whatsappButton.classList.remove('enabled');
+            }
+        }
+
+        // Función submitWhatsAppOrder mejorada
+        function submitWhatsAppOrder() {
+            // Verificar que el botón esté habilitado
+            const whatsappButton = document.getElementById('whatsappSubmitButton');
+            if (!whatsappButton.classList.contains('enabled')) {
+                showNotification('Por favor completa todos los campos obligatorios');
+                return;
+            }
+
+            // Play checkout sound
+            const checkoutSound = document.getElementById('checkoutSound');
+            if (checkoutSound) {
+                checkoutSound.currentTime = 0;
+                checkoutSound.play().catch(() => {});
+            }
+            
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate(100);
+            }
+
+            // Validar campos requeridos
+            const requiredFields = ['nombre', 'apellido', 'telefono', 'departamento', 'ciudad', 'direccion'];
+            let isValid = true;
+            
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (!field || !field.value.trim()) {
+                    if (field) field.style.borderColor = 'red';
+                    isValid = false;
+                } else {
+                    if (field) field.style.borderColor = '';
+                }
+            });
+
+            if (!isValid) {
+                showNotification('Por favor completa todos los campos obligatorios');
+                return;
+            }
+
+            // Verificar que hay productos en el carrito
+            if (cart.length === 0) {
+                showNotification('Tu carrito está vacío');
+                return;
+            }
+
+            try {
+                // Obtener datos del formulario
+                const formData = {
+                    nombre: document.getElementById('nombre').value.trim(),
+                    apellido: document.getElementById('apellido').value.trim(),
+                    telefono: document.getElementById('telefono').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    departamento: document.getElementById('departamento').value,
+                    ciudad: document.getElementById('ciudad').value.trim(),
+                    direccion: document.getElementById('direccion').value.trim(),
+                    metodoPago: document.getElementById('metodoPago').value,
+                    notas: document.getElementById('notas').value.trim()
+                };
+
+                // Calcular total
                 const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
-                // Crear mensaje para WhatsApp
-                let message = `🛒 *NUEVO PEDIDO CAROTONE*\n\n`;
-                message += `👤 *DATOS DEL CLIENTE:*\n`;
-                message += `• Nombre: ${formData.get('nombre')}\n`;
-                message += `• Teléfono: ${formData.get('telefono')}\n`;
-                if (formData.get('email')) {
-                    message += `• Email: ${formData.get('email')}\n`;
+                // Construir mensaje de WhatsApp
+                let message = `¡Hola! Quiero realizar un pedido:\n\n`;
+                message += `*DATOS DEL CLIENTE:*\n`;
+                message += `• Nombre: ${formData.nombre} ${formData.apellido}\n`;
+                message += `• Teléfono: ${formData.telefono}\n`;
+                if (formData.email) {
+                    message += `• Email: ${formData.email}\n`;
                 }
-                message += `• Dirección: ${formData.get('direccion')}\n`;
-                message += `• Ciudad: ${formData.get('ciudad')}\n`;
-                message += `• Departamento: ${formData.get('departamento')}\n`;
-                message += `• Método de pago: ${formData.get('metodoPago')}\n\n`;
-
-                if (formData.get('comentarios')) {
-                    message += `📝 *COMENTARIOS:*\n${formData.get('comentarios')}\n\n`;
+                message += `• Dirección: ${formData.direccion}\n`;
+                message += `• Ciudad: ${formData.ciudad}\n`;
+                message += `• Departamento: ${formData.departamento}\n`;
+                message += `• Método de pago: ${formData.metodoPago}\n`;
+                if (formData.notas) {
+                    message += `• Notas: ${formData.notas}\n`;
                 }
 
-                message += `🛍️ *PRODUCTOS PEDIDOS:*\n`;
+                message += `\n*PRODUCTOS PEDIDOS:*\n`;
                 cart.forEach((item, index) => {
                     message += `${index + 1}. ${item.name}\n`;
-                    message += `   - Cantidad: ${item.quantity} unidad${item.quantity > 1 ? 'es' : ''}\n`;
+                    message += `   - Cantidad: ${item.quantity} paquete(s) de ${item.packageQuantity} unidad(es)\n`;
                     message += `   - Precio unitario: $${Math.round(item.price).toLocaleString()}\n`;
                     message += `   - Subtotal: $${(item.price * item.quantity).toLocaleString()}\n\n`;
                 });
@@ -2403,8 +2496,6 @@
                 // Codificar mensaje para URL
                 const encodedMessage = encodeURIComponent(message);
                 const whatsappUrl = `https://wa.me/573207734748?text=${encodedMessage}`;
-
-                console.log('Abriendo WhatsApp con URL:', whatsappUrl);
 
                 // Abrir WhatsApp
                 window.open(whatsappUrl, '_blank');
@@ -2737,22 +2828,17 @@
             updateCartCount();
         }
 
-        // FUNCIÓN TOGGLECART CORREGIDA PARA MÓVILES
+        // Toggle cart visibility
         function toggleCart() {
             const cartSidebar = document.getElementById('cartSidebar');
             if (!cartSidebar) return;
 
-            const isOpen = cartSidebar.classList.toggle('open');
-
-            // NUEVA LÓGICA PARA PREVENIR EL SCROLL EN MÓVILES
-            if (isOpen) {
-                document.body.classList.add('body-no-scroll');
-            } else {
-                document.body.classList.remove('body-no-scroll');
-            }
+            cartSidebar.classList.toggle('open');
+            // Prevent body scroll when cart is open
+            document.body.style.overflow = cartSidebar.classList.contains('open') ? 'hidden' : '';
 
             // Start timer if cart has items
-            if (isOpen && cart.length > 0) {
+            if (cartSidebar.classList.contains('open') && cart.length > 0) {
                 startTimer();
             }
         }
@@ -2763,52 +2849,68 @@
                 showNotification('Tu carrito está vacío');
                 return;
             }
-            document.getElementById('orderModal').classList.add('show');
-            checkFormValidity();
+            const modal = document.getElementById('orderFormModal');
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+                // Disable WhatsApp button initially
+                const whatsappButton = document.getElementById('whatsappSubmitButton');
+                if (whatsappButton) {
+                    whatsappButton.classList.remove('enabled');
+                }
+            }
         }
 
         // Close order form
         function closeOrderForm() {
-            document.getElementById('orderModal').classList.remove('show');
-        }
-
-        // Search products
-        function searchProducts() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const searchResults = document.getElementById('searchResults');
-            
-            if (searchTerm.length < 2) {
-                searchResults.style.display = 'none';
-                return;
-            }
-            
-            const filteredProducts = products.filter(product => 
-                product.name.toLowerCase().includes(searchTerm) ||
-                product.description.toLowerCase().includes(searchTerm)
-            );
-            
-            if (filteredProducts.length > 0) {
-                searchResults.innerHTML = filteredProducts.map(product => `
-                    <div class="search-result-item" onclick="scrollToProduct('${product.id}')">
-                        <img src="${product.image}" alt="${product.name}" class="search-result-image">
-                        <div>
-                            <div class="search-result-title">${product.name}</div>
-                            <div class="search-result-price">$${product.currentPrice.toLocaleString()}</div>
-                        </div>
-                    </div>
-                `).join('');
-                searchResults.style.display = 'block';
-            } else {
-                searchResults.innerHTML = '<div class="search-result-item">No se encontraron productos</div>';
-                searchResults.style.display = 'block';
+            const modal = document.getElementById('orderFormModal');
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+                // Reset form
+                const form = document.getElementById('orderForm');
+                if (form) form.reset();
+                // Reset validation styles
+                const inputs = document.querySelectorAll('#orderForm input, #orderForm select');
+                inputs.forEach(input => {
+                    input.style.borderColor = '';
+                });
+                // Disable WhatsApp button
+                const whatsappButton = document.getElementById('whatsappSubmitButton');
+                if (whatsappButton) {
+                    whatsappButton.classList.remove('enabled');
+                }
             }
         }
 
-        // Scroll to product
-        function scrollToProduct(productId) {
-            document.getElementById('searchResults').style.display = 'none';
-            document.getElementById('searchInput').value = '';
-            scrollToSection('productos');
+        // Show policy modal
+        function showPolicyModal() {
+            const modal = document.getElementById('policyModal');
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Close policy modal
+        function closePolicyModal() {
+            const modal = document.getElementById('policyModal');
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            if (notification) {
+                notification.textContent = message;
+                notification.classList.add('show');
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
         }
 
         // Scroll to section
@@ -2828,78 +2930,116 @@
         function shareWebsite() {
             if (navigator.share) {
                 navigator.share({
-                    title: 'Carotone - Kits Aclarantes',
-                    text: 'Descubre los mejores kits Carotone para aclarar tu piel',
+                    title: 'Carotone - Kits Aclarantes para Piel Radiante',
+                    text: 'Descubre los mejores kits Carotone para aclarar tu piel y reducir manchas',
                     url: window.location.href
+                }).catch(err => {
+                    console.log('Error sharing:', err);
                 });
             } else {
                 // Fallback for browsers that don't support Web Share API
-                const url = window.location.href;
-                navigator.clipboard.writeText(url).then(() => {
-                    showNotification('Enlace copiado al portapapeles');
-                });
+                const shareUrl = `https://wa.me/?text=Descubre%20los%20mejores%20kits%20Carotone%20para%20aclarar%20tu%20piel%20y%20reducir%20manchas%20${encodeURIComponent(window.location.href)}`;
+                // Copy to clipboard
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        showNotification('Enlace copiado al portapapeles');
+                    }).catch(err => {
+                        console.log('Error copying link:', err);
+                        // Fallback to opening WhatsApp
+                        window.open(shareUrl, '_blank');
+                    });
+                } else {
+                    window.open(shareUrl, '_blank');
+                }
+            }
+            // Vibrate on mobile devices
+            if ('vibrate' in navigator) {
+                navigator.vibrate([100, 50, 100]);
             }
         }
 
-        // Toggle FAQ
-        function toggleFAQ(element) {
-            const faqItem = element.parentElement;
-            const isActive = faqItem.classList.contains('active');
-            
-            // Close all FAQ items
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            // Open clicked item if it wasn't active
-            if (!isActive) {
-                faqItem.classList.add('active');
-            }
-        }
-
-        // Show notification
-        function showNotification(message) {
-            const notification = document.getElementById('notification');
-            notification.textContent = message;
-            notification.classList.add('show');
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
-        }
-
-        // Hide search results when clicking outside
-        document.addEventListener('click', function(e) {
-            const searchBox = document.querySelector('.search-box');
+        // Search products
+        function searchProducts() {
+            const searchInput = document.getElementById('searchInput');
             const searchResults = document.getElementById('searchResults');
             
-            if (!searchBox.contains(e.target)) {
+            if (!searchInput || !searchResults) return;
+
+            const searchTerm = searchInput.value.toLowerCase();
+            if (searchTerm.length < 2) {
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            const filteredProducts = products.filter(product =>
+                product.name.toLowerCase().includes(searchTerm) ||
+                product.description.toLowerCase().includes(searchTerm)
+            );
+
+            if (filteredProducts.length === 0) {
+                searchResults.innerHTML = '<div class="search-result-item">No se encontraron productos</div>';
+                searchResults.style.display = 'block';
+                return;
+            }
+
+            searchResults.innerHTML = filteredProducts.map(product => `
+                <div class="search-result-item" onclick="scrollToProduct('${product.id}'); searchResults.style.display='none'; searchInput.value=''">
+                    <img src="${product.image}" alt="${product.name}" class="search-result-image">
+                    <div class="search-result-info">
+                        <div class="search-result-title">${product.name}</div>
+                        <div class="search-result-price">$${product.currentPrice.toLocaleString()}</div>
+                    </div>
+                </div>
+            `).join('');
+            searchResults.style.display = 'block';
+        }
+
+        // Scroll to specific product
+        function scrollToProduct(productId) {
+            // First, ensure we're on the products section
+            scrollToSection('productos');
+
+            // Then scroll to the specific product card after a short delay
+            setTimeout(() => {
+                const productCard = document.querySelector(`.product-card .add-to-cart-btn[onclick*="${productId}"]`);
+                if (productCard) {
+                    const card = productCard.closest('.product-card');
+                    if (card) {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        // Add temporary highlight effect
+                        card.style.boxShadow = '0 0 20px rgba(233, 30, 99, 0.5)';
+                        setTimeout(() => {
+                            card.style.boxShadow = '';
+                        }, 2000);
+                    }
+                }
+            }, 500);
+        }
+
+        // Close search results when clicking outside
+        document.addEventListener('click', function(event) {
+            const searchBox = document.querySelector('.search-box');
+            const searchResults = document.getElementById('searchResults');
+            if (searchBox && searchResults && !searchBox.contains(event.target)) {
                 searchResults.style.display = 'none';
             }
         });
 
-        // Close modal when clicking outside
-        document.addEventListener('click', function(e) {
-            const modal = document.getElementById('orderModal');
-            if (e.target === modal) {
-                closeOrderForm();
+        // Toggle FAQ
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            if (faqItem) {
+                faqItem.classList.toggle('active');
             }
-        });
-
-        // Close cart when clicking outside
-        document.addEventListener('click', function(e) {
-            const cartSidebar = document.getElementById('cartSidebar');
-            const cartIcon = document.querySelector('.cart-icon');
-            const floatingCart = document.querySelector('.floating-cart');
-            
-            if (cartSidebar.classList.contains('open') && 
-                !cartSidebar.contains(e.target) && 
-                !cartIcon.contains(e.target) && 
-                !floatingCart.contains(e.target)) {
-                toggleCart();
-            }
-        });
+        }
     </script>
+
+    <!-- Audio elements for sound effects -->
+    <audio id="clickSound" preload="auto">
+        <source src="data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" type="audio/mpeg">
+    </audio>
+    <audio id="checkoutSound" preload="auto">
+        <source src="data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" type="audio/mpeg">
+    </audio>
 </body>
 </html>
-
